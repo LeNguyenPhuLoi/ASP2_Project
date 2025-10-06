@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\QuanLyLinhKien\\QuanLyLinhKien\\QuanLyLinhKien.csproj",
+      "projectUniqueName": "D:\\ASP2_Project\\QuanLyLinhKien\\QuanLyLinhKien\\QuanLyLinhKien.csproj",
       "projectName": "QuanLyLinhKien",
-      "projectPath": "D:\\QuanLyLinhKien\\QuanLyLinhKien\\QuanLyLinhKien.csproj",
+      "projectPath": "D:\\ASP2_Project\\QuanLyLinhKien\\QuanLyLinhKien\\QuanLyLinhKien.csproj",
       "packagesPath": "C:\\Users\\leloi\\.nuget\\packages\\",
-      "outputPath": "D:\\QuanLyLinhKien\\QuanLyLinhKien\\obj\\",
+      "outputPath": "D:\\ASP2_Project\\QuanLyLinhKien\\QuanLyLinhKien\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
