@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "D:\\ASP2_Project\\LinhKienDienTu\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D87A6384-9654-4BB7-9FB4-33BE87BBFAA6}|LinhKienDienTu\\LinhKienDienTu.csproj|d:\\asp2_project\\linhkiendientu\\linhkiendientu\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D87A6384-9654-4BB7-9FB4-33BE87BBFAA6}|LinhKienDienTu\\LinhKienDienTu.csproj|solutionrelative:linhkiendientu\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{D87A6384-9654-4BB7-9FB4-33BE87BBFAA6}|LinhKienDienTu\\LinhKienDienTu.csproj|d:\\asp2_project\\linhkiendientu\\linhkiendientu\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D87A6384-9654-4BB7-9FB4-33BE87BBFAA6}|LinhKienDienTu\\LinhKienDienTu.csproj|solutionrelative:linhkiendientu\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D87A6384-9654-4BB7-9FB4-33BE87BBFAA6}|LinhKienDienTu\\LinhKienDienTu.csproj|d:\\asp2_project\\linhkiendientu\\linhkiendientu\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D87A6384-9654-4BB7-9FB4-33BE87BBFAA6}|LinhKienDienTu\\LinhKienDienTu.csproj|solutionrelative:linhkiendientu\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D87A6384-9654-4BB7-9FB4-33BE87BBFAA6}|LinhKienDienTu\\LinhKienDienTu.csproj|d:\\asp2_project\\linhkiendientu\\linhkiendientu\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D87A6384-9654-4BB7-9FB4-33BE87BBFAA6}|LinhKienDienTu\\LinhKienDienTu.csproj|solutionrelative:linhkiendientu\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D87A6384-9654-4BB7-9FB4-33BE87BBFAA6}|LinhKienDienTu\\LinhKienDienTu.csproj|d:\\asp2_project\\linhkiendientu\\linhkiendientu\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D87A6384-9654-4BB7-9FB4-33BE87BBFAA6}|LinhKienDienTu\\LinhKienDienTu.csproj|solutionrelative:linhkiendientu\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D87A6384-9654-4BB7-9FB4-33BE87BBFAA6}|LinhKienDienTu\\LinhKienDienTu.csproj|d:\\asp2_project\\linhkiendientu\\linhkiendientu\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D87A6384-9654-4BB7-9FB4-33BE87BBFAA6}|LinhKienDienTu\\LinhKienDienTu.csproj|solutionrelative:linhkiendientu\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D87A6384-9654-4BB7-9FB4-33BE87BBFAA6}|LinhKienDienTu\\LinhKienDienTu.csproj|d:\\asp2_project\\linhkiendientu\\linhkiendientu\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D87A6384-9654-4BB7-9FB4-33BE87BBFAA6}|LinhKienDienTu\\LinhKienDienTu.csproj|solutionrelative:linhkiendientu\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +34,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\ASP2_Project\\LinhKienDienTu\\LinhKienDienTu\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "LinhKienDienTu\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "D:\\ASP2_Project\\LinhKienDienTu\\LinhKienDienTu\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "LinhKienDienTu\\Views\\Admin\\Index.cshtml",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAAAFUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-07T02:49:38.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\ASP2_Project\\LinhKienDienTu\\LinhKienDienTu\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "LinhKienDienTu\\Controllers\\AdminController.cs",
+              "ToolTip": "D:\\ASP2_Project\\LinhKienDienTu\\LinhKienDienTu\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "LinhKienDienTu\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T02:48:36.356Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -28,22 +70,48 @@
               "RelativeDocumentMoniker": "LinhKienDienTu\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "D:\\ASP2_Project\\LinhKienDienTu\\LinhKienDienTu\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "LinhKienDienTu\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-07T01:02:30.829Z",
+              "WhenOpened": "2025-10-07T02:07:33.542Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "D:\\ASP2_Project\\LinhKienDienTu\\LinhKienDienTu\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "LinhKienDienTu\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "D:\\ASP2_Project\\LinhKienDienTu\\LinhKienDienTu\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "LinhKienDienTu\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-07T02:59:15.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\ASP2_Project\\LinhKienDienTu\\LinhKienDienTu\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "LinhKienDienTu\\Views\\Home\\Index.cshtml",
               "ToolTip": "D:\\ASP2_Project\\LinhKienDienTu\\LinhKienDienTu\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "LinhKienDienTu\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAKIAAAAAAAAAAAAAAKsAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAADYAAAB2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-07T00:57:52.253Z",
+              "WhenOpened": "2025-10-07T02:07:23.905Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\ASP2_Project\\LinhKienDienTu\\LinhKienDienTu\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "LinhKienDienTu\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\ASP2_Project\\LinhKienDienTu\\LinhKienDienTu\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "LinhKienDienTu\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T01:56:41.216Z",
               "EditorCaption": ""
             }
           ]
