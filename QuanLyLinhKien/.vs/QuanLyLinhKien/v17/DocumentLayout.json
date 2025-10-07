@@ -7,8 +7,12 @@
       "RelativeMoniker": "D:0:0:{0EC425CA-BDD7-4B48-9C69-CF223111BC0A}|QuanLyLinhKien\\QuanLyLinhKien.csproj|solutionrelative:quanlylinhkien\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0EC425CA-BDD7-4B48-9C69-CF223111BC0A}|QuanLyLinhKien\\QuanLyLinhKien.csproj|d:\\asp2_project\\quanlylinhkien\\quanlylinhkien\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{0EC425CA-BDD7-4B48-9C69-CF223111BC0A}|QuanLyLinhKien\\QuanLyLinhKien.csproj|solutionrelative:quanlylinhkien\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{0EC425CA-BDD7-4B48-9C69-CF223111BC0A}|QuanLyLinhKien\\QuanLyLinhKien.csproj|d:\\asp2_project\\quanlylinhkien\\quanlylinhkien\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0EC425CA-BDD7-4B48-9C69-CF223111BC0A}|QuanLyLinhKien\\QuanLyLinhKien.csproj|solutionrelative:quanlylinhkien\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0EC425CA-BDD7-4B48-9C69-CF223111BC0A}|QuanLyLinhKien\\QuanLyLinhKien.csproj|d:\\asp2_project\\quanlylinhkien\\quanlylinhkien\\views\\home\\viewcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0EC425CA-BDD7-4B48-9C69-CF223111BC0A}|QuanLyLinhKien\\QuanLyLinhKien.csproj|solutionrelative:quanlylinhkien\\views\\home\\viewcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0EC425CA-BDD7-4B48-9C69-CF223111BC0A}|QuanLyLinhKien\\QuanLyLinhKien.csproj|d:\\asp2_project\\quanlylinhkien\\quanlylinhkien\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -22,19 +26,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ViewCart.cshtml",
+              "DocumentMoniker": "D:\\ASP2_Project\\QuanLyLinhKien\\QuanLyLinhKien\\Views\\Home\\ViewCart.cshtml",
+              "RelativeDocumentMoniker": "QuanLyLinhKien\\Views\\Home\\ViewCart.cshtml",
+              "ToolTip": "D:\\ASP2_Project\\QuanLyLinhKien\\QuanLyLinhKien\\Views\\Home\\ViewCart.cshtml",
+              "RelativeToolTip": "QuanLyLinhKien\\Views\\Home\\ViewCart.cshtml",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-07T00:17:59.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "style.css",
-              "DocumentMoniker": "D:\\ASP2_Project\\QuanLyLinhKien\\QuanLyLinhKien\\wwwroot\\css\\style.css",
-              "RelativeDocumentMoniker": "QuanLyLinhKien\\wwwroot\\css\\style.css",
-              "ToolTip": "D:\\ASP2_Project\\QuanLyLinhKien\\QuanLyLinhKien\\wwwroot\\css\\style.css",
-              "RelativeToolTip": "QuanLyLinhKien\\wwwroot\\css\\style.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-10-06T12:43:40.048Z",
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\ASP2_Project\\QuanLyLinhKien\\QuanLyLinhKien\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "QuanLyLinhKien\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\ASP2_Project\\QuanLyLinhKien\\QuanLyLinhKien\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "QuanLyLinhKien\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T00:16:43.725Z",
               "EditorCaption": ""
             },
             {
@@ -45,23 +62,22 @@
               "RelativeDocumentMoniker": "QuanLyLinhKien\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "D:\\ASP2_Project\\QuanLyLinhKien\\QuanLyLinhKien\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "QuanLyLinhKien\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAJcAAAAAAAAAAAAkwK8AAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-06T09:38:55.561Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\ASP2_Project\\QuanLyLinhKien\\QuanLyLinhKien\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "QuanLyLinhKien\\Views\\Home\\Index.cshtml",
               "ToolTip": "D:\\ASP2_Project\\QuanLyLinhKien\\QuanLyLinhKien\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "QuanLyLinhKien\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAN8BAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAACMCAAAAAAAAAAAAADcCAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-06T09:28:13.665Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-06T09:28:13.665Z"
             }
           ]
         }
