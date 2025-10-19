@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Shop Homepage - Start Bootstrap Template</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+        .pagination {
+            display: flex;
+            justify-content: center; /* Căn giữa theo chiều ngang */
+            align-items: center;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="row gx-4 gx-lg-5 align-items-center">
+                <div id="shopping-cart">
+                    <h2>Shopping Cart</h2>
+                    <div class="float-end">
+                        <a class="btn btn-outline-dark btn-warning mt-auto">Empty Cart</a>
+                    </div>
+                    <table class="table" cellpadding="10" cellspacing="1">
+                        <thead>
+                            <tr>
+                                <th style="text-align:left;">Mã Sản Phẩm</th>
+                                <th style="text-align:left;">Tên Sản Phẩm</th>
+                                <th style="text-align:right;" width="5%">Số Lượng</th>
+                                <th style="text-align:right;" width="10%">Giá<br>( in $)</th>
+                                <th style="text-align:right;" width="10%">Tổng<br>( in $)</th>
+                                <th style="text-align:center;" width="5%">Quản Lý</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th style="text-align:left;">asus_1050_4gb_ddr5</th>
+                                <th style="text-align:left;">Card Asus GTX 1050 4GB DDR5</th>
+                                <th style="text-align:right;" width="5%">2</th>
+                                <th style="text-align:right;" width="10%">350$</th>
+                                <th style="text-align:right;" width="10%">700$</th>
+                                <th style="text-align:center; display: flex; justify-content: center; gap: 5px;">
+                                    <a class="btn btn-success btn-outline-dark" style="color:white;">Buy</a>
+                                    <a class="btn btn-danger btn-outline-dark" style="color:white;">Delete</a>
+                                </th>
+
+                            </tr>
+
+                            <tr>
+                                <td colspan="2" align="right">Total:</td>
+                                <td align="right">2</td>
+                                <td align="right" colspan="2"><strong>700$</strong></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a class="btn btn-primary btn-outline-dark" style="color:white;" asp-controller="GioHang" asp-action="LichSuMuaHang">Lịch Sử Mua Hàng</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

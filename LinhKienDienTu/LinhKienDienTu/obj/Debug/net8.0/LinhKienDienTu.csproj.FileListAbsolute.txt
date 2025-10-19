@@ -32,3 +32,33 @@ D:\ASP2_Project\LinhKienDienTu\LinhKienDienTu\obj\Debug\net8.0\refint\LinhKienDi
 D:\ASP2_Project\LinhKienDienTu\LinhKienDienTu\obj\Debug\net8.0\LinhKienDienTu.pdb
 D:\ASP2_Project\LinhKienDienTu\LinhKienDienTu\obj\Debug\net8.0\LinhKienDienTu.genruntimeconfig.cache
 D:\ASP2_Project\LinhKienDienTu\LinhKienDienTu\obj\Debug\net8.0\ref\LinhKienDienTu.dll
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\bin\Debug\net8.0\appsettings.Development.json
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\bin\Debug\net8.0\appsettings.json
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\bin\Debug\net8.0\LinhKienDienTu.staticwebassets.runtime.json
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\bin\Debug\net8.0\LinhKienDienTu.staticwebassets.endpoints.json
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\bin\Debug\net8.0\LinhKienDienTu.exe
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\bin\Debug\net8.0\LinhKienDienTu.deps.json
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\bin\Debug\net8.0\LinhKienDienTu.runtimeconfig.json
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\bin\Debug\net8.0\LinhKienDienTu.dll
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\bin\Debug\net8.0\LinhKienDienTu.pdb
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\obj\Debug\net8.0\LinhKienDienTu.GeneratedMSBuildEditorConfig.editorconfig
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\obj\Debug\net8.0\LinhKienDienTu.AssemblyInfoInputs.cache
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\obj\Debug\net8.0\LinhKienDienTu.AssemblyInfo.cs
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\obj\Debug\net8.0\LinhKienDienTu.csproj.CoreCompileInputs.cache
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\obj\Debug\net8.0\LinhKienDienTu.MvcApplicationPartsAssemblyInfo.cache
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\obj\Debug\net8.0\LinhKienDienTu.RazorAssemblyInfo.cache
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\obj\Debug\net8.0\LinhKienDienTu.RazorAssemblyInfo.cs
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\obj\Debug\net8.0\LinhKienDienTu.sourcelink.json
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\obj\Debug\net8.0\scopedcss\bundle\LinhKienDienTu.styles.css
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\obj\Debug\net8.0\scopedcss\projectbundle\LinhKienDienTu.bundle.scp.css
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\obj\Debug\net8.0\staticwebassets.build.json
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\obj\Debug\net8.0\staticwebassets.build.json.cache
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\obj\Debug\net8.0\staticwebassets.development.json
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\obj\Debug\net8.0\LinhKienDienTu.dll
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\obj\Debug\net8.0\refint\LinhKienDienTu.dll
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\obj\Debug\net8.0\LinhKienDienTu.pdb
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\obj\Debug\net8.0\LinhKienDienTu.genruntimeconfig.cache
+E:\Hoc kì 5\ASP.NET-2\19-20-2025\ASP2_Project\LinhKienDienTu\LinhKienDienTu\obj\Debug\net8.0\ref\LinhKienDienTu.dll
