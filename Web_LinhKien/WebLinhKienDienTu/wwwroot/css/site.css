@@ -1,0 +1,95 @@
+﻿html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+a.dropdown-item {
+    color: black !important;
+}
+
+.header-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+    .header-search form {
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 50px;
+        overflow: hidden;
+        box-shadow: 0 0 2px rgba(0,0,0,0.2);
+        transition: box-shadow 0.3s ease;
+    }
+
+        .header-search form:hover,
+        .header-search form:focus-within {
+            box-shadow: 0 0 8px rgba(212, 0, 26, 0.4);
+        }
+
+/* Dropdown */
+.input-select {
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #333;
+    border-right: 1px solid #ddd;
+    background-color: #fff;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    cursor: pointer;
+}
+
+/* Ô nhập */
+.input {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    width: 250px;
+    font-size: 14px;
+    color: #333;
+}
+
+    .input::placeholder {
+        color: #999;
+    }
+
+/* Nút tìm kiếm */
+.search-btn {
+    background-color: #d4001a;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 10px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+    .search-btn:hover {
+        background-color: #b00016;
+        transform: scale(1.05);
+    }
