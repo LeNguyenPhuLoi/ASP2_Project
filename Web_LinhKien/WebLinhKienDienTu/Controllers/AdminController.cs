@@ -8,5 +8,20 @@ namespace WebLinhKienDienTu.Controllers
         {
             return View();
         }
+
+        public IActionResult QuanLyKhoSP()
+        {
+            return View();
+        }
+
+        public IActionResult QuanLySP()
+        {
+            return View();
+        }
+
+        public IActionResult QuanLyLoaiSP()
+        {
+            return View();
+        }
     }
 }
