@@ -1,0 +1,109 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Shop Homepage - Start Bootstrap Template</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+        .pagination {
+            display: flex;
+            justify-content: center; /* Căn giữa theo chiều ngang */
+            align-items: center;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container mt-4">
+        <div class="card shadow-lg">
+            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">Quản lý sản phẩm</h4>
+                <a class="btn btn-light btn-sm">+ Thêm sản phẩm</a>
+            </div>
+
+            <div class="card-body">
+                <!-- Thanh tìm kiếm -->
+                <form class="row mb-3">
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" name="searchMa" placeholder="Tìm theo mã sản phẩm">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" name="searchKhachHang" placeholder="Tìm theo tên sản phẩm">
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select" name="trangThai">
+                            <option>Vỏ case</option>
+                            <option>Ổ cứng</option>
+                            <option>Tản nhiệt</option>
+                            <option>Bộ vi xử lý</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 text-end">
+                        <button class="btn btn-primary" type="submit">Tìm kiếm</button>
+                        <a class="btn btn-secondary">Làm mới</a>
+                    </div>
+                </form>
+
+                <!-- Bảng danh sách -->
+                <table class="table table-bordered text-center align-middle">
+                    <thead class="table-secondary">
+                        <tr>
+                            <th>Mã sản phẩm</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Đơn giá</th>
+                            <th>Đơn vị tiền</th>
+                            <th>Số lượng tồn</th>
+                            <th>Mã loại</th>
+                            <th width="20%">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>MP01</th>
+                            <th>Card GTX 1650</th>
+                            <th>1000</th>
+                            <th>$</th>
+                            <th>100</th>
+                            <th>SPL04</th>
+                            <td>
+                                <a class="btn btn-warning btn-sm">Sửa</a>
+                                <a class="btn btn-danger btn-sm">Xóa</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>MP03</th>
+                            <th>Card RTX 2080TI</th>
+                            <th>2000</th>
+                            <th>$</th>
+                            <th>50</th>
+                            <th>SPL04</th>
+                            <td>
+                                <a class="btn btn-warning btn-sm">Sửa</a>
+                                <a class="btn btn-danger btn-sm">Xóa</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

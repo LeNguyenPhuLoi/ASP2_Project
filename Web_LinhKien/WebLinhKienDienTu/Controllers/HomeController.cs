@@ -28,5 +28,12 @@ namespace WebLinhKienDienTu.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        List<string> pd = new List<string>();
+
+        public IActionResult Detail(int id)
+        {
+            return View(id);
+        }
     }
 }

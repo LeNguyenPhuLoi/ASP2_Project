@@ -1,0 +1,569 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\WebLinhKienDienTu.bundle.scp.css",
+      "PackagePath": "staticwebassets\\WebLinhKienDienTu.zabo1k02yw.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\AcBel_450W.jpg",
+      "PackagePath": "staticwebassets\\image\\AcBel_450W.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\AcBel_600W.jpg",
+      "PackagePath": "staticwebassets\\image\\AcBel_600W.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\Sama_export2.jpg",
+      "PackagePath": "staticwebassets\\image\\Sama_export2.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\acbel_750_750w_white.jpg",
+      "PackagePath": "staticwebassets\\image\\acbel_750_750w_white.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\acbel_ipower_g550.jpg",
+      "PackagePath": "staticwebassets\\image\\acbel_ipower_g550.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\asus_24D5MTTray.png",
+      "PackagePath": "staticwebassets\\image\\asus_24D5MTTray.png"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\asus_alo_rox_240.jpg",
+      "PackagePath": "staticwebassets\\image\\asus_alo_rox_240.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\asus_ex_h310m_v3.jpg",
+      "PackagePath": "staticwebassets\\image\\asus_ex_h310m_v3.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\asus_fujitsu.png",
+      "PackagePath": "staticwebassets\\image\\asus_fujitsu.png"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\asus_gtx_1050_4gb_gddr5_cerberus.png",
+      "PackagePath": "staticwebassets\\image\\asus_gtx_1050_4gb_gddr5_cerberus.png"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\asus_gtx_1650.jpg",
+      "PackagePath": "staticwebassets\\image\\asus_gtx_1650.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\asus_radeon_rx64_8gb_hbm2_rog.jpg",
+      "PackagePath": "staticwebassets\\image\\asus_radeon_rx64_8gb_hbm2_rog.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\asus_rog_strix_Z390.jpg",
+      "PackagePath": "staticwebassets\\image\\asus_rog_strix_Z390.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\asus_rog_strixhelios_rgb.jpg",
+      "PackagePath": "staticwebassets\\image\\asus_rog_strixhelios_rgb.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\asus_rtx_2080Ti.jpg",
+      "PackagePath": "staticwebassets\\image\\asus_rtx_2080Ti.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\asus_sdrw_08d2s.png",
+      "PackagePath": "staticwebassets\\image\\asus_sdrw_08d2s.png"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\asus_sdrw_08u9m_u.jpg",
+      "PackagePath": "staticwebassets\\image\\asus_sdrw_08u9m_u.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\asus_tuf_B450M.jpg",
+      "PackagePath": "staticwebassets\\image\\asus_tuf_B450M.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\asus_tuf_gt501.jpg",
+      "PackagePath": "staticwebassets\\image\\asus_tuf_gt501.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\asus_wr_ts8x_dvds.png",
+      "PackagePath": "staticwebassets\\image\\asus_wr_ts8x_dvds.png"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\coolermaster_elete_460w.jpg",
+      "PackagePath": "staticwebassets\\image\\coolermaster_elete_460w.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\coolermaster_gammax400.jpg",
+      "PackagePath": "staticwebassets\\image\\coolermaster_gammax400.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\coolermaster_hyper212LEDTurbo.jpg",
+      "PackagePath": "staticwebassets\\image\\coolermaster_hyper212LEDTurbo.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\coolermaster_masterbox5msi.jpg",
+      "PackagePath": "staticwebassets\\image\\coolermaster_masterbox5msi.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\coolermaster_masterbox_Q300P.jpg",
+      "PackagePath": "staticwebassets\\image\\coolermaster_masterbox_Q300P.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\coolermaster_masterliquid_ml240r.jpg",
+      "PackagePath": "staticwebassets\\image\\coolermaster_masterliquid_ml240r.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\coolermaster_masterwatt_500w.jpg",
+      "PackagePath": "staticwebassets\\image\\coolermaster_masterwatt_500w.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\coolermaster_ml240l_alo.jpg",
+      "PackagePath": "staticwebassets\\image\\coolermaster_ml240l_alo.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\coolermaster_mwe_650v2_650w.jpg",
+      "PackagePath": "staticwebassets\\image\\coolermaster_mwe_650v2_650w.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\coolermaster_xdreami117.jpg",
+      "PackagePath": "staticwebassets\\image\\coolermaster_xdreami117.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\corsair_ddr4_ven-1px.jpg",
+      "PackagePath": "staticwebassets\\image\\corsair_ddr4_ven-1px.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\corsair_ram_vegeeance_ipx_red.jpg",
+      "PackagePath": "staticwebassets\\image\\corsair_ram_vegeeance_ipx_red.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\corsair_vegeance_rgb_2pack_1.jpg",
+      "PackagePath": "staticwebassets\\image\\corsair_vegeance_rgb_2pack_1.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\dominator_platinum_rgb_x2.jpg",
+      "PackagePath": "staticwebassets\\image\\dominator_platinum_rgb_x2.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\gigabyte_400w_gp_pw400.jpg",
+      "PackagePath": "staticwebassets\\image\\gigabyte_400w_gp_pw400.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\gigabyte_8gb_ddr4_2666.jpg",
+      "PackagePath": "staticwebassets\\image\\gigabyte_8gb_ddr4_2666.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\gigabyte_aorus_2x8gb_ddr4_3200.jpg",
+      "PackagePath": "staticwebassets\\image\\gigabyte_aorus_2x8gb_ddr4_3200.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\gigabyte_aorus_850w.jpg",
+      "PackagePath": "staticwebassets\\image\\gigabyte_aorus_850w.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\gigabyte_radeon_rx56_8gb_hbm2.jpg",
+      "PackagePath": "staticwebassets\\image\\gigabyte_radeon_rx56_8gb_hbm2.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\gigabyte_rtx_2070_8gb_gddr6.jpg",
+      "PackagePath": "staticwebassets\\image\\gigabyte_rtx_2070_8gb_gddr6.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\gigabyte_rtx_2070_8gb_gddr6_aorus.jpg",
+      "PackagePath": "staticwebassets\\image\\gigabyte_rtx_2070_8gb_gddr6_aorus.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\gigabyte_rtx_2080_11gb_gddr6.jpg",
+      "PackagePath": "staticwebassets\\image\\gigabyte_rtx_2080_11gb_gddr6.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\gigabyte_z370_aorus.jpg",
+      "PackagePath": "staticwebassets\\image\\gigabyte_z370_aorus.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\gigabyte_z370m_d3h.jpg",
+      "PackagePath": "staticwebassets\\image\\gigabyte_z370m_d3h.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\intel_360gb_sata3_ssd.jpg",
+      "PackagePath": "staticwebassets\\image\\intel_360gb_sata3_ssd.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\intel_i3_7100.jpg",
+      "PackagePath": "staticwebassets\\image\\intel_i3_7100.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\intel_i3_8100.jpg",
+      "PackagePath": "staticwebassets\\image\\intel_i3_8100.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\intel_i5_7500.jpg",
+      "PackagePath": "staticwebassets\\image\\intel_i5_7500.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\intel_i5_9400F.jpg",
+      "PackagePath": "staticwebassets\\image\\intel_i5_9400F.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\intel_i7_7700.jpg",
+      "PackagePath": "staticwebassets\\image\\intel_i7_7700.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\intel_i7_9700.jpg",
+      "PackagePath": "staticwebassets\\image\\intel_i7_9700.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\intel_pentium_G5400.jpg",
+      "PackagePath": "staticwebassets\\image\\intel_pentium_G5400.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\kingston_128gb_2280.jpg",
+      "PackagePath": "staticwebassets\\image\\kingston_128gb_2280.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\kingston_480gb_ssd_sata.jpg",
+      "PackagePath": "staticwebassets\\image\\kingston_480gb_ssd_sata.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\kingston_KVR26S19S8.jpg",
+      "PackagePath": "staticwebassets\\image\\kingston_KVR26S19S8.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\kingston_dt50_usb.jpg",
+      "PackagePath": "staticwebassets\\image\\kingston_dt50_usb.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\kingston_hyper_2x8gb_ddr4_3200.jpg",
+      "PackagePath": "staticwebassets\\image\\kingston_hyper_2x8gb_ddr4_3200.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\kingston_hyperx_ddr3_1600.jpg",
+      "PackagePath": "staticwebassets\\image\\kingston_hyperx_ddr3_1600.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\msi_b450m_promax.jpg",
+      "PackagePath": "staticwebassets\\image\\msi_b450m_promax.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\msi_core_frosiz.jpg",
+      "PackagePath": "staticwebassets\\image\\msi_core_frosiz.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\msi_gtx_1050_4gb_gddr5.jpg",
+      "PackagePath": "staticwebassets\\image\\msi_gtx_1050_4gb_gddr5.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\msi_mpg_sekira_500x_rgb.jpg",
+      "PackagePath": "staticwebassets\\image\\msi_mpg_sekira_500x_rgb.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\msi_mpg_z390.jpg",
+      "PackagePath": "staticwebassets\\image\\msi_mpg_z390.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\msi_radeon_rx5700_8gb_gddr6.jpg",
+      "PackagePath": "staticwebassets\\image\\msi_radeon_rx5700_8gb_gddr6.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\msi_rtx_2080_11gb_gddr6.jpg",
+      "PackagePath": "staticwebassets\\image\\msi_rtx_2080_11gb_gddr6.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\msi_rtx_2080_super_8gb_gddr6.jpg",
+      "PackagePath": "staticwebassets\\image\\msi_rtx_2080_super_8gb_gddr6.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\sama_3601_rgb_midtower.jpg",
+      "PackagePath": "staticwebassets\\image\\sama_3601_rgb_midtower.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\sama_combat.jpg",
+      "PackagePath": "staticwebassets\\image\\sama_combat.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\sama_halo_dual_ring_sample.jpg",
+      "PackagePath": "staticwebassets\\image\\sama_halo_dual_ring_sample.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\sama_shadow.jpg",
+      "PackagePath": "staticwebassets\\image\\sama_shadow.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\samsung_500gb_ssd.jpg",
+      "PackagePath": "staticwebassets\\image\\samsung_500gb_ssd.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\samsung_860Evo250GB_25.png",
+      "PackagePath": "staticwebassets\\image\\samsung_860Evo250GB_25.png"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\samsung_860Evo250GB_m2280.png",
+      "PackagePath": "staticwebassets\\image\\samsung_860Evo250GB_m2280.png"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\image\\samsung_860_pro_2tb.jpg",
+      "PackagePath": "staticwebassets\\image\\samsung_860_pro_2tb.jpg"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\img\\Mlogo.png",
+      "PackagePath": "staticwebassets\\img\\Mlogo.png"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WebLinhKienDienTu.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WebLinhKienDienTu.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.WebLinhKienDienTu.props",
+      "PackagePath": "build\\WebLinhKienDienTu.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.WebLinhKienDienTu.props",
+      "PackagePath": "buildMultiTargeting\\WebLinhKienDienTu.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.WebLinhKienDienTu.props",
+      "PackagePath": "buildTransitive\\WebLinhKienDienTu.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
