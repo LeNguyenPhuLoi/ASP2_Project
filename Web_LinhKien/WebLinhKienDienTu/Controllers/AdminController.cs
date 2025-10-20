@@ -23,5 +23,15 @@ namespace WebLinhKienDienTu.Controllers
         {
             return View();
         }
+
+        public IActionResult NhanVien()
+        {
+            return View();
+        }
+
+        public IActionResult TaiKhoan()
+        {
+            return View();
+        }
     }
 }

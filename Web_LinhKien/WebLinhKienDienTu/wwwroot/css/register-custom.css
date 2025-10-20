@@ -1,0 +1,112 @@
+﻿body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: url('/img/lake.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-container {
+    width: 900px;
+    height: 520px;
+    display: flex;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.left-panel {
+    width: 50%;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    padding: 60px 40px;
+}
+
+    .left-panel h1 {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+
+    .left-panel p {
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+
+.social a {
+    color: #fff;
+    margin-right: 15px;
+    font-size: 22px;
+    transition: 0.3s;
+}
+
+    .social a:hover {
+        color: #ff4747;
+    }
+
+.right-panel {
+    width: 50%;
+    background-color: rgba(30,30,30,0.9);
+    padding: 60px 40px;
+    color: #fff;
+}
+
+    .right-panel h2 {
+        font-size: 26px;
+        margin-bottom: 25px;
+    }
+
+.form-control {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #777;
+    border-radius: 0;
+    color: #fff;
+    font-size: 16px;
+}
+
+    .form-control:focus {
+        box-shadow: none;
+        border-color: #ff4747;
+        outline: none;
+        background-color: transparent;
+    }
+
+.btn-signup {
+    background-color: #ff4747;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+    .btn-signup:hover {
+        background-color: #ff2a2a;
+    }
+
+.form-check-label a {
+    color: #ff4747;
+    text-decoration: none;
+}
+
+.login-link a {
+    color: #ff4747;
+    text-decoration: none;
+}
+
+    .login-link a:hover {
+        text-decoration: underline;
+    }
+.form-control {
+    color: #fff !important;
+    background-color: transparent !important;
+}
+
+    .form-control::placeholder {
+        color: rgba(255, 255, 255, 0.7) !important;
+    }
