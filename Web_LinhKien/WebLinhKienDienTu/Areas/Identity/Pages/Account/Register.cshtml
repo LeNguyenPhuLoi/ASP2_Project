@@ -3,6 +3,78 @@
 @{
     ViewData["Title"] = "Register";
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebLinhKienDienTu</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebLinhKienDienTu.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="~/css/register-custom.css" />
+
+</head>
+<body>
+    <div class="register-container mt-5">
+        <div class="left-panel">
+            <h1>Don't have an account?</h1>
+            <p>Register to access all the features of our services.<br />Manage your business in one place. It's free.</p>
+            <div class="social">
+                <a href="#"><i class="bi bi-google"></i></a>
+                <a href="#"><i class="bi bi-pinterest"></i></a>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <h2>Sign up</h2>
+            <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+                <div class="form-group mb-3">
+                    <input asp-for="Input.Email" class="form-control" placeholder="VD: email@domain.com" autocomplete="username" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <input asp-for="Input.Password" class="form-control" placeholder="Enter password" autocomplete="new-password" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <input asp-for="Input.ConfirmPassword" class="form-control" placeholder="Confirm password" autocomplete="new-password" />
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="terms" required>
+                    <label class="form-check-label" for="terms">I agree to all statements in <a href="#">Terms of service</a></label>
+                </div>
+
+                <button id="registerSubmit" type="submit" class="btn-signup">Sign up</button>
+                <p class="login-link mt-3">Already have an account? <a asp-page="./Login">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a2e0b6df66.js" crossorigin="anonymous"></script>
+    <partial name="_ValidationScriptsPartial" />
+</body>
+</html>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+
+@* ﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
 
 <h1>@ViewData["Title"]</h1>
 
@@ -63,5 +135,5 @@
 </div>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+    <partial name="_ValidationScriptsPartial" /> *@
 }

@@ -1,0 +1,104 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebLinhKienDienTu</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebLinhKienDienTu.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow fixed-top">
+            <div class="container-fluid align-items-center">
+                <!-- Logo -->
+                <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/img/Mlogo.png" style="width: 45px; height: 45px; margin-right: 8px;">
+                    <b><span style="color:red;">M</span>indLess</b>
+                </a>
+
+                <!-- Nút thu gọn menu -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Nội dung Navbar -->
+                <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                    <!-- Menu trái -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <!-- Shop dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">All Products</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="#">2</a></li>
+                                <li><a class="dropdown-item" href="#">1</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <!-- Thanh tìm kiếm -->
+                    <div class="header-search mx-3">
+                        <form action='store.php' method='get'>
+                            <select class="input-select" name='cat-id'>
+                                <option value='all'>Tất cả</option>
+                                <option value='1'>value 1</option>
+                                <option value='2'>value 2</option>
+                                <option value='3'>value 3</option>
+                            </select>
+                            <input class="input" name='key' placeholder="Tìm kiếm ở đây...">
+                            <input type='hidden' name='mode' value='product'>
+                            <input type='hidden' name='ac' value='search'>
+                            <button class="search-btn" name='basic-search' value='Search'>Search</button>
+                        </form>
+                    </div>
+
+                    <div class="header-cart">
+                        @* CART *@
+                        <form class="d-flex" asp-controller="GioHang" asp-action="GioHang">
+                            <button style="border:none;" class="btn btn-outline-dark" type="submit">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span>Carts</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Login partial -->
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted bg-dark fixed-bottom">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; <span style="color:red;">M</span>indLess (CMP)</p>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
