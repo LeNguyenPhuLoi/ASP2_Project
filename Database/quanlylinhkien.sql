@@ -224,20 +224,20 @@ ADD CONSTRAINT FK_TT_HD FOREIGN KEY (MAHD)
 REFERENCES HOADON(MAHD)
 GO
 
+----Bảng lịch sử hoạt động
+CREATE TABLE LICHSUHOATDONG (
+    ID INT IDENTITY(1,1) PRIMARY KEY,          -- Khóa chính, mã tự tăng
+    EMAIL NVARCHAR(100) NOT NULL,              -- Khóa ngoại, liên kết với bảng TAIKHOAN
+    THOIGIAN DATETIME DEFAULT GETDATE(),       -- Thời điểm thực hiện hoạt động
+    HOATDONG NVARCHAR(200),                    -- Tên hoạt động (thêm, sửa, xóa, đăng nhập,...)
+    DOITUONG NVARCHAR(100),                    -- Đối tượng tác động (Sản phẩm, Hóa đơn,...)
+    CHITIET NVARCHAR(500),                     -- Mô tả chi tiết hành động
 
--------------------BẢNG LỊCH SỬ ĐĂNG NHẬP-------------------
-CREATE TABLE LICHSUDANGNHAP (
-    ID INT IDENTITY(1,1) PRIMARY KEY,
-    EMAIL NVARCHAR(100) NOT NULL,
-    THOIGIAN DATETIME DEFAULT GETDATE(),
-    DIACHIIP VARCHAR(50),
-    THIETBI NVARCHAR(100),
-    TRANGTHAI NVARCHAR(50)
+    CONSTRAINT FK_LICHSUHOATDONG_TAIKHOAN FOREIGN KEY (EMAIL)
+        REFERENCES TAIKHOAN(EMAIL)             -- Liên kết với chủ tài khoản thực hiện hành động
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
 )
-GO
-ALTER TABLE LICHSUDANGNHAP
-ADD CONSTRAINT FK_LSDN_TK FOREIGN KEY (EMAIL)
-REFERENCES TAIKHOAN(EMAIL)
 GO
 
 
