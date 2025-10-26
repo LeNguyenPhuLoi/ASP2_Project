@@ -32,9 +32,9 @@
 
     <div class="container mt-4">
         <div class="card shadow-lg">
-            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
                 <h4 class="mb-0">Quản lý hóa đơn</h4>
-                <a class="btn btn-light btn-sm">+ Thêm hóa đơn</a>
+                <a class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#addHoaDon">+ Thêm <b>hóa đơn</b></a>
             </div>
 
             <div class="card-body">
@@ -67,6 +67,7 @@
                             <th>Mã hóa đơn</th>
                             <th>Khách hàng</th>
                             <th>Ngày lập</th>
+                            <th>Nhân Viên</th>
                             <th>Tổng tiền (₫)</th>
                             <th>Trạng thái</th>
                             <th width="20%">Thao tác</th>
@@ -77,28 +78,139 @@
                             <td>HD001</td>
                             <td>Nguyễn Văn An</td>
                             <td>19/10/2025</td>
+                            <td>Trần Thị Mỹ Tuyền</td>
                             <td>2.450.000</td>
                             <td><span class="badge bg-success">Đã thanh toán</span></td>
                             <td>
-                                <a class="btn btn-info btn-sm">Chi tiết</a>
-                                <a class="btn btn-warning btn-sm">Sửa</a>
-                                <a class="btn btn-danger btn-sm">Xóa</a>
+                                <a class="btn btn-info btn-sm" asp-controller="GioHang" asp-action="ChiTietHoaDon">Chi tiết</a>
+                                <a class="btn btn-warning btn-sm" data-bs-target="#editHoaDon" class="edit" data-bs-toggle="modal">Sửa</a>
+                                <a class="btn btn-danger btn-sm" data-bs-target="#deleteHoaDon" class="delete" data-bs-toggle="modal">Xóa</a>                          
                             </td>
                         </tr>
-                        <tr>
-                            <td>HD002</td>
-                            <td>Trần Thị Banh</td>
-                            <td>18/10/2025</td>
-                            <td>1.150.000</td>
-                            <td><span class="badge bg-danger">Chưa thanh toán</span></td>
-                            <td>
-                                <a class="btn btn-info btn-sm">Chi tiết</a>
-                                <a class="btn btn-warning btn-sm">Sửa</a>
-                                <a class="btn btn-danger btn-sm">Xóa</a>
-                            </td>
-                        </tr>
+
+                        <div id="editHoaDon" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <form action="#" method="POST">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Sửa Hóa Đơn</h4>
+                                            <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <input type="hidden" name="type" value="add">
+                                            <div class="form-group">
+                                                <label>Mã Hóa Đơn</label>
+                                                <input type="text" class="form-control" required name="mahd" value="HD001">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Tên Khách Hàng</label>
+                                                <input type="text" class="form-control" required name="tenkhp" value="Nguyễn Văn An">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Ngày Lập</label>
+                                                <input type="text" class="form-control" required name="ngaylap" value="19/10/2025">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Tổng Tiền</label>
+                                                <input class="form-control" required name="tongtien" value="2.450.000">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Trạng Thái</label>
+                                                <select class="form-select" name="trangThai" required value="Đã thanh toán">
+                                                    <option value="Đã thanh toán">Đã thanh toán</option>
+                                                    <option value="Chưa thanh toán">Chưa thanh toán</option>
+                                                    <option value="Đã hủy">Đã hủy</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Hủy">
+                                            <input type="submit" class="btn btn-warning" value="Sửa">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="deleteHoaDon" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <form action="#">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Xóa Hóa Đơn</h4>
+                                            <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <input type="hidden" name="type" value="delete">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    <input type="hidden" name="masp" value="">
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>Bạn có muốn xóa hóa đơn này?</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Hủy">
+                                                    <input type="submit" class="btn btn-danger" value="Xóa">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
                     </tbody>
                 </table>
+
+                <!-- Add Modal HTML -->
+                <div id="addHoaDon" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form action="sanphamProcess.php" method="POST">
+
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Thêm Hóa Đơn</h4>
+                                    <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <input type="hidden" name="type" value="add">
+                                    <div class="form-group">
+                                        <label>Mã Hóa Đơn</label>
+                                        <input type="text" class="form-control" required name="mahd">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Tên Khách Hàng</label>
+                                        <input type="text" class="form-control" required name="tenkhp">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Ngày Lập</label>
+                                        <input type="text" class="form-control" required name="ngaylap">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Tổng Tiền</label>
+                                        <input class="form-control" required name="tongtien">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Trạng Thái</label>
+                                        <select class="form-select" name="trangThai" required>
+                                            <option value="Đã thanh toán">Đã thanh toán</option>
+                                            <option value="Chưa thanh toán">Chưa thanh toán</option>
+                                            <option value="Đã hủy">Đã hủy</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Hủy">
+                                    <input type="submit" class="btn btn-success" value="Thêm">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

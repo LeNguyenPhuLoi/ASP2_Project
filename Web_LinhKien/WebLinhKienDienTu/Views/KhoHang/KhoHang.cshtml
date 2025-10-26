@@ -30,162 +30,171 @@
 
 <body>
 
-	<!-- Product section-->
-	<section class="py-5">
-		<div class="container px-4 px-lg-5 my-5">
-			<div class="row gx-4 gx-lg-5 align-items-center">
-				<div class="table-wrapper">
+	<div class="container mt-4">
+		<div class="card shadow-lg">
+			<div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+				<h4 class="mb-0">Quản lý <b>Kho Hàng</b></h4>
+				<a class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#addKhoHang">+ Thêm <b>Kho Hàng</b></a>
+			</div>
 
-					<div class="table-title">
-						<div class="row">
-							<div class="col-sm-6">
-								<h2>Quản lý <b>Kho Hàng</b></h2>
+			<div class="card-body">
+				<!-- Thanh tìm kiếm -->
+				<form class="row mb-3">
+					<div class="col-md-4">
+						<input type="text" class="form-control" name="searchMaKho" placeholder="Tìm theo mã kho hàng">
+					</div>
+					<div class="col-md-4">
+						<input type="text" class="form-control" name="searchTenKho" placeholder="Tìm theo tên kho hàng">
+					</div>
+					<div class="col-md-4 text-end">
+						<button class="btn btn-primary" type="submit">Tìm kiếm</button>
+						<a class="btn btn-secondary">Làm mới</a>
+					</div>
+				</form>
+
+				<!-- Bảng danh sách -->
+				<table class="table table-bordered text-center align-middle">
+					<thead class="table-secondary">
+						<tr>
+							<th>STT</th>
+							<th>Mã Kho Hàng</th>
+							<th>Tên Kho Hàng</th>
+							<th>Địa Chỉ</th>
+							<th>Nhân Viên Quản Lý Kho</th>
+							<th>Số Lượng Loại Hàng</th>
+							<th width="20%">Thao tác</th>
+						</tr>
+					</thead>
+					<tbody>
+
+						<tr>
+							<td>1</td>
+							<td>Kho_001</td>
+							<td>Kho Linh Kiện Máy Tính Mindless Võ Văn Ngân</td>
+							<td>Số 36 Đường Võ Văn Ngân, Bình Thọ, Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam</td>
+							<td>Hoài Thị Trâm Anh</td>
+							<td>36 loại hàng</td>
+							<td>
+								<a class="btn btn-info btn-sm" data-bs-target="#editKhoHang" class="edit" data-bs-toggle="modal">Sửa</a>
+								<a class="btn btn-danger btn-sm" data-bs-target="#deleteKhoHang" class="delete" data-bs-toggle="modal">Xóa</a>
+							</td>
+						</tr>
+
+						<div id="editKhoHang" class="modal fade">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<form action="#" method="POST">
+										<div class="modal-header">
+											<h4 class="modal-title">Sửa Kho Hàng</h4>
+											<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+										</div>
+										<div class="modal-body">
+											<input type="hidden" name="type" value="update">
+											<div class="form-group">
+												<label>Mã Kho Hàng</label>
+												<input type="text" class="form-control" required name="masp" value="Kho_001">
+											</div>
+											<div class="form-group">
+												<label>Tên Kho Hàng</label>
+												<input type="text" class="form-control" required name="tensp" value="Kho Linh Kiện Máy Tính Mindless Võ Văn Ngân">
+											</div>
+											<div class="form-group">
+												<label>Địa Chỉ</label>
+												<textarea type="text" class="form-control" required name="gia">Số 36 Đường Võ Văn Ngân, Bình Thọ, Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam</textarea>
+											</div>
+											<div class="form-group">
+												<label>Nhân Viên Quản Lý Kho</label>
+												<input class="form-control" required name="mota" value="Hoài Thị Trâm Anh">
+											</div>
+											<div class="form-group">
+												<label>Số Lượng Loại Hàng</label>
+												<input type="text" class="form-control" required name="hinh" value="36 loại hàng">
+											</div>
+										</div>
+										<div class="modal-footer">
+											<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Hủy">
+											<input type="submit" class="btn btn-info" value="Sửa">
+										</div>
+									</form>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<table class="table table-striped table-hover">
-						<thead>
-							<tr>
-								<th>STT</th>
-								<th>Mã Kho Hàng</th>
-								<th>Tên Kho Hàng</th>
-								<th>Địa Chỉ</th>
-								<th>Nhân Viên Quản Lý Kho</th>
-								<th>Số Lượng Loại Hàng</th>
-								<th>Quản Trị</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>1</td>
-								<td>Kho_001</td>
-								<td>Kho Linh Kiện Máy Tính Mindless Võ Văn Ngân</td>
-								<td>Số 36 Đường Võ Văn Ngân, Bình Thọ, Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam</td>
-								<td>Hoài Thị Trâm Anh</td>
-								<td>36 loại hàng</td>
-								<td>
-									<a data-bs-target="#editKhoHang" class="edit" data-bs-toggle="modal"><i class="bi bi-pencil"></i></a>
-									<a data-bs-target="#deleteKhoHang" class="delete" data-bs-toggle="modal"><i class="bi bi-trash"></i></a>
-								</td>
-							</tr>
+						<div id="deleteKhoHang" class="modal fade">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<form action="#">
+										<div class="modal-header">
+											<h4 class="modal-title">Xóa Kho Hàng</h4>
+											<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+										</div>
+										<div class="modal-body">
+											<input type="hidden" name="type" value="delete">
+											<div class="form-group">
+												<div class="form-group">
+													<input type="hidden" name="masp" value="">
+												</div>
+												<div class="modal-body">
+													<p>Bạn có muốn xóa kho này?</p>
+												</div>
+												<div class="modal-footer">
+													<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Hủy">
+													<input type="submit" class="btn btn-danger" value="Xóa">
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
 
-							<div id="editKhoHang" class="modal fade">
-								<div class="modal-dialog">
-									<div class="modal-content">
-										<form action="sanphamProcess.php" method="POST">
-											<div class="modal-header">
-												<h4 class="modal-title">Sửa Kho Hàng</h4>
-												<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
-											</div>
-											<div class="modal-body">
-												<input type="hidden" name="type" value="update">
-												<div class="form-group">
-													<label>Mã Kho Hàng</label>
-													<input type="text" class="form-control" required name="masp" value="Kho_001">
-												</div>
-												<div class="form-group">
-													<label>Tên Kho Hàng</label>
-													<input type="text" class="form-control" required name="tensp" value="Kho Linh Kiện Máy Tính Mindless Võ Văn Ngân">
-												</div>
-												<div class="form-group">
-													<label>Địa Chỉ</label>
-													<textarea type="text" class="form-control" required name="gia">Số 36 Đường Võ Văn Ngân, Bình Thọ, Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam</textarea>
-												</div>
-												<div class="form-group">
-													<label>Nhân Viên Quản Lý Kho</label>
-													<input class="form-control" required name="mota" value="Hoài Thị Trâm Anh">
-												</div>
-												<div class="form-group">
-													<label>Số Lượng Loại Hàng</label>
-													<input type="text" class="form-control" required name="hinh" value="36 loại hàng">
-												</div>
-											</div>
-											<div class="modal-footer">
-												<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancel">
-												<input type="submit" class="btn btn-info" value="Update">
-											</div>
-										</form>
+					</tbody>
+				</table>
+
+				<!-- Add Modal HTML -->
+				<div id="addKhoHang" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<form action="sanphamProcess.php" method="POST">
+								<div class="modal-header">
+									<h4 class="modal-title">Thêm Kho Hàng</h4>
+									<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+								</div>
+								<div class="modal-body">
+									<input type="hidden" name="type" value="add">
+									<div class="form-group">
+										<label>Mã Kho Hàng</label>
+										<input type="text" class="form-control" required name="masp">
+									</div>
+									<div class="form-group">
+										<label>Tên Kho Hàng</label>
+										<input type="text" class="form-control" required name="tensp">
+									</div>
+									<div class="form-group">
+										<label>Địa Chỉ</label>
+										<textarea type="text" class="form-control" required name="gia"></textarea>
+									</div>
+									<div class="form-group">
+										<label>Nhân Viên Quản Lý Kho</label>
+										<input class="form-control" required name="mota">
+									</div>
+									<div class="form-group">
+										<label>Số Lượng Loại Hàng</label>
+										<input type="text" class="form-control" required name="hinh">
 									</div>
 								</div>
-							</div>
-
-							<div id="deleteKhoHang" class="modal fade">
-								<div class="modal-dialog">
-									<div class="modal-content">
-										<form action="sanphamProcess.php">
-											<div class="modal-header">
-												<h4 class="modal-title">Xóa Kho Hàng</h4>
-												<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
-											</div>
-											<div class="modal-body">
-												<input type="hidden" name="type" value="delete">
-												<div class="form-group">
-													<div class="form-group">
-														<input type="hidden" name="masp" value="">
-													</div>
-													<div class="modal-body">
-														<p>Are you sure you want to delete these Records?</p>
-													</div>
-													<div class="modal-footer">
-														<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancel">
-														<input type="submit" class="btn btn-danger" value="Delete">
-													</div>
-												</div>
-											</div>
-										</form>
-									</div>
+								<div class="modal-footer">
+									<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Hủy">
+									<input type="submit" class="btn btn-success" value="Thêm">
 								</div>
-							</div>
-
-						</tbody>
-					</table>
-					<a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addKhoHang"><i class="bi bi-pencil"></i><span>Thêm Kho Hàng</span></a>
-				</div>
-			</div>
-
-			<!-- Add Modal HTML -->
-			<div id="addKhoHang" class="modal fade">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<form action="sanphamProcess.php" method="POST">
-							<div class="modal-header">
-								<h4 class="modal-title">Thêm Kho Hàng</h4>
-								<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
-							</div>
-							<div class="modal-body">
-								<input type="hidden" name="type" value="add">
-								<div class="form-group">
-									<label>Mã Kho Hàng</label>
-									<input type="text" class="form-control" required name="masp">
-								</div>
-								<div class="form-group">
-									<label>Tên Kho Hàng</label>
-									<input type="text" class="form-control" required name="tensp">
-								</div>
-								<div class="form-group">
-									<label>Địa Chỉ</label>
-                                    <textarea type="text" class="form-control" required name="gia"></textarea>
-								</div>
-								<div class="form-group">
-									<label>Nhân Viên Quản Lý Kho</label>
-									<input class="form-control" required name="mota">
-								</div>
-								<div class="form-group">
-									<label>Số Lượng Loại Hàng</label>
-									<input type="text" class="form-control" required name="hinh">
-								</div>
-							</div>
-							<div class="modal-footer">
-								<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancel">
-								<input type="submit" class="btn btn-success" value="Add">
-							</div>
-						</form>
+							</form>
+						</div>
 					</div>
 				</div>
-			</div>
 
-	</section>
+			</div>
+		</div>
+	</div>
 
 </body>
 
