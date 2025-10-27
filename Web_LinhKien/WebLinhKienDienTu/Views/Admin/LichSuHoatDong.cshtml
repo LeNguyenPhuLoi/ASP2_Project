@@ -1,0 +1,136 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Shop Adminpage - Nhân Viên</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+        .pagination {
+            display: flex;
+            justify-content: center; /* Căn giữa theo chiều ngang */
+            align-items: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container mt-4">
+        <div class="card shadow-lg">
+            <div class="card-header bg-gradient text-primary d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">Lịch Sử Hoạt Động</h4>
+            </div>
+
+            <div class="card-body">
+                <!-- Thanh tìm kiếm -->
+                <form class="row mb-3">
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="searchMa" placeholder="Tìm theo Email">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="searchKhachHang" placeholder="Tìm theo Thời Gian">
+                    </div>
+                    <div class="col-md-4 text-end">
+                        <button class="btn btn-info" type="submit">Tìm kiếm</button>
+                        <a class="btn btn-secondary">Làm mới</a>
+                    </div>
+                </form>
+
+                <!-- Bảng danh sách -->
+                <table class="table table-striped table-hover text-center align-middle">
+                    <thead>
+                        <tr>
+                            <th>
+                                <span class="custom-checkbox">
+                                    <input type="checkbox" id="selectAll">
+                                    <label for="selectAll"></label>
+                                </span>
+                            </th>
+                            <th>Mã</th>
+                            <th>Email</th>
+                            <th>thời gian</th>
+                            <th>Hoạt Động</th>
+                            <th>Đối tượng</th>
+                            <th>Chi Tiết</th>
+                            <th width="10%">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span class="custom-checkbox">
+                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                    <label for="checkbox1"></label>
+                                </span>
+                            </td>
+                            <td>LS001</td>
+                            <td>Linario@mail.com</td>
+                            <td>1995-02-15</td>
+                            <td>Mua Hàng</td>
+                            <td>Sản Phẩm</td>
+                            <td>Mua RTX 12 giá 1000$</td>
+                            <td>
+                                <a class="btn btn-info btn-sm">View</a>
+                                <a class="btn btn-danger btn-sm">Xóa</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="custom-checkbox">
+                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                    <label for="checkbox1"></label>
+                                </span>
+                            </td>
+                            <td>LS001</td>
+                            <td>Linario@mail.com</td>
+                            <td>1995-02-15</td>
+                            <td>Mua Hàng</td>
+                            <td>Sản Phẩm</td>
+                            <td>Mua RTX 12 giá 1000$</td>
+                            <td>
+                                <a class="btn btn-info btn-sm">View</a>
+                                <a class="btn btn-danger btn-sm">Xóa</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="custom-checkbox">
+                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                    <label for="checkbox1"></label>
+                                </span>
+                            </td>
+                            <td>LS001</td>
+                            <td>Linario@mail.com</td>
+                            <td>1995-02-15</td>
+                            <td>Mua Hàng</td>
+                            <td>Sản Phẩm</td>
+                            <td>Mua RTX 12 giá 1000$</td>
+                            <td>
+                                <a class="btn btn-info btn-sm">View</a>
+                                <a class="btn btn-danger btn-sm">Xóa</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

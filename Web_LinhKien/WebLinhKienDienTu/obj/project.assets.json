@@ -8358,23 +8358,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\veros\\.nuget\\packages\\": {},
+    "C:\\Users\\leloi\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Hoc kì 5\\ASP.NET-2\\26-10-2025\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\WebLinhKienDienTu.csproj",
+      "projectUniqueName": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\WebLinhKienDienTu.csproj",
       "projectName": "WebLinhKienDienTu",
-      "projectPath": "E:\\Hoc kì 5\\ASP.NET-2\\26-10-2025\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\WebLinhKienDienTu.csproj",
-      "packagesPath": "C:\\Users\\veros\\.nuget\\packages\\",
-      "outputPath": "E:\\Hoc kì 5\\ASP.NET-2\\26-10-2025\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\obj\\",
+      "projectPath": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\WebLinhKienDienTu.csproj",
+      "packagesPath": "C:\\Users\\leloi\\.nuget\\packages\\",
+      "outputPath": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\veros\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\leloi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -8455,7 +8455,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

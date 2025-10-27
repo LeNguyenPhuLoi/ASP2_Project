@@ -33,5 +33,16 @@ namespace WebLinhKienDienTu.Controllers
         {
             return View();
         }
+
+        public IActionResult LichSuHoatDong()
+        {
+            return View();
+        }
+
+        public IActionResult KhachHang()
+        {
+            return View();
+        }
+
     }
 }
