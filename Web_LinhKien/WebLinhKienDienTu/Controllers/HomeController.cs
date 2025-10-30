@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using WebLinhKienDienTu.Models;
 using WebLinhKienDienTu.Repository;
+using X.PagedList;
 
 namespace WebLinhKienDienTu.Controllers
 {
@@ -16,9 +17,9 @@ namespace WebLinhKienDienTu.Controllers
             _sanphamservice = sanphamservice;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int? page)
         {
-            var sp = _sanphamservice.GetAllSP();
+            var sp = _sanphamservice.GetAllSP().ToPagedList(page ?? 1, 8);
             return View(sp);
         }
 
