@@ -1477,3 +1477,8 @@ D:\Kì 5\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\obj\Debug\net8.0\refint\Web
 D:\Kì 5\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\obj\Debug\net8.0\WebLinhKienDienTu.pdb
 D:\Kì 5\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\obj\Debug\net8.0\WebLinhKienDienTu.genruntimeconfig.cache
 D:\Kì 5\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\obj\Debug\net8.0\ref\WebLinhKienDienTu.dll
+D:\Kì 5\ASPNET 2\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Kì 5\ASPNET 2\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+D:\Kì 5\ASPNET 2\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\bin\Debug\net8.0\X.PagedList.dll
+D:\Kì 5\ASPNET 2\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
+D:\Kì 5\ASPNET 2\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\bin\Debug\net8.0\X.PagedList.Web.Common.dll
