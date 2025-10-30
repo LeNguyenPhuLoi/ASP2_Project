@@ -1,21 +1,25 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using WebLinhKienDienTu.Models;
+using WebLinhKienDienTu.Repository;
 
 namespace WebLinhKienDienTu.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        public readonly ISanPhamService _sanphamservice;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ISanPhamService sanphamservice)
         {
             _logger = logger;
+            _sanphamservice = sanphamservice;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var sp = _sanphamservice.GetAllSP();
+            return View(sp);
         }
 
         public IActionResult Privacy()

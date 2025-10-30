@@ -1,10 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\ASP2_Project\\Web_LinhKien\\",
+  "WorkspaceRootPath": "D:\\K\u00EC 5\\ASP2_Project\\Web_LinhKien\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|d:\\asp2_project\\web_linhkien\\weblinhkiendientu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|d:\\k\u00EC 5\\asp2_project\\web_linhkien\\weblinhkiendientu\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Program.cs",
-              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Program.cs",
-              "ToolTip": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Program.cs",
-              "RelativeToolTip": "WebLinhKienDienTu\\Program.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAQwC0AAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T03:40:27.934Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\K\u00EC 5\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\K\u00EC 5\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "WebLinhKienDienTu\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAcwDIAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-30T07:46:04.924Z",
               "EditorCaption": ""
             }
           ]
