@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "D:\\ASP2_Project\\Web_LinhKien\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|d:\\asp2_project\\web_linhkien\\weblinhkiendientu\\views\\admin\\khachhang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\views\\admin\\khachhang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|d:\\asp2_project\\web_linhkien\\weblinhkiendientu\\views\\admin\\lichsuhoatdong.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\views\\admin\\lichsuhoatdong.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|d:\\asp2_project\\web_linhkien\\weblinhkiendientu\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|d:\\asp2_project\\web_linhkien\\weblinhkiendientu\\views\\admin\\nhanvien.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\views\\admin\\nhanvien.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|d:\\asp2_project\\web_linhkien\\weblinhkiendientu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,53 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "KhachHang.cshtml",
-              "DocumentMoniker": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Views\\Admin\\KhachHang.cshtml",
-              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Views\\Admin\\KhachHang.cshtml",
-              "ToolTip": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Views\\Admin\\KhachHang.cshtml",
-              "RelativeToolTip": "WebLinhKienDienTu\\Views\\Admin\\KhachHang.cshtml",
-              "ViewState": "AgIAACMAAAAAAAAAAAAAAIAAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-27T02:46:51.736Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Controllers\\AdminController.cs",
-              "ToolTip": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "WebLinhKienDienTu\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAswCsAAAAVAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Program.cs",
+              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Program.cs",
+              "ToolTip": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Program.cs",
+              "RelativeToolTip": "WebLinhKienDienTu\\Program.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwCwAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T02:37:56.88Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "NhanVien.cshtml",
-              "DocumentMoniker": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Views\\Admin\\NhanVien.cshtml",
-              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Views\\Admin\\NhanVien.cshtml",
-              "ToolTip": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Views\\Admin\\NhanVien.cshtml",
-              "RelativeToolTip": "WebLinhKienDienTu\\Views\\Admin\\NhanVien.cshtml",
-              "ViewState": "AgIAAKIAAAAAAAAAAAAAALAAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-27T02:29:08.027Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LichSuHoatDong.cshtml",
-              "DocumentMoniker": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Views\\Admin\\LichSuHoatDong.cshtml",
-              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Views\\Admin\\LichSuHoatDong.cshtml",
-              "ToolTip": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Views\\Admin\\LichSuHoatDong.cshtml",
-              "RelativeToolTip": "WebLinhKienDienTu\\Views\\Admin\\LichSuHoatDong.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH4AAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-27T02:29:03.866Z",
+              "WhenOpened": "2025-10-30T03:40:27.934Z",
               "EditorCaption": ""
             }
           ]
