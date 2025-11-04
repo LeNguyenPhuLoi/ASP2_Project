@@ -1,12 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\K\u00EC 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\",
-  "Documents": [],
+  "WorkspaceRootPath": "E:\\Hoc k\u00EC 5\\ASP.NET-2\\11-4-2025\\ASP2_Project\\Web_LinhKien\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|e:\\hoc k\u00EC 5\\asp.net-2\\11-4-2025\\asp2_project\\web_linhkien\\weblinhkiendientu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\ASP.NET-2\\11-4-2025\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Program.cs",
+              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Program.cs",
+              "ToolTip": "E:\\Hoc k\u00EC 5\\ASP.NET-2\\11-4-2025\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Program.cs",
+              "RelativeToolTip": "WebLinhKienDienTu\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T16:05:20.11Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
