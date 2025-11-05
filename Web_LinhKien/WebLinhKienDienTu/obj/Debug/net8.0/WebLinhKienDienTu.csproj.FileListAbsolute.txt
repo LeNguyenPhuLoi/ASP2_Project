@@ -1482,16 +1482,3 @@ D:\Kì 5\ASPNET 2\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\bin\Debug\net8.0\N
 D:\Kì 5\ASPNET 2\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\bin\Debug\net8.0\X.PagedList.dll
 D:\Kì 5\ASPNET 2\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
 D:\Kì 5\ASPNET 2\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\bin\Debug\net8.0\X.PagedList.Web.Common.dll
-E:\Hoc kì 5\ASP.NET-2\11-4-2025\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\obj\Debug\net8.0\WebLinhKienDienTu.csproj.AssemblyReference.cache
-E:\Hoc kì 5\ASP.NET-2\11-4-2025\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\obj\Debug\net8.0\WebLinhKienDienTu.GeneratedMSBuildEditorConfig.editorconfig
-E:\Hoc kì 5\ASP.NET-2\11-4-2025\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\obj\Debug\net8.0\WebLinhKienDienTu.AssemblyInfoInputs.cache
-E:\Hoc kì 5\ASP.NET-2\11-4-2025\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\obj\Debug\net8.0\WebLinhKienDienTu.AssemblyInfo.cs
-E:\Hoc kì 5\ASP.NET-2\11-4-2025\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\obj\Debug\net8.0\WebLinhKienDienTu.csproj.CoreCompileInputs.cache
-E:\Hoc kì 5\ASP.NET-2\11-4-2025\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\obj\Debug\net8.0\WebLinhKienDienTu.MvcApplicationPartsAssemblyInfo.cs
-E:\Hoc kì 5\ASP.NET-2\11-4-2025\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\obj\Debug\net8.0\WebLinhKienDienTu.MvcApplicationPartsAssemblyInfo.cache
-E:\Hoc kì 5\ASP.NET-2\11-4-2025\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\obj\Debug\net8.0\WebLinhKienDienTu.RazorAssemblyInfo.cache
-E:\Hoc kì 5\ASP.NET-2\11-4-2025\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\obj\Debug\net8.0\WebLinhKienDienTu.RazorAssemblyInfo.cs
-E:\Hoc kì 5\ASP.NET-2\11-4-2025\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\obj\Debug\net8.0\WebLinhKienDienTu.sourcelink.json
-E:\Hoc kì 5\ASP.NET-2\11-4-2025\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\obj\Debug\net8.0\WebLinhKienDienTu.dll
-E:\Hoc kì 5\ASP.NET-2\11-4-2025\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\obj\Debug\net8.0\refint\WebLinhKienDienTu.dll
-E:\Hoc kì 5\ASP.NET-2\11-4-2025\ASP2_Project\Web_LinhKien\WebLinhKienDienTu\obj\Debug\net8.0\WebLinhKienDienTu.pdb

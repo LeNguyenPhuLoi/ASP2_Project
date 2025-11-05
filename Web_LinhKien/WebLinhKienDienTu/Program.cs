@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using WebLinhKienDienTu.Data;
 using WebLinhKienDienTu.Models;
 using WebLinhKienDienTu.Repository;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace WebLinhKienDienTu
 {
@@ -13,19 +12,12 @@ namespace WebLinhKienDienTu
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            //Connection
-            AutoConnectSql autoConnectSql = new AutoConnectSql();
-            var connectionString = autoConnectSql.GetConnection();
-
-            if(connectionString == null)
-            {
-                builder.Logging.AddConsole();
-                Console.WriteLine("Không thể kết nối SQL Server. Ứng dụng sẽ không khởi chạy.");
-                throw new Exception("Không kết nối được SQL Server.");
-            }
-
-            builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
-            builder.Services.AddDbContext<QllkContext>(options => options.UseSqlServer(connectionString));
+            // Add services to the container.
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(connectionString));
+            builder.Services.AddDbContext<QllkContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
@@ -35,7 +27,6 @@ namespace WebLinhKienDienTu
                 .AddDefaultTokenProviders()
                 .AddDefaultUI();
 
-            // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<ISanPhamService, SanPhamService>();
             var app = builder.Build();
