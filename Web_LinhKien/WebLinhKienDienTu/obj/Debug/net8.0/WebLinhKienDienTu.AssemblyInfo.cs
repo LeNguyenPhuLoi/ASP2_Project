@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebLinhKienDienTu")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e594516d12ea827d42529582f86a4976cfbd0725")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0b8d7fb8ff7a41dc557737b3bf7e7a512f168087")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebLinhKienDienTu")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebLinhKienDienTu")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
