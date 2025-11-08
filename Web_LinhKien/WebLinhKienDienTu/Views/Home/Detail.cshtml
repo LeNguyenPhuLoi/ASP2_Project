@@ -1,7 +1,7 @@
-﻿@{
+﻿@model Sanpham
+@{
     ViewData["Title"] = "Home Page";
 }
-@model int
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,9 +19,9 @@
     <link href="css/styles.css" rel="stylesheet" />
     <style>
         .pagination {
-        display: flex;
-        justify-content: center; /* Căn giữa theo chiều ngang */
-        align-items: center;
+            display: flex;
+            justify-content: center; /* Căn giữa theo chiều ngang */
+            align-items: center;
         }
 
     </style>
@@ -34,20 +34,15 @@
 
         <div class="container px-4 px-lg-5 my-5">
             <div class="row gx-4 gx-lg-5 align-items-center">
-                @if(Model == 1)
-                {
-                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="~/image/asus_gtx_1650.jpg" alt="..." /></div>
+                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="~/image/@Model.Hinhanh" /></div>
                     <div class="col-md-6">
-                        <div class="small mb-1">Mã sản phẩm: MP01</div>
-                        <h1 class="display-5 fw-bolder">Card GTX 1650</h1>
+                    <div class="small mb-1">Mã sản phẩm: @Model.Masp</div>
+                    <h1 class="display-5 fw-bolder">@Model.Tensp</h1>
 
                         <div class="fs-5 mb-5">
-                            <span class="text-decoration-line-through">2000$</span>
-                            <span>1000$</span>
+                        <span>@Model.Dongia</span>
                         </div>
-                        <p class="lead">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fermentum turpis felis, non pellentesque elit fermentum in. Nam ac ultricies dolor. Aenean ultrices at lacus eu condimentum. Morbi vitae consectetur turpis. Integer pharetra interdum tempus. Nullam enim odio, ultrices in nibh dignissim, tempus tincidunt arcu. Sed commodo mollis sem, eu.
-                        </p>
+                    <p class="lead">@Model.Mota</p>
                         <form action="cartProcess.php">
                             <input type="hidden" name="masp" value="" />
                             <input type="hidden" name="type" value="add" />
@@ -61,278 +56,7 @@
                             </div>
                         </form>
                     </div>
-                } 
-                @if (Model == 2)
-                {
-                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="~/image/asus_rog_strix_Z390.jpg" alt="..." /></div>
-                    <div class="col-md-6">
-                        <div class="small mb-1">Mã sản phẩm: MP02</div>
-                        <h1 class="display-5 fw-bolder">Main Asus ROG STRIX Z390</h1>
-
-                        <div class="fs-5 mb-5">
-                            <span class="text-decoration-line-through">2000$</span>
-                            <span>1000$</span>
-                        </div>
-                        <p class="lead">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fermentum turpis felis, non pellentesque elit fermentum in. Nam ac ultricies dolor. Aenean ultrices at lacus eu condimentum. Morbi vitae consectetur turpis. Integer pharetra interdum tempus. Nullam enim odio, ultrices in nibh dignissim, tempus tincidunt arcu. Sed commodo mollis sem, eu.
-                        </p>
-                        <form action="cartProcess.php">
-                            <input type="hidden" name="masp" value="" />
-                            <input type="hidden" name="type" value="add" />
-                            <div class="d-flex">
-                                <label for="inputQuantity">Số lượng:</label>
-                                <input class="form-control text-center me-3 mx-2 pt-1" name="inputQuantity" type="number" value="1" min="1" max="9" style="max-width: 3rem" />
-                                <button class="btn btn-outline-dark flex-shrink-0" type="submit">
-                                    <i class="bi-cart-fill me-1"></i>
-                                    Add to cart
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                }
-                @if (Model == 3)
-                {
-                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="~/image/asus_rtx_2080Ti.jpg" alt="..." /></div>
-                    <div class="col-md-6">
-                        <div class="small mb-1">Mã sản phẩm: MP03</div>
-                        <h1 class="display-5 fw-bolder">Card RTX 2080TI</h1>
-
-                        <div class="fs-5 mb-5">
-                            <span class="text-decoration-line-through">2000$</span>
-                            <span>1000$</span>
-                        </div>
-                        <p class="lead">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fermentum turpis felis, non pellentesque elit fermentum in. Nam ac ultricies dolor. Aenean ultrices at lacus eu condimentum. Morbi vitae consectetur turpis. Integer pharetra interdum tempus. Nullam enim odio, ultrices in nibh dignissim, tempus tincidunt arcu. Sed commodo mollis sem, eu.
-                        </p>
-                        <form action="cartProcess.php">
-                            <input type="hidden" name="masp" value="" />
-                            <input type="hidden" name="type" value="add" />
-                            <div class="d-flex">
-                                <label for="inputQuantity">Số lượng:</label>
-                                <input class="form-control text-center me-3 mx-2 pt-1" name="inputQuantity" type="number" value="1" min="1" max="9" style="max-width: 3rem" />
-                                <button class="btn btn-outline-dark flex-shrink-0" type="submit">
-                                    <i class="bi-cart-fill me-1"></i>
-                                    Add to cart
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                }
-                @if (Model == 4)
-                {
-                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="~/image/asus_tuf_gt501.jpg" alt="..." /></div>
-                    <div class="col-md-6">
-                        <div class="small mb-1">Mã sản phẩm: MP04</div>
-                        <h1 class="display-5 fw-bolder">Case Asus TUF GT501</h1>
-
-                        <div class="fs-5 mb-5">
-                            <span class="text-decoration-line-through">2000$</span>
-                            <span>1000$</span>
-                        </div>
-                        <p class="lead">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fermentum turpis felis, non pellentesque elit fermentum in. Nam ac ultricies dolor. Aenean ultrices at lacus eu condimentum. Morbi vitae consectetur turpis. Integer pharetra interdum tempus. Nullam enim odio, ultrices in nibh dignissim, tempus tincidunt arcu. Sed commodo mollis sem, eu.
-                        </p>
-                        <form action="cartProcess.php">
-                            <input type="hidden" name="masp" value="" />
-                            <input type="hidden" name="type" value="add" />
-                            <div class="d-flex">
-                                <label for="inputQuantity">Số lượng:</label>
-                                <input class="form-control text-center me-3 mx-2 pt-1" name="inputQuantity" type="number" value="1" min="1" max="9" style="max-width: 3rem" />
-                                <button class="btn btn-outline-dark flex-shrink-0" type="submit">
-                                    <i class="bi-cart-fill me-1"></i>
-                                    Add to cart
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                }
-                @if (Model == 5)
-                {
-                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="~/image/gigabyte_aorus_2x8gb_ddr4_3200.jpg" alt="..." /></div>
-                    <div class="col-md-6">
-                        <div class="small mb-1">Mã sản phẩm: MP05</div>
-                        <h1 class="display-5 fw-bolder">Ram Gigabyte Aorus 2x8GB DDR4 Bus 3200</h1>
-
-                        <div class="fs-5 mb-5">
-                            <span class="text-decoration-line-through">2000$</span>
-                            <span>1000$</span>
-                        </div>
-                        <p class="lead">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fermentum turpis felis, non pellentesque elit fermentum in. Nam ac ultricies dolor. Aenean ultrices at lacus eu condimentum. Morbi vitae consectetur turpis. Integer pharetra interdum tempus. Nullam enim odio, ultrices in nibh dignissim, tempus tincidunt arcu. Sed commodo mollis sem, eu.
-                        </p>
-                        <form action="cartProcess.php">
-                            <input type="hidden" name="masp" value="" />
-                            <input type="hidden" name="type" value="add" />
-                            <div class="d-flex">
-                                <label for="inputQuantity">Số lượng:</label>
-                                <input class="form-control text-center me-3 mx-2 pt-1" name="inputQuantity" type="number" value="1" min="1" max="9" style="max-width: 3rem" />
-                                <button class="btn btn-outline-dark flex-shrink-0" type="submit">
-                                    <i class="bi-cart-fill me-1"></i>
-                                    Add to cart
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                }
-                @if (Model == 6)
-                {
-                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="~/image/gigabyte_aorus_850w.jpg" alt="..." /></div>
-                    <div class="col-md-6">
-                        <div class="small mb-1">Mã sản phẩm: MP06</div>
-                        <h1 class="display-5 fw-bolder">Power Supply Gigabyte Aorus 850W</h1>
-
-                        <div class="fs-5 mb-5">
-                            <span class="text-decoration-line-through">2000$</span>
-                            <span>1000$</span>
-                        </div>
-                        <p class="lead">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fermentum turpis felis, non pellentesque elit fermentum in. Nam ac ultricies dolor. Aenean ultrices at lacus eu condimentum. Morbi vitae consectetur turpis. Integer pharetra interdum tempus. Nullam enim odio, ultrices in nibh dignissim, tempus tincidunt arcu. Sed commodo mollis sem, eu.
-                        </p>
-                        <form action="cartProcess.php">
-                            <input type="hidden" name="masp" value="" />
-                            <input type="hidden" name="type" value="add" />
-                            <div class="d-flex">
-                                <label for="inputQuantity">Số lượng:</label>
-                                <input class="form-control text-center me-3 mx-2 pt-1" name="inputQuantity" type="number" value="1" min="1" max="9" style="max-width: 3rem" />
-                                <button class="btn btn-outline-dark flex-shrink-0" type="submit">
-                                    <i class="bi-cart-fill me-1"></i>
-                                    Add to cart
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                }
-                @if (Model == 7)
-                {
-                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="~/image/intel_i5_9400F.jpg" alt="..." /></div>
-                    <div class="col-md-6">
-                        <div class="small mb-1">Mã sản phẩm: MP07</div>
-                        <h1 class="display-5 fw-bolder">Chip Intel I5 9400F</h1>
-
-                        <div class="fs-5 mb-5">
-                            <span class="text-decoration-line-through">2000$</span>
-                            <span>1000$</span>
-                        </div>
-                        <p class="lead">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fermentum turpis felis, non pellentesque elit fermentum in. Nam ac ultricies dolor. Aenean ultrices at lacus eu condimentum. Morbi vitae consectetur turpis. Integer pharetra interdum tempus. Nullam enim odio, ultrices in nibh dignissim, tempus tincidunt arcu. Sed commodo mollis sem, eu.
-                        </p>
-                        <form action="cartProcess.php">
-                            <input type="hidden" name="masp" value="" />
-                            <input type="hidden" name="type" value="add" />
-                            <div class="d-flex">
-                                <label for="inputQuantity">Số lượng:</label>
-                                <input class="form-control text-center me-3 mx-2 pt-1" name="inputQuantity" type="number" value="1" min="1" max="9" style="max-width: 3rem" />
-                                <button class="btn btn-outline-dark flex-shrink-0" type="submit">
-                                    <i class="bi-cart-fill me-1"></i>
-                                    Add to cart
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                }
-                @if (Model == 8)
-                {
-                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="~/image/samsung_860_pro_2tb.jpg" alt="..." /></div>
-                    <div class="col-md-6">
-                        <div class="small mb-1">Mã sản phẩm: MP08</div>
-                        <h1 class="display-5 fw-bolder">SSD SamSung 860 PRO 2TB</h1>
-
-                        <div class="fs-5 mb-5">
-                            <span class="text-decoration-line-through">2000$</span>
-                            <span>1000$</span>
-                        </div>
-                        <p class="lead">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fermentum turpis felis, non pellentesque elit fermentum in. Nam ac ultricies dolor. Aenean ultrices at lacus eu condimentum. Morbi vitae consectetur turpis. Integer pharetra interdum tempus. Nullam enim odio, ultrices in nibh dignissim, tempus tincidunt arcu. Sed commodo mollis sem, eu.
-                        </p>
-                        <form action="cartProcess.php">
-                            <input type="hidden" name="masp" value="" />
-                            <input type="hidden" name="type" value="add" />
-                            <div class="d-flex">
-                                <label for="inputQuantity">Số lượng:</label>
-                                <input class="form-control text-center me-3 mx-2 pt-1" name="inputQuantity" type="number" value="1" min="1" max="9" style="max-width: 3rem" />
-                                <button class="btn btn-outline-dark flex-shrink-0" type="submit">
-                                    <i class="bi-cart-fill me-1"></i>
-                                    Add to cart
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                }             
             </div>
-        </div>
-    </section>
-
-    <!-- Related items section-->
-    <section class="py-5 bg-light">
-        <div class="container px-4 px-lg-5 mt-5">
-            <h2 class="fw-bolder mb-4">Related products</h2>
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Product image-->
-                        <img class="card-img-top" src="~/image/AcBel_450W.jpg" alt="..." />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder">Nuba</h5>
-                                <!-- Product price-->
-                                <span class="text-decoration-line-through">1000$</span>
-                                <span>1000$</span>
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto">View options</a></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Product image-->
-                        <img class="card-img-top" src="~/image/AcBel_450W.jpg" alt="..." />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder">Nuba</h5>
-                                <!-- Product price-->
-                                <span class="text-decoration-line-through">1000$</span>
-                                <span>1000$</span>
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto">View options</a></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Product image-->
-                        <img class="card-img-top" src="~/image/AcBel_450W.jpg" alt="..." />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder">Nuba</h5>
-                                <!-- Product price-->
-                                <span class="text-decoration-line-through">1000$</span>
-                                <span>1000$</span>
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto">View options</a></div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
         </div>
     </section>
 </body>

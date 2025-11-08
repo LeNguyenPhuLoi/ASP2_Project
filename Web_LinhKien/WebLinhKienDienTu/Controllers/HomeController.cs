@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using WebLinhKienDienTu.Models;
 using WebLinhKienDienTu.Repository;
@@ -36,9 +36,14 @@ namespace WebLinhKienDienTu.Controllers
 
         List<string> pd = new List<string>();
 
-        public IActionResult Detail(int id)
+        public IActionResult Detail(string id)
         {
-            return View(id);
+            var sp = _sanphamservice.GetSanPhamById(id);
+            if (sp == null)
+            {
+                return NotFound(); // phòng trường hợp id không tồn tại
+            }
+            return View(sp);
         }
     }
 }
