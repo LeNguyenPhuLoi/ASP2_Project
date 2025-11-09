@@ -68,3 +68,39 @@ VALUES
 --('KHO03', 'SP006', '15/03/2025', 65),
 --('KHO03', 'SP008', '20/03/2025', 50),
 --('KHO03', 'SP010', '25/03/2025', 30);
+
+--THEM DU LIEU TAI KHOAN
+GO
+INSERT INTO TAIKHOAN(EMAIL, PASS, QUYEN, TRANGTHAI)
+VALUES (N'namle75@gmail.com','namle@123', N'USER', N'HOẠT ĐỘNG')
+
+--THEM DU LIEU NHAN VIEN
+GO
+INSERT INTO NHANVIEN (MANV, TENNV, GIOITINH, NGAYSINH, CHUC, LUONG, DIACHI, SDT, EMAIL)
+VALUES ('NV001', N'Lê Hoài Nam', N'Nam', '30/04/1975', N'Nhân viên quản kho', 12000000, N'43 Hoàng Hoa Thám', 0977251843, N'namle75@gmail.com')
+
+--THEM DU LIEU KHO HANG
+GO
+INSERT INTO KHOHANG(MAKHO, TENKHO, DIACHIKHO, MANV, SOLUONGLOAIHANG)
+VALUES 
+('KHO001', N'Kho linh kiện máy tính Hoàng Hoa Thám', N'số 43 Hoàng Hoa Thám', 'NV001', N'36 loại hàng linh kiện máy tính'),
+('KHO002', N'Kho linh kiện điện tử Bình Thạnh', N'129 Điện Biên Phủ, Bình Thạnh', 'NV002', N'28 loại linh kiện điện tử'),
+('KHO003', N'Kho phụ kiện công nghệ Tân Bình', N'75 Trường Chinh, Tân Bình', 'NV003', N'41 loại phụ kiện thiết bị'),
+('KHO004', N'Kho thiết bị mạng Quận 7', N'18 Nguyễn Thị Thập, Quận 7', 'NV004', N'33 loại thiết bị mạng'),
+('KHO005', N'Kho máy văn phòng Gò Vấp', N'254 Quang Trung, Gò Vấp', 'NV005', N'22 loại thiết bị máy văn phòng'),
+('KHO006', N'Kho linh kiện điện tử Thủ Đức', N'47 Võ Văn Ngân, Thủ Đức', 'NV006', N'30 loại linh kiện điện tử'),
+('KHO007', N'Kho thiết bị âm thanh Quận 10', N'190 Lý Thái Tổ, Quận 10', 'NV007', N'18 loại thiết bị âm thanh'),
+('KHO008', N'Kho màn hình & thiết bị hiển thị Quận 1', N'22 Nguyễn Trãi, Quận 1', 'NV008', N'25 loại màn hình và thiết bị hiển thị'),
+('KHO009', N'Kho thiết bị lưu trữ Tân Phú', N'65 Âu Cơ, Tân Phú', 'NV009', N'27 loại thiết bị lưu trữ'),
+('KHO010', N'Kho dây cáp và phụ kiện Quận 4', N'11 Hoàng Diệu, Quận 4', 'NV010', N'19 loại dây cáp và phụ kiện'),
+('KHO011', N'Kho linh kiện máy in Quận 3', N'52 Võ Văn Tần, Quận 3', 'NV011', N'17 loại linh kiện máy in'),
+('KHO012', N'Kho bo mạch & IC Gia Định', N'234 Phan Đăng Lưu, Phú Nhuận', 'NV012', N'38 loại bo mạch và vi mạch'),
+('KHO013', N'Kho thiết bị văn phòng Quận 6', N'90 Hậu Giang, Quận 6', 'NV013', N'21 loại thiết bị văn phòng'),
+('KHO014', N'Kho phụ kiện máy tính Quận 12', N'14 Tô Ký, Quận 12', 'NV014', N'29 loại phụ kiện máy tính'),
+('KHO015', N'Kho dây điện – cáp mạng Bình Tân', N'67 Mã Lò, Bình Tân', 'NV015', N'24 loại dây & cáp mạng'),
+('KHO016', N'Kho thiết bị camera giám sát Tân Bình', N'120 Cộng Hòa, Tân Bình', 'NV016', N'31 loại thiết bị camera & giám sát'),
+('KHO017', N'Kho nguồn máy tính & UPS Gò Vấp', N'88 Nguyễn Oanh, Gò Vấp', 'NV017', N'16 loại nguồn máy & UPS'),
+('KHO018', N'Kho CPU & bộ vi xử lý Quận 1', N'15 Pasteur, Quận 1', 'NV018', N'14 loại CPU và vi xử lý'),
+('KHO019', N'Kho mainboard & thiết bị máy chủ Quận 7', N'300 Nguyễn Văn Linh, Quận 7', 'NV019', N'26 loại mainboard & linh kiện máy chủ'),
+('KHO020', N'Kho RAM & bộ nhớ máy tính Bình Thạnh', N'102 Ung Văn Khiêm, Bình Thạnh', 'NV020', N'18 loại RAM & thiết bị bộ nhớ');
+

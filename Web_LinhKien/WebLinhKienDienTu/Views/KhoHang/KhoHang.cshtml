@@ -2,6 +2,7 @@
     ViewData["Title"] = "Home Page";
 }
 
+@model List<WebLinhKienDienTu.Models.Khohang>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,18 +40,20 @@
 
 			<div class="card-body">
 				<!-- Thanh tìm kiếm -->
-				<form class="row mb-3">
+				<form class="row mb-3" method="post" asp-action="KhoHang" asp-controller="KhoHang">
 					<div class="col-md-4">
-						<input type="text" class="form-control" name="searchMaKho" placeholder="Tìm theo mã kho hàng">
+						<input type="text" class="form-control" name="searchMaKho" placeholder="Tìm theo mã kho hàng" value="@ViewBag.SearchMaKho" />
 					</div>
 					<div class="col-md-4">
-						<input type="text" class="form-control" name="searchTenKho" placeholder="Tìm theo tên kho hàng">
+						<input type="text" class="form-control" name="searchTenKho" placeholder="Tìm theo tên kho hàng" value="@ViewBag.SearchTenKho" />
 					</div>
 					<div class="col-md-4 text-end">
 						<button class="btn btn-primary" type="submit">Tìm kiếm</button>
-						<a class="btn btn-secondary">Làm mới</a>
+						<a class="btn btn-secondary" href="@Url.Action("KhoHang", "KhoHang")">Làm mới</a>
 					</div>
 				</form>
+
+
 
 				<!-- Bảng danh sách -->
 				<table class="table table-bordered text-center align-middle">
@@ -67,130 +70,175 @@
 					</thead>
 					<tbody>
 
-						<tr>
-							<td>1</td>
-							<td>Kho_001</td>
-							<td>Kho Linh Kiện Máy Tính Mindless Võ Văn Ngân</td>
-							<td>Số 36 Đường Võ Văn Ngân, Bình Thọ, Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam</td>
-							<td>Hoài Thị Trâm Anh</td>
-							<td>36 loại hàng</td>
-							<td>
-								<a class="btn btn-info btn-sm" data-bs-target="#editKhoHang" class="edit" data-bs-toggle="modal">Sửa</a>
-								<a class="btn btn-danger btn-sm" data-bs-target="#deleteKhoHang" class="delete" data-bs-toggle="modal">Xóa</a>
-							</td>
-						</tr>
+						@if(Model != null)
+						{
+							foreach(var item in Model)
+							{
+								<tr>
+									<td>@item.Stt</td>
+									<td>@item.Makho</td>
+									<td>@item.Tenkho</td>
+									<td>@item.Diachikho</td>
+									<td>@item.Manv</td>
+									<td>@item.Soluongloaihang</td>
+									<td>
+										<a class="btn btn-info btn-sm edit-btn" 
+											data-bs-toggle="modal" 
+											data-bs-target="#editKhoHang"
+											data-stt="@item.Stt"
+											data-makho="@item.Makho"
+											data-tenkho="@item.Tenkho"
+											data-diachi="@item.Diachikho"
+											data-manv="@item.Manv"
+											data-loaihang="@item.Soluongloaihang">
+											Sửa
+										</a>
 
-						<div id="editKhoHang" class="modal fade">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<form action="#" method="POST">
-										<div class="modal-header">
-											<h4 class="modal-title">Sửa Kho Hàng</h4>
-											<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
-										</div>
-										<div class="modal-body">
-											<input type="hidden" name="type" value="update">
-											<div class="form-group">
-												<label>Mã Kho Hàng</label>
-												<input type="text" class="form-control" required name="masp" value="Kho_001">
-											</div>
-											<div class="form-group">
-												<label>Tên Kho Hàng</label>
-												<input type="text" class="form-control" required name="tensp" value="Kho Linh Kiện Máy Tính Mindless Võ Văn Ngân">
-											</div>
-											<div class="form-group">
-												<label>Địa Chỉ</label>
-												<textarea type="text" class="form-control" required name="gia">Số 36 Đường Võ Văn Ngân, Bình Thọ, Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam</textarea>
-											</div>
-											<div class="form-group">
-												<label>Nhân Viên Quản Lý Kho</label>
-												<input class="form-control" required name="mota" value="Hoài Thị Trâm Anh">
-											</div>
-											<div class="form-group">
-												<label>Số Lượng Loại Hàng</label>
-												<input type="text" class="form-control" required name="hinh" value="36 loại hàng">
-											</div>
-										</div>
-										<div class="modal-footer">
-											<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Hủy">
-											<input type="submit" class="btn btn-info" value="Sửa">
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
-
-						<div id="deleteKhoHang" class="modal fade">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<form action="#">
-										<div class="modal-header">
-											<h4 class="modal-title">Xóa Kho Hàng</h4>
-											<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
-										</div>
-										<div class="modal-body">
-											<input type="hidden" name="type" value="delete">
-											<div class="form-group">
-												<div class="form-group">
-													<input type="hidden" name="masp" value="">
-												</div>
-												<div class="modal-body">
-													<p>Bạn có muốn xóa kho này?</p>
-												</div>
-												<div class="modal-footer">
-													<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Hủy">
-													<input type="submit" class="btn btn-danger" value="Xóa">
-												</div>
-											</div>
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
+										<a class="btn btn-danger btn-sm delete-btn"
+										   data-bs-toggle="modal"
+										   data-bs-target="#deleteKhoHang"
+										   data-makho="@item.Makho">
+											Xóa
+										</a>
+									</td>
+								</tr>
+							}
+						}
 
 					</tbody>
 				</table>
+
+				<nav>
+					<ul class="pagination justify-content-center">
+
+						@if (ViewBag.Page > 1)
+						{
+							<li class="page-item">
+								<a class="page-link" href="@Url.Action("KhoHang", new { page = ViewBag.Page - 1 })">Previous</a>
+							</li>
+						}
+
+						@for (int i = 1; i <= ViewBag.TotalPage; i++)
+						{
+							<li class="page-item @(i == ViewBag.Page ? "active" : "")">
+								<a class="page-link" href="@Url.Action("KhoHang", new { page = i })">@i</a>
+							</li>
+						}
+
+						@if (ViewBag.Page < ViewBag.TotalPage)
+						{
+							<li class="page-item">
+								<a class="page-link" href="@Url.Action("KhoHang", new { page = ViewBag.Page + 1 })">Next</a>
+							</li>
+						}
+
+					</ul>
+				</nav>
 
 				<!-- Add Modal HTML -->
 				<div id="addKhoHang" class="modal fade">
 					<div class="modal-dialog">
 						<div class="modal-content">
-							<form action="sanphamProcess.php" method="POST">
+							@using (Html.BeginForm("AddKhoHang", "KhoHang", FormMethod.Post))
+							{
 								<div class="modal-header">
 									<h4 class="modal-title">Thêm Kho Hàng</h4>
-									<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+									<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 								</div>
 								<div class="modal-body">
-									<input type="hidden" name="type" value="add">
-									<div class="form-group">
-										<label>Mã Kho Hàng</label>
-										<input type="text" class="form-control" required name="masp">
+									<div class="mb-3">
+										@Html.Label("Mã Kho Hàng")
+										@Html.TextBox("Makho", "", new { @class = "form-control", required = "required" })
 									</div>
-									<div class="form-group">
-										<label>Tên Kho Hàng</label>
-										<input type="text" class="form-control" required name="tensp">
+									<div class="mb-3">
+										@Html.Label("Tên Kho Hàng")
+										@Html.TextBox("Tenkho", "", new { @class = "form-control", required = "required" })
 									</div>
-									<div class="form-group">
-										<label>Địa Chỉ</label>
-										<textarea type="text" class="form-control" required name="gia"></textarea>
+									<div class="mb-3">
+										@Html.Label("Địa Chỉ")
+										@Html.TextArea("Diachi", "", new { @class = "form-control", required = "required" })
 									</div>
-									<div class="form-group">
-										<label>Nhân Viên Quản Lý Kho</label>
-										<input class="form-control" required name="mota">
+									<div class="mb-3">
+										@Html.Label("Nhân Viên Quản Lý Kho")
+										@Html.TextBox("Manv", "", new { @class = "form-control", required = "required" })
 									</div>
-									<div class="form-group">
-										<label>Số Lượng Loại Hàng</label>
-										<input type="text" class="form-control" required name="hinh">
+									<div class="mb-3">
+										@Html.Label("Số Lượng Loại Hàng")
+										@Html.TextBox("Soluongloaihang", "", new { @class = "form-control", required = "required" })
 									</div>
 								</div>
 								<div class="modal-footer">
-									<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Hủy">
-									<input type="submit" class="btn btn-success" value="Thêm">
+									<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+									<button type="submit" class="btn btn-success">Thêm</button>
 								</div>
-							</form>
+							}
 						</div>
 					</div>
 				</div>
+
+
+				<div id="editKhoHang" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							@using (Html.BeginForm("EditKhoHang", "KhoHang", FormMethod.Post))
+							{
+								<div class="modal-header">
+									<h4 class="modal-title">Sửa Kho Hàng</h4>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<div class="mb-3">
+										@Html.Label("Mã Kho Hàng")
+										@Html.TextBox("Makho", "", new { @class = "form-control", id = "modal-makho", required = "required", @readonly = "readonly" })
+									</div>
+									<div class="mb-3">
+										@Html.Label("Tên Kho Hàng")
+										@Html.TextBox("Tenkho", "", new { @class = "form-control", id = "modal-tenkho", required = "required" })
+									</div>
+									<div class="mb-3">
+										@Html.Label("Địa Chỉ")
+										@Html.TextArea("Diachi", "", new { @class = "form-control", id = "modal-diachi", required = "required" })
+									</div>
+									<div class="mb-3">
+										@Html.Label("Mã Nhân Viên Quản Lý Kho")
+										@Html.TextBox("Manv", "", new { @class = "form-control", id = "modal-manv", required = "required" })
+									</div>
+									<div class="mb-3">
+										@Html.Label("Số Lượng Loại Hàng")
+										@Html.TextBox("Soluongloaihang", "", new { @class = "form-control", id = "modal-loaihang", required = "required" })
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+									<button type="submit" class="btn btn-info">Sửa</button>
+								</div>
+							}
+						</div>
+					</div>
+				</div>
+
+				<div id="deleteKhoHang" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							@using (Html.BeginForm("DeleteKhoHang", "KhoHang", FormMethod.Post))
+							{
+								<div class="modal-header">
+									<h4 class="modal-title">Xóa Kho Hàng</h4>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									@Html.TextBox("Makho", "", new { @class = "form-control", id = "modal-delete-makho", required = "required", @readonly = "readonly" })
+									<p>Bạn có muốn xóa kho này?</p>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+									<button type="submit" class="btn btn-danger">Xóa</button>
+								</div>
+							}
+						</div>
+					</div>
+				</div>
+
 
 			</div>
 		</div>
@@ -199,3 +247,24 @@
 </body>
 
 </html>
+<script>
+
+	var editModal = document.getElementById('editKhoHang');
+	editModal.addEventListener('show.bs.modal', function (event) {
+		var button = event.relatedTarget;
+		document.getElementById('modal-makho').value = button.getAttribute('data-makho');
+		document.getElementById('modal-tenkho').value = button.getAttribute('data-tenkho');
+		document.getElementById('modal-diachi').value = button.getAttribute('data-diachi');
+		document.getElementById('modal-manv').value = button.getAttribute('data-manv');
+		document.getElementById('modal-loaihang').value = button.getAttribute('data-loaihang');
+	});
+
+		var deleteModal = document.getElementById('deleteKhoHang');
+	deleteModal.addEventListener('show.bs.modal', function (event) {
+		var button = event.relatedTarget;
+		var makho = button.getAttribute('data-makho');
+		document.getElementById('modal-delete-makho').value = makho;
+	});
+
+
+</script>
