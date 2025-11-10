@@ -1,92 +1,12 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Hoc k\u00EC 5\\ASP.NET-2\\11-9-2025\\ASP2_Project\\Web_LinhKien\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|e:\\hoc k\u00EC 5\\asp.net-2\\11-9-2025\\asp2_project\\web_linhkien\\weblinhkiendientu\\controllers\\khohangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\controllers\\khohangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|e:\\hoc k\u00EC 5\\asp.net-2\\11-9-2025\\asp2_project\\web_linhkien\\weblinhkiendientu\\views\\khohang\\khohang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\views\\khohang\\khohang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|e:\\hoc k\u00EC 5\\asp.net-2\\11-9-2025\\asp2_project\\web_linhkien\\weblinhkiendientu\\repository\\khohangservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\repository\\khohangservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|e:\\hoc k\u00EC 5\\asp.net-2\\11-9-2025\\asp2_project\\web_linhkien\\weblinhkiendientu\\repository\\ikhohangservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\repository\\ikhohangservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "D:\\K\u00EC 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "KhoHangController.cs",
-              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\ASP.NET-2\\11-9-2025\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Controllers\\KhoHangController.cs",
-              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Controllers\\KhoHangController.cs",
-              "ToolTip": "E:\\Hoc k\u00EC 5\\ASP.NET-2\\11-9-2025\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Controllers\\KhoHangController.cs*",
-              "RelativeToolTip": "WebLinhKienDienTu\\Controllers\\KhoHangController.cs*",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAIwDsAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T03:56:58.557Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IKhoHangService.cs",
-              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\ASP.NET-2\\11-9-2025\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Repository\\IKhoHangService.cs",
-              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Repository\\IKhoHangService.cs",
-              "ToolTip": "E:\\Hoc k\u00EC 5\\ASP.NET-2\\11-9-2025\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Repository\\IKhoHangService.cs",
-              "RelativeToolTip": "WebLinhKienDienTu\\Repository\\IKhoHangService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAABOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T03:58:54.025Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "KhoHangService.cs",
-              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\ASP.NET-2\\11-9-2025\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Repository\\KhoHangService.cs",
-              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Repository\\KhoHangService.cs",
-              "ToolTip": "E:\\Hoc k\u00EC 5\\ASP.NET-2\\11-9-2025\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Repository\\KhoHangService.cs",
-              "RelativeToolTip": "WebLinhKienDienTu\\Repository\\KhoHangService.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAADwv1gAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T03:59:08.722Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "KhoHang.cshtml",
-              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\ASP.NET-2\\11-9-2025\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Views\\KhoHang\\KhoHang.cshtml",
-              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Views\\KhoHang\\KhoHang.cshtml",
-              "ToolTip": "E:\\Hoc k\u00EC 5\\ASP.NET-2\\11-9-2025\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Views\\KhoHang\\KhoHang.cshtml",
-              "RelativeToolTip": "WebLinhKienDienTu\\Views\\KhoHang\\KhoHang.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACoAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-09T05:24:57.898Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }
