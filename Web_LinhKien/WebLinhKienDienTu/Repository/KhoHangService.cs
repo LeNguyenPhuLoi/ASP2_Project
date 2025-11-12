@@ -41,8 +41,12 @@ namespace WebLinhKienDienTu.Repository
         }
 
         //hàm thêm kho hàng
-        public void AddKhoHang(string Makho, string Tenkho, string Diachi, string Manv, string Soluongloaihang)
+        public void AddKhoHang(string Tenkho, string Diachi, string Manv, string Soluongloaihang)
         {
+            string Makho;
+            int soluongmoi = _db.Khohangs.Count() + 1;
+            Makho = "KHO" + soluongmoi.ToString("D2");
+
             var kho = new Khohang
             {
                 Makho = Makho,

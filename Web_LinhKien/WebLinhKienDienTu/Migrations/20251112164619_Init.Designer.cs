@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebLinhKienDienTu.Models;
 
@@ -11,9 +12,10 @@ using WebLinhKienDienTu.Models;
 namespace WebLinhKienDienTu.Migrations
 {
     [DbContext(typeof(QllkContext))]
-    partial class QllkContextModelSnapshot : ModelSnapshot
+    [Migration("20251112164619_Init")]
+    partial class Init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

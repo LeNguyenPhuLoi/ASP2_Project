@@ -72,12 +72,18 @@ VALUES
 --THEM DU LIEU TAI KHOAN
 GO
 INSERT INTO TAIKHOAN(EMAIL, PASS, QUYEN, TRANGTHAI)
-VALUES (N'namle75@gmail.com','namle@123', N'USER', N'HOẠT ĐỘNG')
+VALUES (N'namle75@gmail.com','namle@123', N'USER', N'HOẠT ĐỘNG'),
+		(N'tung98@gmail.com','tung@123', N'USER', N'HOẠT ĐỘNG')
 
 --THEM DU LIEU NHAN VIEN
 GO
 INSERT INTO NHANVIEN (MANV, TENNV, GIOITINH, NGAYSINH, CHUC, LUONG, DIACHI, SDT, EMAIL)
 VALUES ('NV001', N'Lê Hoài Nam', N'Nam', '30/04/1975', N'Nhân viên quản kho', 12000000, N'43 Hoàng Hoa Thám', 0977251843, N'namle75@gmail.com')
+
+--THEM DU LIEU KHACH HANG
+GO
+INSERT INTO KHACHHANG(MAKH, TENKH, SDT, EMAIL, DIACHI, NGAYTAO)
+VALUES ('KH001', N'Nguyễn Thanh Tùng', 0972581443, N'tung98@gmail.com', N'987 Võ Thượng Thái Quân', '30/04/2018')
 
 --THEM DU LIEU KHO HANG
 GO
@@ -104,3 +110,27 @@ VALUES
 ('KHO019', N'Kho mainboard & thiết bị máy chủ Quận 7', N'300 Nguyễn Văn Linh, Quận 7', 'NV019', N'26 loại mainboard & linh kiện máy chủ'),
 ('KHO020', N'Kho RAM & bộ nhớ máy tính Bình Thạnh', N'102 Ung Văn Khiêm, Bình Thạnh', 'NV020', N'18 loại RAM & thiết bị bộ nhớ');
 
+
+GO
+INSERT INTO HOADON(MAHD, NGAYLAP, TONGTIEN, MAKH, MANV, Trangthai)
+VALUES
+  ('HD001', '22/10/2018', 2800000, 'KH001', 'NV001', N'Đã thanh toán'),
+  ('HD002', '23/10/2018', 3200000, 'KH001', 'NV001', N'Chưa thanh toán'),
+  ('HD003', '24/10/2018', 4500000, 'KH001', 'NV001', N'Đã thanh toán'),
+  ('HD004', '25/10/2018', 5600000, 'KH001', 'NV001', N'Chưa thanh toán'),
+  ('HD005', '26/10/2018', 2700000, 'KH001', 'NV001', N'Đã thanh toán'),
+  ('HD006', '27/10/2018', 3100000, 'KH001', 'NV001', N'Chưa thanh toán'),
+  ('HD007', '28/10/2018', 2200000, 'KH001', 'NV001', N'Đã thanh toán'),
+  ('HD008', '29/10/2018', 4900000, 'KH001', 'NV001', N'Chưa thanh toán'),
+  ('HD009', '30/10/2018', 3300000, 'KH001', 'NV001', N'Đã thanh toán'),
+  ('HD010', '31/10/2018', 2400000, 'KH001', 'NV001', N'Chưa thanh toán'),
+  ('HD011', '01/11/2018', 5100000, 'KH001', 'NV001', N'Đã thanh toán'),
+  ('HD012', '02/11/2018', 6200000, 'KH001', 'NV001', N'Chưa thanh toán'),
+  ('HD013', '03/11/2018', 3500000, 'KH001', 'NV001', N'Đã thanh toán'),
+  ('HD014', '04/11/2018', 4200000, 'KH001', 'NV001', N'Chưa thanh toán'),
+  ('HD015', '05/11/2018', 3000000, 'KH001', 'NV001', N'Đã thanh toán'),
+  ('HD016', '06/11/2018', 5400000, 'KH001', 'NV001', N'Chưa thanh toán'),
+  ('HD017', '07/11/2018', 4000000, 'KH001', 'NV001', N'Đã thanh toán'),
+  ('HD018', '08/11/2018', 2800000, 'KH001', 'NV001', N'Chưa thanh toán'),
+  ('HD019', '09/11/2018', 5700000, 'KH001', 'NV001', N'Đã thanh toán'),
+  ('HD020', '10/11/2018', 3300000, 'KH001', 'NV001', N'Chưa thanh toán');

@@ -15,6 +15,8 @@ public partial class Hoadon
 
     public string? Manv { get; set; }
 
+    public string? Trangthai { get; set; }
+
     public virtual ICollection<Chitiethoadon> Chitiethoadons { get; set; } = new List<Chitiethoadon>();
 
     public virtual ICollection<Giohang> Giohangs { get; set; } = new List<Giohang>();
