@@ -2,6 +2,10 @@ wwwroot\css\Login-custom.css
 wwwroot\css\register-custom.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\image\1989b824-131b-48e9-bcc7-04ead0c2506d.jpg
+wwwroot\image\4e49606d-d15e-435b-973b-122ac191f98f.jpg
+wwwroot\image\6410fb27-a96e-4df6-98a2-52736e6c0163.jpg
+wwwroot\image\960aca01-7b6c-4ddf-ab5b-b9ff52deabf3.jpg
 wwwroot\image\AcBel_450W.jpg
 wwwroot\image\AcBel_600W.jpg
 wwwroot\image\acbel_750_750w_white.jpg
@@ -21,6 +25,7 @@ wwwroot\image\asus_sdrw_08u9m_u.jpg
 wwwroot\image\asus_tuf_B450M.jpg
 wwwroot\image\asus_tuf_gt501.jpg
 wwwroot\image\asus_wr_ts8x_dvds.png
+wwwroot\image\ba62c575-a6b1-4f8f-a94c-b759bec2732c.jpg
 wwwroot\image\coolermaster_elete_460w.jpg
 wwwroot\image\coolermaster_gammax400.jpg
 wwwroot\image\coolermaster_hyper212LEDTurbo.jpg
@@ -34,6 +39,7 @@ wwwroot\image\coolermaster_xdreami117.jpg
 wwwroot\image\corsair_ddr4_ven-1px.jpg
 wwwroot\image\corsair_ram_vegeeance_ipx_red.jpg
 wwwroot\image\corsair_vegeance_rgb_2pack_1.jpg
+wwwroot\image\d9f6ac56-5039-47b7-8416-1279cb552c30.jpg
 wwwroot\image\dominator_platinum_rgb_x2.jpg
 wwwroot\image\gigabyte_400w_gp_pw400.jpg
 wwwroot\image\gigabyte_8gb_ddr4_2666.jpg
