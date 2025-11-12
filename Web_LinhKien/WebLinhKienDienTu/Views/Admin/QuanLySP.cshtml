@@ -2,6 +2,8 @@
     Layout = "/Views/Shared/_AdminLayout.cshtml"; // Chỉ định layout mới cho trang Index
     ViewData["Title"] = "Admin Page";
 }
+
+@model List<WebLinhKienDienTu.Models.Sanpham>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,9 +21,9 @@
     <link href="css/styles.css" rel="stylesheet" />
     <style>
         .pagination {
-            display: flex;
-            justify-content: center; /* Căn giữa theo chiều ngang */
-            align-items: center;
+        display: flex;
+        justify-content: center; /* Căn giữa theo chiều ngang */
+        align-items: center;
         }
 
     </style>
@@ -33,30 +35,31 @@
     <div class="container mt-4">
         <div class="card shadow-lg">
             <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-                <h4 class="mb-0">Quản lý sản phẩm</h4>
-                <a class="btn btn-light btn-sm">+ Thêm sản phẩm</a>
+                <h4 class="mb-0">Quản lý Sản Phẩm</h4>
+                <a class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#addSP">+ Thêm <b>Sản Phẩm</b></a>
             </div>
 
             <div class="card-body">
                 <!-- Thanh tìm kiếm -->
-                <form class="row mb-3">
+                <form class="row mb-3" method="post" asp-action="QuanLySP" asp-controller="Admin">
                     <div class="col-md-3">
-                        <input type="text" class="form-control" name="searchMa" placeholder="Tìm theo mã sản phẩm">
+                        <input type="text" class="form-control" name="searchMaSp" placeholder="Tìm theo mã sản phẩm" value="@ViewBag.searchMaSp">
                     </div>
                     <div class="col-md-3">
-                        <input type="text" class="form-control" name="searchKhachHang" placeholder="Tìm theo tên sản phẩm">
+                        <input type="text" class="form-control" name="searchTenSp" placeholder="Tìm theo tên sản phẩm" value="@ViewBag.searchTenSp">
                     </div>
-                    <div class="col-md-3">
-                        <select class="form-select" name="trangThai">
-                            <option>Vỏ case</option>
-                            <option>Ổ cứng</option>
-                            <option>Tản nhiệt</option>
-                            <option>Bộ vi xử lý</option>
+                    <div class="col-md-2">
+                        <select class="form-select" name="searchLoai">
+                            <option value="">-- Tất cả loại --</option>
+                            @foreach (var loai in @ViewBag.DanhSachLoai as List<Loaisanpham>)
+                            {
+                                <option value="@loai.Maloai">@loai.Tenloai</option>
+                            }
                         </select>
                     </div>
-                    <div class="col-md-3 text-end">
+                    <div class="col-md-4 text-end">
                         <button class="btn btn-primary" type="submit">Tìm kiếm</button>
-                        <a class="btn btn-secondary">Làm mới</a>
+                        <a class="btn btn-secondary" href="@Url.Action("QuanLySP", "Admin")">Làm mới</a>
                     </div>
                 </form>
 
@@ -68,38 +71,210 @@
                             <th>Tên sản phẩm</th>
                             <th>Đơn giá</th>
                             <th>Đơn vị tiền</th>
+                            <th>Mô tả</th>
+                            <th>Hình ảnh</th>
                             <th>Số lượng tồn</th>
                             <th>Mã loại</th>
                             <th width="20%">Thao tác</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th>MP01</th>
-                            <th>Card GTX 1650</th>
-                            <th>1000</th>
-                            <th>$</th>
-                            <th>100</th>
-                            <th>SPL04</th>
-                            <td>
-                                <a class="btn btn-warning btn-sm">Sửa</a>
-                                <a class="btn btn-danger btn-sm">Xóa</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>MP03</th>
-                            <th>Card RTX 2080TI</th>
-                            <th>2000</th>
-                            <th>$</th>
-                            <th>50</th>
-                            <th>SPL04</th>
-                            <td>
-                                <a class="btn btn-warning btn-sm">Sửa</a>
-                                <a class="btn btn-danger btn-sm">Xóa</a>
-                            </td>
-                        </tr>
+                        @if (Model != null)
+                        {
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th>@item.Masp</th>
+                                    <th>@item.Tensp</th>
+                                    <th>@item.Dongia</th>
+                                    <th>@item.Dvt</th>
+                                    <th>@item.Mota</th>
+                                    <th>@item.Hinhanh</th>
+                                    <th>@item.Soluongton</th>
+                                    <th>@item.Maloai</th>
+                                    <td>
+                                        <a class="btn btn-warning btn-sm"
+                                           data-bs-toggle="modal"
+                                           data-bs-target="#editSP"
+                                           data-masp="@item.Masp"
+                                           data-tensp="@item.Tensp"
+                                           data-dongia="@item.Dongia"
+                                           data-dvt="@item.Dvt"
+                                           data-mota="@item.Mota"
+                                           data-hinhanh="@item.Hinhanh"
+                                           data-soluongton="@item.Soluongton"
+                                           data-maloai="@item.Maloai">
+                                            Sửa
+                                        </a>
+                                        <a class="btn btn-danger btn-sm"
+                                           data-bs-toggle="modal"
+                                           data-bs-target="#deleteSP"
+                                           data-masp="@item.Masp">
+                                            Xóa
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        }
                     </tbody>
                 </table>
+
+                <!--Chuyển Trang-->
+                <nav>
+                    <ul class="pagination justify-content-center">
+
+                        @if (ViewBag.Page > 1)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" href="@Url.Action("QuanLySP", new { page = ViewBag.Page - 1 })">Previous</a>
+                            </li>
+                        }
+
+                        @for (int i = 1; i <= ViewBag.TotalPage; i++)
+                        {
+                            <li class="page-item @(i == ViewBag.Page ? "active" : "")">
+                                <a class="page-link" href="@Url.Action("QuanLySP", new { page = i })">@i</a>
+                            </li>
+                        }
+
+                        @if (ViewBag.Page < ViewBag.TotalPage)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" href="@Url.Action("QuanLySP", new { page = ViewBag.Page + 1 })">Next</a>
+                            </li>
+                        }
+
+                    </ul>
+                </nav>
+
+                <!--Add Loại Sản Phẩm-->
+                <div id="addSP" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            @using (Html.BeginForm("AddSanPham", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Thêm Sản Phẩm</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        @Html.Label("Tên Sản Phẩm")
+                                        @Html.TextBox("Tensp", "", new { @class = "form-control", required = "required" })
+                                    </div>
+                                    <div class="mb-3">
+                                        @Html.Label("Đơn Giá")
+                                        @Html.TextBox("Dongia", "", new { @class = "form-control", required = "required" })
+                                    </div>
+                                    <div class="mb-3">
+                                        @Html.Label("Đơn Vị Tiền")
+                                        @Html.TextBox("Dvt", "", new { @class = "form-control", required = "required" })
+                                    </div>
+                                    <div class="mb-3">
+                                        @Html.Label("Mô Tả")
+                                        @Html.TextArea("Mota", "", new { @class = "form-control", required = "required" })
+                                    </div>
+                                    <div class="mb-3">
+                                        @Html.Label("Hình Ảnh")
+                                        <input type="file" name="fileHinhAnh" class="form-control" accept="image/*" required />
+                                        <small class="text-muted">Chọn ảnh từ máy tính (jpg, png...)</small>
+                                    </div>
+                                    <div class="mb-3">
+                                        @Html.Label("Số Lượng Tồn")
+                                        @Html.TextBox("Soluongton", "", new { @class = "form-control", required = "required" })
+                                    </div>
+                                    <div class="mb-3">
+                                        @Html.Label("Mã Loại")
+                                        @Html.TextBox("Maloai", "", new { @class = "form-control", required = "required" })
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <button type="submit" class="btn btn-success">Thêm</button>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <!--Edit Sản Phẩm-->
+                <div id="editSP" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            @using (Html.BeginForm("EditSanPham", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Sửa Sản Phẩm</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        @Html.Label("Mã Sản Phẩm")
+                                        @Html.TextBox("Masp", "", new { @class = "form-control", id = "modal-masp", @readonly = "readonly" })
+                                    </div>
+                                    <div class="mb-3">
+                                        @Html.Label("Tên Sản Phẩm")
+                                        @Html.TextBox("Tensp", "", new { @class = "form-control", id = "modal-tensp" })
+                                    </div>
+                                    <div class="mb-3">
+                                        @Html.Label("Đơn Giá")
+                                        @Html.TextBox("Dongia", "", new { @class = "form-control", id = "modal-dongia" })
+                                    </div>
+                                    <div class="mb-3">
+                                        @Html.Label("Đơn Vị Tiền")
+                                        @Html.TextBox("Dvt", "", new { @class = "form-control", id = "modal-dvt" })
+                                    </div>
+                                    <div class="mb-3">
+                                        @Html.Label("Mô Tả")
+                                        @Html.TextArea("Mota", "", new { @class = "form-control", id = "modal-mota" })
+                                    </div>
+                                    <div class="mb-3">
+                                        @Html.Label("Hình Ảnh")
+                                        <input type="file" name="fileHinhAnh" id="modal-hinhanh" class="form-control" accept="image/*" />
+                                        <small id="modal-hinhanh-old" class="text-muted">Ảnh hiện tại: (chưa có)</small>
+                                    </div>
+                                    <div class="mb-3">
+                                        @Html.Label("Số Lượng Tồn")
+                                        @Html.TextBox("Soluongton", "", new { @class = "form-control", id = "modal-soluongton" })
+                                    </div>
+                                    <div class="mb-3">
+                                        @Html.Label("Mã Loại Sản Phẩm")
+                                        @Html.TextBox("Maloai", "", new { @class = "form-control", id = "modal-maloai" })
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <button type="submit" class="btn btn-info">Sửa</button>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <!--Delete Sản Phẩm-->
+                <div id="deleteSP" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            @using (Html.BeginForm("DeleteSanPham", "Admin", FormMethod.Post))
+                            {
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Xóa Sản Phẩm</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    @Html.TextBox("Masp", "", new { @class = "form-control", id = "modal-delete-masp", required = "required", @readonly = "readonly" })
+                                    <p>Bạn có muốn xóa sản phẩm này?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <button type="submit" class="btn btn-danger">Xóa</button>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </div>
@@ -107,3 +282,34 @@
 </body>
 
 </html>
+
+<script>
+
+        var editModal = document.getElementById('editSP');
+    editModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget;
+
+        document.getElementById('modal-masp').value = button.getAttribute('data-masp');
+        document.getElementById('modal-tensp').value = button.getAttribute('data-tensp');
+        document.getElementById('modal-dongia').value = button.getAttribute('data-dongia');
+        document.getElementById('modal-dvt').value = button.getAttribute('data-dvt');
+        document.getElementById('modal-mota').value = button.getAttribute('data-mota');
+
+        // Không thể set giá trị cho input type="file"
+        var oldImage = button.getAttribute('data-hinhanh');
+        document.getElementById('modal-hinhanh-old').textContent = "Ảnh hiện tại: " + (oldImage || "(chưa có)");
+
+        // Gán số lượng tồn & mã loại
+        document.getElementById('modal-soluongton').value = button.getAttribute('data-soluongton');
+        document.getElementById('modal-maloai').value = button.getAttribute('data-maloai');
+    });
+
+        var deleteModal = document.getElementById('deleteSP');
+    deleteModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget;
+        var masp = button.getAttribute('data-masp');
+        document.getElementById('modal-delete-masp').value = masp;
+    });
+
+
+</script>

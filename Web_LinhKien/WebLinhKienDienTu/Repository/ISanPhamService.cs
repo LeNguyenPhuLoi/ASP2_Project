@@ -15,7 +15,7 @@ namespace WebLinhKienDienTu.Repository
         List<Sanpham> TimSanPhamTheoTen(string tensp);
 
         // hàm thêm sản phẩm
-        void AddSanPham(string Masp, string Tensp, decimal Dongia, string Dvt,
+        void AddSanPham(string Tensp, decimal Dongia, string Dvt,
                         string Mota, string Hinhanh, int Soluongton, string Maloai);
 
         // hàm sửa sản phẩm
@@ -26,6 +26,6 @@ namespace WebLinhKienDienTu.Repository
         bool DeleteSanPham(string Masp);
 
         // hàm tìm kiếm
-        List<Sanpham> TimKiem(string searchMaSp, string searchTenSp);
+        List<Sanpham> TimKiem(string searchMaSp, string searchTenSp, string searchMaLoai);
     }
 }

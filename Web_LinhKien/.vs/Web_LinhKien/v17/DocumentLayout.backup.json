@@ -1,26 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\K\u00EC 5\\ASP2_Project\\ASP2_Project\\Web_LinhKien\\",
+  "WorkspaceRootPath": "D:\\K\u00EC 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|d:\\k\u00EC 5\\asp2_project\\asp2_project\\web_linhkien\\weblinhkiendientu\\views\\admin\\quanlyloaisp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\views\\admin\\quanlyloaisp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|d:\\k\u00EC 5\\asp2_project\\asp2_project\\web_linhkien\\weblinhkiendientu\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|d:\\k\u00EC 5\\asp2_project\\asp2_project\\web_linhkien\\weblinhkiendientu\\repository\\loaispservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\repository\\loaispservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|d:\\k\u00EC 5\\asp2_project\\asp2_project\\web_linhkien\\weblinhkiendientu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|d:\\k\u00EC 5\\asp2_project\\asp2_project\\web_linhkien\\weblinhkiendientu\\repository\\iloaispservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\repository\\iloaispservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|d:\\k\u00EC 5\\aspnet 2\\asp2_project\\web_linhkien\\weblinhkiendientu\\views\\admin\\quanlysp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\views\\admin\\quanlysp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,71 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "D:\\K\u00EC 5\\ASP2_Project\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Controllers\\AdminController.cs",
-              "ToolTip": "D:\\K\u00EC 5\\ASP2_Project\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "WebLinhKienDienTu\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAgwDsAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T03:15:21.941Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ILoaiSPService.cs",
-              "DocumentMoniker": "D:\\K\u00EC 5\\ASP2_Project\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Repository\\ILoaiSPService.cs",
-              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Repository\\ILoaiSPService.cs",
-              "ToolTip": "D:\\K\u00EC 5\\ASP2_Project\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Repository\\ILoaiSPService.cs",
-              "RelativeToolTip": "WebLinhKienDienTu\\Repository\\ILoaiSPService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T03:14:56.071Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LoaiSPService.cs",
-              "DocumentMoniker": "D:\\K\u00EC 5\\ASP2_Project\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Repository\\LoaiSPService.cs",
-              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Repository\\LoaiSPService.cs",
-              "ToolTip": "D:\\K\u00EC 5\\ASP2_Project\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Repository\\LoaiSPService.cs",
-              "RelativeToolTip": "WebLinhKienDienTu\\Repository\\LoaiSPService.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAMwCQAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T03:12:04.234Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "QuanLyLoaiSP.cshtml",
-              "DocumentMoniker": "D:\\K\u00EC 5\\ASP2_Project\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Views\\Admin\\QuanLyLoaiSP.cshtml",
-              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Views\\Admin\\QuanLyLoaiSP.cshtml",
-              "ToolTip": "D:\\K\u00EC 5\\ASP2_Project\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Views\\Admin\\QuanLyLoaiSP.cshtml",
-              "RelativeToolTip": "WebLinhKienDienTu\\Views\\Admin\\QuanLyLoaiSP.cshtml",
-              "ViewState": "AgIAAHgAAAAAAAAAAAAAAIcAAAA4AAAAAAAAAA==",
+              "Title": "QuanLySP.cshtml",
+              "DocumentMoniker": "D:\\K\u00EC 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Views\\Admin\\QuanLySP.cshtml",
+              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Views\\Admin\\QuanLySP.cshtml",
+              "ToolTip": "D:\\K\u00EC 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Views\\Admin\\QuanLySP.cshtml*",
+              "RelativeToolTip": "WebLinhKienDienTu\\Views\\Admin\\QuanLySP.cshtml*",
+              "ViewState": "AgIAAMwAAAAAAAAAAAAAAOQAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-12T03:09:18.547Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\K\u00EC 5\\ASP2_Project\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Program.cs",
-              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Program.cs",
-              "ToolTip": "D:\\K\u00EC 5\\ASP2_Project\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Program.cs",
-              "RelativeToolTip": "WebLinhKienDienTu\\Program.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAADwvx8AAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T03:06:23.499Z",
+              "WhenOpened": "2025-11-12T13:41:09.574Z",
               "EditorCaption": ""
             }
           ]

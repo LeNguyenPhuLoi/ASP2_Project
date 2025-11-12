@@ -38,12 +38,16 @@ namespace WebLinhKienDienTu.Repository
         }
 
         // hàm thêm sản phẩm
-        public void AddSanPham(string Masp, string Tensp, decimal Dongia, string Dvt,
+        public void AddSanPham(string Tensp, decimal Dongia, string Dvt,
                                string Mota, string Hinhanh, int Soluongton, string Maloai)
         {
+            string masp;
+            int moi = _db.Sanphams.Count() + 1;
+            masp = "SP" + moi.ToString("D3");
+
             var sp = new Sanpham
             {
-                Masp = Masp,
+                Masp = masp,
                 Tensp = Tensp,
                 Dongia = Dongia,
                 Dvt = Dvt,
@@ -93,7 +97,7 @@ namespace WebLinhKienDienTu.Repository
         }
 
         // hàm tìm kiếm
-        public List<Sanpham> TimKiem(string searchMaSp, string searchTenSp)
+        public List<Sanpham> TimKiem(string searchMaSp, string searchTenSp, string searchMaLoai)
         {
             var query = _db.Sanphams.AsQueryable();
 
@@ -105,6 +109,11 @@ namespace WebLinhKienDienTu.Repository
             if (!string.IsNullOrEmpty(searchTenSp))
             {
                 query = query.Where(k => k.Tensp.Contains(searchTenSp));
+            }
+
+            if (!string.IsNullOrEmpty(searchMaLoai))
+            {
+                query = query.Where(k => k.Maloai == searchMaLoai);
             }
             return query.ToList();
         }
