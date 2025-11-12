@@ -1,5 +1,4 @@
-﻿using AspNetCoreGeneratedDocument;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebLinhKienDienTu.Repository;
 
@@ -35,9 +34,9 @@ namespace WebLinhKienDienTu.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddKhoHang(string Makho, string Tenkho, string Diachi, string Manv, string Soluongloaihang)
+        public IActionResult AddKhoHang(string Tenkho, string Diachi, string Manv, string Soluongloaihang)
         {
-            _khohangservice.AddKhoHang(Makho, Tenkho, Diachi, Manv, Soluongloaihang);
+            _khohangservice.AddKhoHang(Tenkho, Diachi, Manv, Soluongloaihang);
             return RedirectToAction("KhoHang");
         }
 

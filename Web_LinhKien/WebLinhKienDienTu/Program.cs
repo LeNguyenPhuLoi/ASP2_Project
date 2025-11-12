@@ -31,6 +31,7 @@ namespace WebLinhKienDienTu
             builder.Services.AddScoped<ISanPhamService, SanPhamService>();
             builder.Services.AddScoped<ILoaiSPService, LoaiSPService>();
             builder.Services.AddScoped<IKhoHangService, KhoHangService>();
+            builder.Services.AddScoped<IHoaDonService, HoaDonService>();
 
 
             var app = builder.Build();

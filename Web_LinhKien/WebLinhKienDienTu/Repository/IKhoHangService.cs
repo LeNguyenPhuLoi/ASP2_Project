@@ -14,7 +14,7 @@ namespace WebLinhKienDienTu.Repository
         public List<Khohang> TimKhoHangTheoTenKho(string tenkho);
 
         //hàm thêm kho hàng
-        public void AddKhoHang(string Makho, string Tenkho, string Diachi, string Manv, string Soluongloaihang);
+        public void AddKhoHang(string Tenkho, string Diachi, string Manv, string Soluongloaihang);
 
         //hàm sửa kho hàng
         public bool EditKhoHang(string Makho, string Tenkho, string Diachi, string Manv, string Soluongloaihang);

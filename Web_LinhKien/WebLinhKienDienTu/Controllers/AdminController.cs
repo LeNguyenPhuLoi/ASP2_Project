@@ -7,16 +7,61 @@ namespace WebLinhKienDienTu.Controllers
     {
         public readonly ILoaiSPService _loaiSPService;
         public readonly ISanPhamService _sanphamservice;
+        public readonly IHoaDonService _hoadonservice;
 
-        public AdminController(ILoaiSPService loaiSanPhamService, ISanPhamService sanphamservice)
+        public AdminController(ILoaiSPService loaiSanPhamService, ISanPhamService sanphamservice, IHoaDonService hoadonservice)
         {
             _loaiSPService = loaiSanPhamService;
             _sanphamservice = sanphamservice;
+            _hoadonservice = hoadonservice;
         }
 
-        public IActionResult QuanLyHoaDon()
+        public IActionResult QuanLyHoaDon(int page = 1)
         {
-            return View();
+            int pageSize = 5; // Số dòng mỗi trang
+
+            // Lấy toàn bộ danh sách
+            var danhsach = _hoadonservice.LayDanhSachHoaDon()
+                                          .OrderBy(k => k.Mahd);
+
+            // Tính toán phân trang
+            var data = danhsach.Skip((page - 1) * pageSize)
+                               .Take(pageSize)
+                               .ToList();
+
+            // Gửi thông tin phân trang sang View
+            ViewBag.Page = page;
+            ViewBag.TotalPage = (int)Math.Ceiling((double)danhsach.Count() / pageSize);
+
+            return View(data);
+        }
+
+        [HttpPost]
+        public IActionResult QuanLyHoaDon(string searchMa, string searchKhachHang, string searchTrangThai)
+        {
+            var model = _hoadonservice.TimKiem(searchMa, searchKhachHang, searchTrangThai);
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult AddHoaDon(string Makh, string Ngaylap, string Manv, string Tongtien, string Trangthai)
+        {
+            _hoadonservice.AddHoaDon(Makh, Ngaylap, Manv, Tongtien, Trangthai);
+            return RedirectToAction("QuanLyHoaDon");
+        }
+
+        [HttpPost]
+        public IActionResult EditHoaDon(string Mahoadon, string Makh, string Ngaylap, string Manv, string Tongtien, string Trangthai)
+        {
+            _hoadonservice.EditHoaDon(Mahoadon, Makh, Ngaylap, Manv, Tongtien, Trangthai);
+            return RedirectToAction("QuanLyHoaDon");
+        }
+
+        [HttpPost]
+        public IActionResult DeleteHoaDon(string Mahoadon)
+        {
+            _hoadonservice.DeleteHoaDon(Mahoadon);
+            return RedirectToAction("QuanLyHoaDon");
         }
 
         public IActionResult QuanLyKhoSP()

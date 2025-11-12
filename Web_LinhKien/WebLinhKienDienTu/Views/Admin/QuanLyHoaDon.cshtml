@@ -1,8 +1,13 @@
-﻿@{
-    Layout = "/Views/Shared/_AdminLayout.cshtml"; // Chỉ định layout mới cho trang Index
-    ViewData["Title"] = "Admin Page";
+﻿@using Microsoft.AspNetCore.Identity
+@using WebLinhKienDienTu.Models
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    ViewData["Title"] = "Home Page";
 }
 
+@model List<WebLinhKienDienTu.Models.Hoadon>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,9 +35,10 @@
 </head>
 
 <body>
-
-    <div class="container mt-4">
-        <div class="card shadow-lg">
+    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+    {
+        <div class="container mt-4">
+            <div class="card shadow-lg">
             <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
                 <h4 class="mb-0">Quản lý hóa đơn</h4>
                 <a class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#addHoaDon">+ Thêm <b>hóa đơn</b></a>
@@ -40,26 +46,26 @@
 
             <div class="card-body">
                 <!-- Thanh tìm kiếm -->
-                <form class="row mb-3">
-                    <div class="col-md-3">
-                        <input type="text" class="form-control" name="searchMa" placeholder="Tìm theo mã hóa đơn">
-                    </div>
-                    <div class="col-md-3">
-                        <input type="text" class="form-control" name="searchKhachHang" placeholder="Tìm theo khách hàng">
-                    </div>
-                    <div class="col-md-3">
-                        <select class="form-select" name="trangThai">
-                            <option value="">-- Trạng thái --</option>
-                            <option>Đã thanh toán</option>
-                            <option>Chưa thanh toán</option>
-                            <option>Đã hủy</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3 text-end">
-                        <button class="btn btn-primary" type="submit">Tìm kiếm</button>
-                        <a class="btn btn-secondary">Làm mới</a>
-                    </div>
-                </form>
+                    <form class="row mb-3" method="post" asp-action="QuanLyHoaDon" asp-controller="Admin">
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" name="searchMa" placeholder="Tìm theo mã hóa đơn" value="@ViewBag.searchMa" />
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" name="searchKhachHang" placeholder="Tìm theo khách hàng" value="@ViewBag.searchKhachHang" />
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-select" name="searchTrangThai" value="@ViewBag.searchTrangThai">
+                                <option value="">-- Trạng thái --</option>
+                                <option>Đã thanh toán</option>
+                                <option>Chưa thanh toán</option>
+                                <option>Đã hủy</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 text-end">
+                            <button class="btn btn-primary" type="submit">Tìm kiếm</button>
+                            <a class="btn btn-secondary" href="@Url.Action("QuanLyHoaDon", "Admin")">Làm mới</a>
+                        </div>
+                    </form>
 
                 <!-- Bảng danh sách -->
                 <table class="table table-bordered text-center align-middle">
@@ -75,147 +81,227 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>HD001</td>
-                            <td>Nguyễn Văn An</td>
-                            <td>19/10/2025</td>
-                            <td>Trần Thị Mỹ Tuyền</td>
-                            <td>2.450.000</td>
-                            <td><span class="badge bg-success">Đã thanh toán</span></td>
-                            <td>
-                                <a class="btn btn-info btn-sm" asp-controller="GioHang" asp-action="ChiTietHoaDon">Chi tiết</a>
-                                <a class="btn btn-warning btn-sm" data-bs-target="#editHoaDon" class="edit" data-bs-toggle="modal">Sửa</a>
-                                <a class="btn btn-danger btn-sm" data-bs-target="#deleteHoaDon" class="delete" data-bs-toggle="modal">Xóa</a>                          
-                            </td>
-                        </tr>
-
-                        <div id="editHoaDon" class="modal fade">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <form action="#" method="POST">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title">Sửa Hóa Đơn</h4>
-                                            <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <input type="hidden" name="type" value="add">
-                                            <div class="form-group">
-                                                <label>Mã Hóa Đơn</label>
-                                                <input type="text" class="form-control" required name="mahd" value="HD001">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Tên Khách Hàng</label>
-                                                <input type="text" class="form-control" required name="tenkhp" value="Nguyễn Văn An">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Ngày Lập</label>
-                                                <input type="text" class="form-control" required name="ngaylap" value="19/10/2025">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Tổng Tiền</label>
-                                                <input class="form-control" required name="tongtien" value="2.450.000">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Trạng Thái</label>
-                                                <select class="form-select" name="trangThai" required value="Đã thanh toán">
-                                                    <option value="Đã thanh toán">Đã thanh toán</option>
-                                                    <option value="Chưa thanh toán">Chưa thanh toán</option>
-                                                    <option value="Đã hủy">Đã hủy</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Hủy">
-                                            <input type="submit" class="btn btn-warning" value="Sửa">
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="deleteHoaDon" class="modal fade">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <form action="#">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title">Xóa Hóa Đơn</h4>
-                                            <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <input type="hidden" name="type" value="delete">
-                                            <div class="form-group">
-                                                <div class="form-group">
-                                                    <input type="hidden" name="masp" value="">
-                                                </div>
-                                                <div class="modal-body">
-                                                    <p>Bạn có muốn xóa hóa đơn này?</p>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Hủy">
-                                                    <input type="submit" class="btn btn-danger" value="Xóa">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
+                            @if (Model != null)
+                            {
+                                @foreach (var hoadon in Model)
+                                {
+                                    <tr>
+                                        <td>@hoadon.Mahd</td>
+                                        <td>@hoadon.Makh</td>
+                                        <td>@hoadon.Ngaylap.Value.ToShortDateString()</td>
+                                        <td>@hoadon.Manv</td>
+                                        <td>@hoadon.Tongtien</td>
+                                        @if (hoadon.Trangthai == "Đã thanh toán")
+                                        {
+                                            <td><span class="badge bg-success">@hoadon.Trangthai</span></td>
+                                        }
+                                        else
+                                        {
+                                            <td><span class="badge bg-danger">@hoadon.Trangthai</span></td>
+                                        }
+                                        <td>
+                                            <a class="btn btn-info btn-sm" asp-controller="GioHang" asp-action="ChiTietHoaDon">Chi tiết</a>
+                                            <a class="btn btn-warning btn-sm edit-btn"
+                                               data-bs-toggle="modal"
+                                               data-bs-target="#editHoaDon"
+                                               data-mahoadon="@hoadon.Mahd"
+                                               data-makh="@hoadon.Makh"
+                                               data-ngaylap="@hoadon.Ngaylap"
+                                               data-manv="@hoadon.Manv"
+                                               data-tongtien="@hoadon.Tongtien"
+                                               data-trangthai="@hoadon.Trangthai">
+                                                Sửa
+                                            </a>
+                                            <a class="btn btn-danger btn-sm delete-btn"
+                                               data-bs-toggle="modal"
+                                               data-bs-target="#deleteHoaDon"
+                                               data-mahoadon="@hoadon.Mahd">
+                                                Xóa
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
                     </tbody>
                 </table>
 
+                    <nav>
+                        <ul class="pagination justify-content-center">
+
+                            @if (ViewBag.Page > 1)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link" href="@Url.Action("QuanLyHoaDon", new { page = ViewBag.Page - 1 })">Previous</a>
+                                </li>
+                            }
+
+                            @for (int i = 1; i <= ViewBag.TotalPage; i++)
+                            {
+                                <li class="page-item @(i == ViewBag.Page ? "active" : "")">
+                                    <a class="page-link" href="@Url.Action("QuanLyHoaDon", new { page = i })">@i</a>
+                                </li>
+                            }
+
+                            @if (ViewBag.Page < ViewBag.TotalPage)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link" href="@Url.Action("QuanLyHoaDon", new { page = ViewBag.Page + 1 })">Next</a>
+                                </li>
+                            }
+
+                        </ul>
+                    </nav>
+
                 <!-- Add Modal HTML -->
-                <div id="addHoaDon" class="modal fade">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <form action="sanphamProcess.php" method="POST">
+                    <div id="addHoaDon" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                @using (Html.BeginForm("AddHoaDon", "Admin", FormMethod.Post))
+                                {
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Thêm Hóa Đơn</h4>
+                                        <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            @Html.Label("Khách Hàng")
+                                            @Html.TextBox("Makh", "", new { @class = "form-control", required = "required" })
+                                        </div>
+                                        <div class="mb-3">
+                                            @Html.Label("Ngày Lập")
+                                            @Html.TextBox("Ngaylap", "", new { @class = "form-control", required = "required" })
+                                        </div>
+                                        <div class="mb-3">
+                                            @Html.Label("Nhân Viên Lập Hóa Đơn")
+                                            @Html.TextBox("Manv", "", new { @class = "form-control", required = "required" })
+                                        </div>
+                                        <div class="mb-3">
+                                            @Html.Label("Tổng Tiền")
+                                            @Html.TextBox("Tongtien", "", new { @class = "form-control", required = "required" })
+                                        </div>
+                                        <div class="mb-3">
+                                            @Html.Label("Trạng Thái")
+                                            @Html.DropDownList("Trangthai",
+                                    new List<SelectListItem>
+                                    {
+                                    new SelectListItem { Text = "Đã thanh toán", Value = "Đã thanh toán" },
+                                    new SelectListItem { Text = "Chưa thanh toán", Value = "Chưa thanh toán" },
+                                    new SelectListItem { Text = "Đã hủy", Value = "Đã hủy" }
+                                    },
+                                    new { @class = "form-select", required = "required" })
+                                        </div>
 
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Thêm Hóa Đơn</h4>
-                                    <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
-                                </div>
-
-                                <div class="modal-body">
-                                    <input type="hidden" name="type" value="add">
-                                    <div class="form-group">
-                                        <label>Mã Hóa Đơn</label>
-                                        <input type="text" class="form-control" required name="mahd">
                                     </div>
-                                    <div class="form-group">
-                                        <label>Tên Khách Hàng</label>
-                                        <input type="text" class="form-control" required name="tenkhp">
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                        <button type="submit" class="btn btn-success">Thêm</button>
                                     </div>
-                                    <div class="form-group">
-                                        <label>Ngày Lập</label>
-                                        <input type="text" class="form-control" required name="ngaylap">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Tổng Tiền</label>
-                                        <input class="form-control" required name="tongtien">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Trạng Thái</label>
-                                        <select class="form-select" name="trangThai" required>
-                                            <option value="Đã thanh toán">Đã thanh toán</option>
-                                            <option value="Chưa thanh toán">Chưa thanh toán</option>
-                                            <option value="Đã hủy">Đã hủy</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="modal-footer">
-                                    <input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Hủy">
-                                    <input type="submit" class="btn btn-success" value="Thêm">
-                                </div>
-                            </form>
+                                }
+                            </div>
                         </div>
                     </div>
-                </div>
+
+                    <div id="editHoaDon" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                @using (Html.BeginForm("EditHoaDon", "Admin", FormMethod.Post))
+                                {
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Sửa Kho Hàng</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            @Html.Label("Mã Hóa Đơn")
+                                            @Html.TextBox("Mahoadon", "", new { @class = "form-control", id = "modal-mahoadon", required = "required", @readonly = "readonly" })
+                                        </div>
+                                        <div class="mb-3">
+                                            @Html.Label("Khách Hàng")
+                                            @Html.TextBox("Makh", "", new { @class = "form-control", id = "modal-makh", required = "required" })
+                                        </div>
+                                        <div class="mb-3">
+                                            @Html.Label("Ngày Lập")
+                                            @Html.TextBox("Ngaylap", "", new { @class = "form-control", id = "modal-ngaylap", required = "required" })
+                                        </div>
+                                        <div class="mb-3">
+                                            @Html.Label("Nhân Viên Lập Hóa Đơn")
+                                            @Html.TextBox("Manv", "", new { @class = "form-control", id = "modal-manv", required = "required" })
+                                        </div>
+                                        <div class="mb-3">
+                                            @Html.Label("Tổng Tiền")
+                                            @Html.TextBox("Tongtien", "", new { @class = "form-control", id = "modal-tongtien", required = "required" })
+                                        </div>
+                                        <div class="mb-3">
+                                            @Html.Label("Trạng Thái")
+                                            @Html.DropDownList("Trangthai",
+                                    new List<SelectListItem>
+                                    {
+                                    new SelectListItem { Text = "Đã thanh toán", Value = "Đã thanh toán" },
+                                    new SelectListItem { Text = "Chưa thanh toán", Value = "Chưa thanh toán" },
+                                    new SelectListItem { Text = "Đã hủy", Value = "Đã hủy" }
+                                    },
+                                    new { @class = "form-select", id = "modal-trangthai", required = "required" })
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                        <button type="submit" class="btn btn-info">Sửa</button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="deleteHoaDon" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                @using (Html.BeginForm("DeleteHoaDon", "Admin", FormMethod.Post))
+                                {
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Xóa Kho Hàng</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        @Html.TextBox("Mahoadon", "", new { @class = "form-control", id = "modal-delete-mahoadon", required = "required", @readonly = "readonly" })
+                                        <p>Bạn có muốn xóa kho này?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                        <button type="submit" class="btn btn-danger">Xóa</button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
 
             </div>
         </div>
     </div>
+    }
 
 </body>
 
 </html>
+<script>
+
+    var editModal = document.getElementById('editHoaDon');
+    editModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget;
+        document.getElementById('modal-mahoadon').value = button.getAttribute('data-mahoadon');
+        document.getElementById('modal-makh').value = button.getAttribute('data-makh');
+        document.getElementById('modal-ngaylap').value = button.getAttribute('data-ngaylap');
+        document.getElementById('modal-manv').value = button.getAttribute('data-manv');
+        document.getElementById('modal-tongtien').value = button.getAttribute('data-tongtien');
+        document.getElementById('modal-trangthai').value = button.getAttribute('data-trangthai');
+    });
+
+    var deleteModal = document.getElementById('deleteHoaDon');
+    deleteModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget;
+        var makho = button.getAttribute('data-mahoadon');
+        document.getElementById('modal-delete-mahoadon').value = makho;
+    });
+
+
+</script>

@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using WebLinhKienDienTu.Models
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -62,15 +67,18 @@
                         </form>
                     </div>
 
-                    <div class="header-cart">
-                        @* CART *@
-                        <form class="d-flex" asp-controller="GioHang" asp-action="GioHang">
-                            <button style="border:none;" class="btn btn-outline-dark" type="submit">
-                                <i class="fa fa-shopping-cart"></i>
-                                <span>Carts</span>
-                            </button>
-                        </form>
-                    </div>
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <div class="header-cart">
+                            @* CART *@
+                            <form class="d-flex" asp-controller="GioHang" asp-action="GioHang">
+                                <button style="border:none;" class="btn btn-outline-dark" type="submit">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    <span>Carts</span>
+                                </button>
+                            </form>
+                        </div>
+                    }
 
                     <!-- Login partial -->
                     <partial name="_LoginPartial" />
