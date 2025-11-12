@@ -40,11 +40,15 @@ namespace WebLinhKienDienTu.Repository
         }
 
         // hàm thêm loại sản phẩm
-        public void AddLoaiSanPham(string Maloai, string Tenloai, string Mota)
+        public void AddLoaiSanPham(string Tenloai, string Mota)
         {
+            string maloai;
+            int moi = _db.Loaisanphams.Count() + 1;
+            maloai = "LSP" + moi.ToString("D2");
+
             var loai = new Loaisanpham
             {
-                Maloai = Maloai,
+                Maloai = maloai,
                 Tenloai = Tenloai,
                 Mota = Mota
             };

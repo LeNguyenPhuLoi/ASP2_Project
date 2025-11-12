@@ -1,105 +1,12 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\ASP2_Project\\Web_LinhKien\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|d:\\asp2_project\\web_linhkien\\weblinhkiendientu\\views\\khohang\\khohang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\views\\khohang\\khohang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|d:\\asp2_project\\web_linhkien\\weblinhkiendientu\\views\\admin\\quanlysp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\views\\admin\\quanlysp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|d:\\asp2_project\\web_linhkien\\weblinhkiendientu\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|d:\\asp2_project\\web_linhkien\\weblinhkiendientu\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|d:\\asp2_project\\web_linhkien\\weblinhkiendientu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "D:\\K\u00EC 5\\ASP2_Project\\ASP2_Project\\Web_LinhKien\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "KhoHang.cshtml",
-              "DocumentMoniker": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Views\\KhoHang\\KhoHang.cshtml",
-              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Views\\KhoHang\\KhoHang.cshtml",
-              "ToolTip": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Views\\KhoHang\\KhoHang.cshtml",
-              "RelativeToolTip": "WebLinhKienDienTu\\Views\\KhoHang\\KhoHang.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAABVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-12T01:18:48.734Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Program.cs",
-              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Program.cs",
-              "ToolTip": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Program.cs",
-              "RelativeToolTip": "WebLinhKienDienTu\\Program.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAC4AAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T01:15:26.221Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "WebLinhKienDienTu\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACEAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-12T01:09:46.746Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_AdminLayout.cshtml",
-              "DocumentMoniker": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Views\\Shared\\_AdminLayout.cshtml",
-              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Views\\Shared\\_AdminLayout.cshtml",
-              "ToolTip": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Views\\Shared\\_AdminLayout.cshtml",
-              "RelativeToolTip": "WebLinhKienDienTu\\Views\\Shared\\_AdminLayout.cshtml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAACgAAAB6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-12T01:00:33.564Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "QuanLySP.cshtml",
-              "DocumentMoniker": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Views\\Admin\\QuanLySP.cshtml",
-              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Views\\Admin\\QuanLySP.cshtml",
-              "ToolTip": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Views\\Admin\\QuanLySP.cshtml",
-              "RelativeToolTip": "WebLinhKienDienTu\\Views\\Admin\\QuanLySP.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAABYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-12T00:56:32.724Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

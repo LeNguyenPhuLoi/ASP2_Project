@@ -14,7 +14,7 @@ namespace WebLinhKienDienTu.Repository
         public List<Loaisanpham> TimLoaiSanPhamTheoTenLoai(string tenloai);
 
         //hàm thêm loại sản phẩm
-        public void AddLoaiSanPham(string Maloai, string Tenloai, string Mota);
+        public void AddLoaiSanPham(string Tenloai, string Mota);
 
         //hàm sửa loại sản phẩm
         public bool EditLoaiSanPham(string Maloai, string Tenloai, string Mota);

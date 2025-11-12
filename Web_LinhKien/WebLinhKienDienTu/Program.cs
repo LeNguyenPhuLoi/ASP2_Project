@@ -29,6 +29,7 @@ namespace WebLinhKienDienTu
 
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<ISanPhamService, SanPhamService>();
+            builder.Services.AddScoped<ILoaiSPService, LoaiSPService>();
             builder.Services.AddScoped<IKhoHangService, KhoHangService>();
 
 
