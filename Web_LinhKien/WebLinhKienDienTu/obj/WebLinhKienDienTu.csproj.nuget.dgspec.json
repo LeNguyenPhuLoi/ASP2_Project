@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\test\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\WebLinhKienDienTu.csproj": {}
+    "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\WebLinhKienDienTu.csproj": {}
   },
   "projects": {
-    "D:\\test\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\WebLinhKienDienTu.csproj": {
+    "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\WebLinhKienDienTu.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\test\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\WebLinhKienDienTu.csproj",
+        "projectUniqueName": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\WebLinhKienDienTu.csproj",
         "projectName": "WebLinhKienDienTu",
-        "projectPath": "D:\\test\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\WebLinhKienDienTu.csproj",
+        "projectPath": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\WebLinhKienDienTu.csproj",
         "packagesPath": "C:\\Users\\leloi\\.nuget\\packages\\",
-        "outputPath": "D:\\test\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\obj\\",
+        "outputPath": "D:\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
