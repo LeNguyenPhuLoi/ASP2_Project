@@ -89,15 +89,29 @@ namespace WebLinhKienDienTu.Controllers
             // Truyền danh sách loại vào View
             ViewBag.DanhSachLoai = _loaiSPService.LayDanhSachLoaiSanPham();
 
+            // **Giữ ô tìm kiếm trống ban đầu**
+            ViewBag.searchMaSp = "";
+            ViewBag.searchTenSp = "";
+            ViewBag.searchLoai = "";
+
             return View(data);
         }
 
         [HttpPost]
-        public IActionResult QuanLySP(string searchMaSP, string searchTenSP, string searchMaLoai)
+        public IActionResult QuanLySP(string searchMaSp, string searchTenSp, string searchLoai)
         {
-            var model = _sanphamservice.TimKiem(searchMaSP, searchTenSP, searchMaLoai);
-            // Giữ lại danh sách loại để hiển thị lại combobox
+            // Gọi đúng service (tham số thứ ba là mã loại)
+            var model = _sanphamservice.TimKiem(searchMaSp, searchTenSp, searchLoai);
+
+            // Nạp lại danh sách loại cho dropdown
             ViewBag.DanhSachLoai = _loaiSPService.LayDanhSachLoaiSanPham();
+
+            // Giữ lại giá trị đã nhập/tìm
+            ViewBag.searchMaSp = searchMaSp;
+            ViewBag.searchTenSp = searchTenSp;
+            ViewBag.searchLoai = searchLoai;
+
+            // Không cần phân trang ở kết quả tìm kiếm
             return View(model);
         }
 
@@ -171,7 +185,7 @@ namespace WebLinhKienDienTu.Controllers
         {
             _sanphamservice.DeleteSanPham(Masp);
             return RedirectToAction("QuanLySP");
-        }    
+        }
 
         public IActionResult QuanLyLoaiSP(int page = 1)
         {

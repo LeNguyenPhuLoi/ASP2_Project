@@ -21,9 +21,9 @@
     <link href="css/styles.css" rel="stylesheet" />
     <style>
         .pagination {
-        display: flex;
-        justify-content: center; /* Căn giữa theo chiều ngang */
-        align-items: center;
+            display: flex;
+            justify-content: center; /* Căn giữa theo chiều ngang */
+            align-items: center;
         }
 
     </style>
@@ -51,9 +51,11 @@
                     <div class="col-md-2">
                         <select class="form-select" name="searchLoai">
                             <option value="">-- Tất cả loại --</option>
-                            @foreach (var loai in @ViewBag.DanhSachLoai as List<Loaisanpham>)
+                            @foreach (var loai in ViewBag.DanhSachLoai as List<Loaisanpham>)
                             {
-                                <option value="@loai.Maloai">@loai.Tenloai</option>
+                                <option value="@loai.Maloai" selected="@(ViewBag.searchLoai == loai.Maloai ? "selected" : null)">
+                                    @loai.Maloai - @loai.Tenloai
+                                </option>
                             }
                         </select>
                     </div>
@@ -184,8 +186,14 @@
                                         @Html.TextBox("Soluongton", "", new { @class = "form-control", required = "required" })
                                     </div>
                                     <div class="mb-3">
-                                        @Html.Label("Mã Loại")
-                                        @Html.TextBox("Maloai", "", new { @class = "form-control", required = "required" })
+                                        @Html.Label("Loại Sản Phẩm")
+                                        <select name="Maloai" class="form-select" required>
+                                            <option value="">-- Chọn loại sản phẩm --</option>
+                                            @foreach (var loai in ViewBag.DanhSachLoai as List<Loaisanpham>)
+                                            {
+                                                <option value="@loai.Maloai">@loai.Tenloai</option>
+                                            }
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -238,8 +246,14 @@
                                         @Html.TextBox("Soluongton", "", new { @class = "form-control", id = "modal-soluongton" })
                                     </div>
                                     <div class="mb-3">
-                                        @Html.Label("Mã Loại Sản Phẩm")
-                                        @Html.TextBox("Maloai", "", new { @class = "form-control", id = "modal-maloai" })
+                                        @Html.Label("Loại Sản Phẩm")
+                                        <select name="Maloai" id="modal-maloai" class="form-select" required>
+                                            <option value="">-- Chọn loại sản phẩm --</option>
+                                            @foreach (var loai in ViewBag.DanhSachLoai as List<Loaisanpham>)
+                                            {
+                                                <option value="@loai.Maloai">@loai.Tenloai</option>
+                                            }
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
