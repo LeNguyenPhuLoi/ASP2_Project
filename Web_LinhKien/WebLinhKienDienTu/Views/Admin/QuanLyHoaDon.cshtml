@@ -101,7 +101,7 @@
                                         }
                                         <td>
                                             <a class="btn btn-info btn-sm" asp-controller="GioHang" asp-action="ChiTietHoaDon">Chi tiết</a>
-                                            <!--<a class="btn btn-warning btn-sm edit-btn"
+                                            <a class="btn btn-warning btn-sm edit-btn"
                                                data-bs-toggle="modal"
                                                data-bs-target="#editHoaDon"
                                                data-mahoadon="@hoadon.Mahd"
@@ -111,7 +111,7 @@
                                                data-tongtien="@hoadon.Tongtien"
                                                data-trangthai="@hoadon.Trangthai">
                                                 Sửa
-                                            </a>-->
+                                            </a>
                                             <a class="btn btn-danger btn-sm delete-btn"
                                                data-bs-toggle="modal"
                                                data-bs-target="#deleteHoaDon"
@@ -217,7 +217,9 @@
                                         </div>
                                         <div class="mb-3">
                                             @Html.Label("Khách Hàng")
-                                            @Html.TextBox("Makh", "", new { @class = "form-control", id = "modal-makh", required = "required" })
+                                            @Html.DropDownList("Makh", (IEnumerable<SelectListItem>)ViewBag.Makh,
+                                            "— Chọn khách hàng —",
+                                            new { @class = "form-select", id = "modal-makh", required = "required" })
                                         </div>
                                         <div class="mb-3">
                                             @Html.Label("Ngày Lập")
@@ -225,7 +227,9 @@
                                         </div>
                                         <div class="mb-3">
                                             @Html.Label("Nhân Viên Lập Hóa Đơn")
-                                            @Html.TextBox("Manv", "", new { @class = "form-control", id = "modal-manv", required = "required" })
+                                            @Html.DropDownList("Manv", (IEnumerable<SelectListItem>)ViewBag.Manv,
+                                            "— Chọn nhân viên —",
+                                            new { @class = "form-select", id = "modal-manv", required = "required" })
                                         </div>
                                         <div class="mb-3">
                                             @Html.Label("Tổng Tiền")
