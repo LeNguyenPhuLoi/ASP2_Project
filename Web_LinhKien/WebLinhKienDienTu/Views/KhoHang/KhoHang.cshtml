@@ -162,7 +162,9 @@
 										</div>
 										<div class="mb-3">
 											@Html.Label("Nhân Viên Quản Lý Kho")
-											@Html.TextBox("Manv", "", new { @class = "form-control", required = "required" })
+											@Html.DropDownList("Manv", (IEnumerable<SelectListItem>)ViewBag.Manv,
+											"— Chọn nhân viên —",
+																		new { @class = "form-select", required = "required" })
 										</div>
 										<div class="mb-3">
 											@Html.Label("Số Lượng Loại Hàng")
@@ -203,7 +205,9 @@
 										</div>
 										<div class="mb-3">
 											@Html.Label("Mã Nhân Viên Quản Lý Kho")
-											@Html.TextBox("Manv", "", new { @class = "form-control", id = "modal-manv", required = "required" })
+											@Html.DropDownList("Manv", (IEnumerable<SelectListItem>)ViewBag.Manv,
+											"— Chọn nhân viên —",
+																		new { @class = "form-select", id = "modal-manv", required = "required" })
 										</div>
 										<div class="mb-3">
 											@Html.Label("Số Lượng Loại Hàng")

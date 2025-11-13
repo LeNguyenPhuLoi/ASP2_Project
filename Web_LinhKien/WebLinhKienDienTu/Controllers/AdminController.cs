@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using WebLinhKienDienTu.Models;
 using WebLinhKienDienTu.Repository;
 
 namespace WebLinhKienDienTu.Controllers
@@ -33,20 +35,32 @@ namespace WebLinhKienDienTu.Controllers
             ViewBag.Page = page;
             ViewBag.TotalPage = (int)Math.Ceiling((double)danhsach.Count() / pageSize);
 
+            IEnumerable<SelectListItem> khachHangs = _hoadonservice.GetDanhSachKhachHang();
+            ViewBag.Makh = khachHangs;
+
+            IEnumerable<SelectListItem> nhanviens = _hoadonservice.GetDanhSachNhanVien();
+            ViewBag.Manv = nhanviens;
+
             return View(data);
         }
 
         [HttpPost]
         public IActionResult QuanLyHoaDon(string searchMa, string searchKhachHang, string searchTrangThai)
         {
+            IEnumerable<SelectListItem> khachHangs = _hoadonservice.GetDanhSachKhachHang();
+            ViewBag.Makh = khachHangs;
+
+            IEnumerable<SelectListItem> nhanviens = _hoadonservice.GetDanhSachNhanVien();
+            ViewBag.Manv = nhanviens;
+
             var model = _hoadonservice.TimKiem(searchMa, searchKhachHang, searchTrangThai);
             return View(model);
         }
 
         [HttpPost]
-        public IActionResult AddHoaDon(string Makh, string Ngaylap, string Manv, string Tongtien, string Trangthai)
+        public IActionResult AddHoaDon(string Makh,string Manv, string Tongtien, string Trangthai)
         {
-            _hoadonservice.AddHoaDon(Makh, Ngaylap, Manv, Tongtien, Trangthai);
+            _hoadonservice.AddHoaDon(Makh, Manv, Tongtien, Trangthai);
             return RedirectToAction("QuanLyHoaDon");
         }
 
