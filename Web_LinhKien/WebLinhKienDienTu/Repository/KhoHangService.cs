@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using WebLinhKienDienTu.Models;
 
 namespace WebLinhKienDienTu.Repository
@@ -38,6 +39,20 @@ namespace WebLinhKienDienTu.Repository
                 .Where(x => x.Tenkho.Contains(tenkho))
                 .ToList();
             return list;
+        }
+
+        //lấy danh sách nhân viên
+        public IEnumerable<SelectListItem> GetDanhSachNhanVien()
+        {
+            var nhanviens = _db.Nhanviens
+                .Select(nv => new SelectListItem
+                {
+                    Text = nv.Tennv,
+                    Value = nv.Manv
+                })
+                .ToList();
+
+            return nhanviens;
         }
 
         //hàm thêm kho hàng

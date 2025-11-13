@@ -1,4 +1,5 @@
-﻿using WebLinhKienDienTu.Models;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using WebLinhKienDienTu.Models;
 
 namespace WebLinhKienDienTu.Repository
 {
@@ -12,6 +13,9 @@ namespace WebLinhKienDienTu.Repository
 
         //hàm tìm kho hàng theo tên kho
         public List<Khohang> TimKhoHangTheoTenKho(string tenkho);
+
+        //lấy danh sách nhân viên
+        public IEnumerable<SelectListItem> GetDanhSachNhanVien();
 
         //hàm thêm kho hàng
         public void AddKhoHang(string Tenkho, string Diachi, string Manv, string Soluongloaihang);

@@ -1,4 +1,6 @@
-﻿using System.Globalization;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Globalization;
 using WebLinhKienDienTu.Models;
 
 namespace WebLinhKienDienTu.Repository
@@ -20,8 +22,36 @@ namespace WebLinhKienDienTu.Repository
             return list;
         }
 
+        //lấy danh sách khách hàng
+        public IEnumerable<SelectListItem> GetDanhSachKhachHang()
+        {
+            var khachHangs = _db.Khachhangs
+                .Select(kh => new SelectListItem
+                {
+                    Text = kh.Tenkh,
+                    Value = kh.Makh
+                })
+                .ToList();
+
+            return khachHangs;
+        }
+
+        //lấy danh sách nhân viên
+        public IEnumerable<SelectListItem> GetDanhSachNhanVien()
+        {
+            var nhanviens = _db.Nhanviens
+                .Select(nv => new SelectListItem
+                {
+                    Text = nv.Tennv,
+                    Value = nv.Manv
+                })
+                .ToList();
+
+            return nhanviens;
+        }
+
         //hàm thêm hóa đơn
-        public void AddHoaDon(string Makh, string Ngaylap, string Manv, string Tongtien, string Trangthai)
+        public void AddHoaDon(string Makh, string Manv, string Tongtien, string Trangthai)
         {
             string Mahoadon;
             int soluongmoi = _db.Hoadons.Count() + 1;
@@ -31,7 +61,7 @@ namespace WebLinhKienDienTu.Repository
             {
                Mahd = Mahoadon,
                Makh = Makh,
-               Ngaylap = Convert.ToDateTime(Ngaylap),
+               Ngaylap = DateTime.Now.Date,
                Manv = Manv,
                Tongtien = Convert.ToDecimal(Tongtien),
                Trangthai = Trangthai

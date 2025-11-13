@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebLinhKienDienTu.Repository;
 
@@ -30,6 +31,9 @@ namespace WebLinhKienDienTu.Controllers
             ViewBag.Page = page;
             ViewBag.TotalPage = (int)Math.Ceiling((double)danhsach.Count() / pageSize);
 
+            IEnumerable<SelectListItem> nhanviens = _khohangservice.GetDanhSachNhanVien();
+            ViewBag.Manv = nhanviens;
+
             return View(data);
         }
 
@@ -57,6 +61,9 @@ namespace WebLinhKienDienTu.Controllers
         [HttpPost]
         public IActionResult KhoHang(string searchMaKho, string searchTenKho)
         {
+            IEnumerable<SelectListItem> nhanviens = _khohangservice.GetDanhSachNhanVien();
+            ViewBag.Manv = nhanviens;
+
             var model = _khohangservice.TimKiem(searchMaKho, searchTenKho);
             return View(model);
         }
