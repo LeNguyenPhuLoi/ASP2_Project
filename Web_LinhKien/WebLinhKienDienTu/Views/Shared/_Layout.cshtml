@@ -45,11 +45,15 @@
                         <form class="search-bar" method="post" asp-action="Search" asp-controller="Home">
                             <select class="form-select search-select" name="searchLoai">
                                 <option value="">Tất cả loại</option>
-                                @foreach (var loai in ViewBag.DanhSachLoai as List<Loaisanpham>)
+
+                                @if (ViewBag.DanhSachLoai != null)
                                 {
-                                    <option value="@loai.Maloai" selected="@(ViewBag.searchLoai == loai.Maloai ? "selected" : null)">
-                                        @loai.Tenloai
-                                    </option>
+                                    foreach (var loai in ViewBag.DanhSachLoai as List<Loaisanpham>)
+                                    {
+                                        <option value="@loai.Maloai" selected="@(ViewBag.searchLoai == loai.Maloai ? "selected" : null)">
+                                            @loai.Tenloai
+                                        </option>
+                                    }
                                 }
                             </select>
 
