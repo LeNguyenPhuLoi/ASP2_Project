@@ -3,6 +3,26 @@ GO
 USE QLLK
 SET DATEFORMAT DMY
 
+--THEM DU LIEU ASPNETROLES
+GO
+INSERT INTO AspNetRoles(Id, Name, NormalizedName, ConcurrencyStamp)
+VALUES(N'07966728-3f96-465e-b7cb-f7bccb599965',N'User',N'USER',N'a69adb30-ff16-4b08-b6a5-5273e672ab99'),
+		(N'ff980498-3cc9-47e6-9af8-8d27d498b436',N'Admin',N'ADMIN',N'ada11024-3e22-4d30-b2a2-391270796135')
+
+--THEM DU LIEU ASPNETUSER
+GO
+INSERT INTO AspNetUsers(Id,UserName,NormalizedUserName,Email,NormalizedEmail,EmailConfirmed,PasswordHash,SecurityStamp,ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled,AccessFailedCount,Address,DateOfBirth,FullName)
+VALUES(N'04c4d31d-8960-41b4-8bbe-4823ba4db4e6',N'admin@local.test',N'ADMIN@LOCAL.TEST',N'admin@local.test',N'ADMIN@LOCAL.TEST',1,N'AQAAAAEAACcQAAAAEObgeg7NP3bMR3P8KP3chrrUHQhEtUETJUpIuHkO6YZm73j00j8oS6Ibj3diw5q/1g==',N'STYRKRHBLTS3NU5DM4XUO74RL2UMCMIK',N'b040131b-a5d5-4250-9a81-2c44af2d5adf',null,0,0,null,1,0,null,null,null),
+		(N'c8be8d9d-8a69-4f1a-9a9d-f2d4d5acb001',N'namle75@gmail.com',N'NAMLE75@GMAIL.COM',N'namle75@gmail.com',N'NAMLE75@GMAIL.COM',1,N'AQAAAAEAACcQAAAAELNzunqKm62t0O/WxidAevmMlrvGjeqni/j4+sXNRpTGYmT9Rmx/pm6yl/VOMfgV9w==',N'6f2b2e5f-508c-4bca-a7b3-22394c30cd10',N'cf74daef-2c4d-48a6-a0a4-85e65e92b20f',NULL,0,0,NULL,1,0,NULL,NULL,N'Lê Nam'),
+		(N'd920e2b6-7b94-4e59-93ae-3c2c6345d002',N'tung98@gmail.com',N'TUNG98@GMAIL.COM',N'tung98@gmail.com',N'TUNG98@GMAIL.COM',1,N'AQAAAAEAACcQAAAAEBnmM5nvBxeKmawf3y3beqQEalr3xrm90BENXmCG0f4FoVq8U7vksFB50fhaZN3lgA==',N'8b99aa3d-94fd-4b1b-9a45-b623eaf13ab2',N'3e6b8db2-0816-4e71-9dbe-093cb05a5214',NULL,0,0,NULL,1,0,NULL,NULL,N'Nguyễn Tùng')
+
+--THEM DU LIEU ASPNETUSERROLES
+GO
+INSERT INTO AspNetUserRoles(UserId,RoleId)
+VALUES(N'04c4d31d-8960-41b4-8bbe-4823ba4db4e6',N'ff980498-3cc9-47e6-9af8-8d27d498b436'),
+		(N'c8be8d9d-8a69-4f1a-9a9d-f2d4d5acb001',N'07966728-3f96-465e-b7cb-f7bccb599965'),
+		(N'd920e2b6-7b94-4e59-93ae-3c2c6345d002',N'07966728-3f96-465e-b7cb-f7bccb599965')
+
 ---THEM DU LIEU LOAI SAN PHAM
 GO
 INSERT INTO LOAISANPHAM (MALOAI, TENLOAI, MOTA)
