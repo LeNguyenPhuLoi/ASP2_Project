@@ -212,7 +212,7 @@ public partial class QllkContext : DbContext
                 .HasMaxLength(100)
                 .HasColumnName("DIACHI");
             entity.Property(e => e.Email)
-                .HasMaxLength(100)
+                .HasMaxLength(256)
                 .HasColumnName("EMAIL");
             entity.Property(e => e.Ngaytao)
                 .HasColumnType("datetime")
@@ -299,7 +299,7 @@ public partial class QllkContext : DbContext
                 .HasMaxLength(100)
                 .HasColumnName("DOITUONG");
             entity.Property(e => e.Email)
-                .HasMaxLength(100)
+                .HasMaxLength(256)
                 .HasColumnName("EMAIL");
             entity.Property(e => e.Hoatdong)
                 .HasMaxLength(200)
@@ -396,7 +396,7 @@ public partial class QllkContext : DbContext
                 .HasMaxLength(50)
                 .HasColumnName("DIACHI");
             entity.Property(e => e.Email)
-                .HasMaxLength(100)
+                .HasMaxLength(256)
                 .HasColumnName("EMAIL");
             entity.Property(e => e.Gioitinh)
                 .HasMaxLength(5)
@@ -462,19 +462,28 @@ public partial class QllkContext : DbContext
             entity.ToTable("TAIKHOAN");
 
             entity.Property(e => e.Email)
-                .HasMaxLength(100)
+                .HasMaxLength(256)
                 .HasColumnName("EMAIL");
+
             entity.Property(e => e.Pass)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .IsFixedLength()
                 .HasColumnName("PASS");
+
             entity.Property(e => e.Quyen)
                 .HasMaxLength(50)
                 .HasColumnName("QUYEN");
+
             entity.Property(e => e.Trangthai)
                 .HasMaxLength(20)
                 .HasColumnName("TRANGTHAI");
+
+            entity.HasOne(t => t.User)
+                  .WithMany()
+                  .HasForeignKey(t => t.Email)
+                  .HasPrincipalKey(u => u.Email)
+                  .OnDelete(DeleteBehavior.Restrict);
         });
 
         modelBuilder.Entity<Thanhtoan>(entity =>

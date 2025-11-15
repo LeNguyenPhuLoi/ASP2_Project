@@ -18,4 +18,6 @@ public partial class Taikhoan
     public virtual ICollection<Lichsuhoatdong> Lichsuhoatdongs { get; set; } = new List<Lichsuhoatdong>();
 
     public virtual ICollection<Nhanvien> Nhanviens { get; set; } = new List<Nhanvien>();
+
+    public virtual ApplicationUser User { get; set; } = null!;
 }

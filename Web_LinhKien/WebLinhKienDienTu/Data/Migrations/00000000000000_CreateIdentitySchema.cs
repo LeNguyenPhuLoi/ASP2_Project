@@ -47,6 +47,12 @@ namespace WebLinhKienDienTu.Data.Migrations
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
                 });
 
+                migrationBuilder.CreateIndex(
+                    name: "IX_AspNetUsers_Email",
+                    table: "AspNetUsers",
+                    column: "Email",
+                    unique: true);
+
             migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new

@@ -36,7 +36,7 @@
 </head>
 
 <body>
-    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+    @if (SignInManager.IsSignedIn(User))
     {
         @if(Model != null)
         {       
@@ -56,7 +56,14 @@
                             </div>
                             <div class="col-md-6">
                                 <p><strong>Nhân viên lập:</strong> @Model.TenNV</p>
-                                <p><strong>Trạng thái:</strong> <span class="badge bg-success">@Model.Trangthai</span></p>
+                                @if (Model.Trangthai == "Đã thanh toán")
+                                {
+                                    <p><strong>Trạng thái:</strong> <span class="badge bg-success">@Model.Trangthai</span></p>
+                                }
+                                else
+                                {
+                                    <p><strong>Trạng thái:</strong> <span class="badge bg-danger">@Model.Trangthai</span></p>
+                                }
                                 <p><strong>Tổng tiền:</strong> <span class="text-danger fw-bold">@(Model.Soluong* Model.Dongia)</span></p>
                             </div>
                         </div>
@@ -91,9 +98,6 @@
                         </div>
                     </div>
 
-                    <div class="card-footer text-end">
-                        <button class="btn btn-primary me-2">In hóa đơn</button>
-                    </div>
                 </div>
             </div>
         }
