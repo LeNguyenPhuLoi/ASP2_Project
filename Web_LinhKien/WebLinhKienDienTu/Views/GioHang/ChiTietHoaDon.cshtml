@@ -1,6 +1,13 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Identity
+@using WebLinhKienDienTu.Models
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@{
     ViewData["Title"] = "Home Page";
 }
+
+@model WebLinhKienDienTu.ViewModels.ChiTietHoaDonViewModel
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,67 +36,68 @@
 </head>
 
 <body>
-
-    <div class="container mt-4">
-        <div class="card shadow-lg">
-            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-                <h4 class="mb-0">Chi tiết hóa đơn</h4>
-            </div>
-
-            <div class="card-body">
-                <!-- Thông tin chung -->
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <p><strong>Mã hóa đơn:</strong> HD001</p>
-                        <p><strong>Khách hàng:</strong> Nguyễn Văn An</p>
-                        <p><strong>Ngày lập:</strong> 19/10/2025</p>
+    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+    {
+        @if(Model != null)
+        {       
+            <div class="container mt-4">
+                <div class="card shadow-lg">
+                    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                        <h4 class="mb-0">Chi tiết hóa đơn</h4>
                     </div>
-                    <div class="col-md-6">
-                        <p><strong>Nhân viên lập:</strong> Trần Thị Mỹ Tuyền</p>
-                        <p><strong>Trạng thái:</strong> <span class="badge bg-success">Đã thanh toán</span></p>
-                        <p><strong>Tổng tiền:</strong> <span class="text-danger fw-bold">700$</span></p>
+
+                    <div class="card-body">
+                        <!-- Thông tin chung -->
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <p><strong>Mã hóa đơn:</strong> @Model.Mahd</p>
+                                <p><strong>Khách hàng:</strong> @Model.Tenkh</p>
+                                <p><strong>Ngày lập:</strong> @Model.Ngaylap</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><strong>Nhân viên lập:</strong> @Model.TenNV</p>
+                                <p><strong>Trạng thái:</strong> <span class="badge bg-success">@Model.Trangthai</span></p>
+                                <p><strong>Tổng tiền:</strong> <span class="text-danger fw-bold">@(Model.Soluong* Model.Dongia)</span></p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- Danh sách sản phẩm -->
+                        <h5 class="mb-3">Danh sách sản phẩm</h5>
+                        <table class="table table-bordered text-center align-middle">
+                            <thead class="table-secondary">
+                                <tr>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Địa chỉ kho</th>
+                                    <th>Đơn giá (₫)</th>
+                                    <th>Số lượng</th>
+                                    <th>Thành tiền (₫)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>@Model.Tensp</td>
+                                    <td>@Model.Tenkho</td>
+                                    <td>@Model.Dongia</td>
+                                    <td>@Model.Soluong</td>
+                                    <td>@(Model.Soluong* Model.Dongia)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="text-end mt-3">
+                            <h5><strong>Tổng cộng:</strong> <span class="text-danger">@(Model.Soluong* Model.Dongia)</span></h5>
+                        </div>
+                    </div>
+
+                    <div class="card-footer text-end">
+                        <button class="btn btn-primary me-2">In hóa đơn</button>
                     </div>
                 </div>
-
-                <hr>
-
-                <!-- Danh sách sản phẩm -->
-                <h5 class="mb-3">Danh sách sản phẩm</h5>
-                <table class="table table-bordered text-center align-middle">
-                    <thead class="table-secondary">
-                        <tr>
-                            <th>STT</th>
-                            <th>Tên sản phẩm</th>
-                            <th>Địa chỉ kho</th>
-                            <th>Đơn giá (₫)</th>
-                            <th>Số lượng</th>
-                            <th>Thành tiền (₫)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Card Asus GTX 1050 4GB DDR5</td>
-                            <td>Kho Linh Kiện Máy Tính Mindless Võ Văn Ngân</td>
-                            <td>350$</td>
-                            <td>2</td>                            
-                            <td>700$</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="text-end mt-3">
-                    <h5><strong>Tổng cộng:</strong> <span class="text-danger">700$</span></h5>
-                </div>
             </div>
-
-            <div class="card-footer text-end">
-                <button class="btn btn-primary me-2">In hóa đơn</button>
-            </div>
-        </div>
-    </div>
-
-
+        }
+    }
 </body>
 
 </html>
