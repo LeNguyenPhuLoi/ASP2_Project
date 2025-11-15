@@ -15,5 +15,5 @@ public partial class KhoSanpham
 
     public virtual Sanpham MaspNavigation { get; set; } = null!;
 
-    public virtual Khohang SttNavigation { get; set; } = null!;
+    public virtual Khohang MakhoNavigation { get; set; } = null!;
 }

@@ -635,7 +635,7 @@ namespace WebLinhKienDienTu.Migrations
                         .IsRequired()
                         .HasConstraintName("FK_CTHD_HD");
 
-                    b.HasOne("WebLinhKienDienTu.Models.Khohang", "SttNavigation")
+                    b.HasOne("WebLinhKienDienTu.Models.Khohang", "MakhoNavigation")
                         .WithMany("Chitiethoadons")
                         .HasForeignKey("Makho")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -650,9 +650,9 @@ namespace WebLinhKienDienTu.Migrations
 
                     b.Navigation("MahdNavigation");
 
-                    b.Navigation("MaspNavigation");
+                    b.Navigation("MakhoNavigation");
 
-                    b.Navigation("SttNavigation");
+                    b.Navigation("MaspNavigation");
                 });
 
             modelBuilder.Entity("WebLinhKienDienTu.Models.Giohang", b =>
@@ -710,7 +710,7 @@ namespace WebLinhKienDienTu.Migrations
 
             modelBuilder.Entity("WebLinhKienDienTu.Models.KhoSanpham", b =>
                 {
-                    b.HasOne("WebLinhKienDienTu.Models.Khohang", "SttNavigation")
+                    b.HasOne("WebLinhKienDienTu.Models.Khohang", "MakhoNavigation")
                         .WithMany("KhoSanphams")
                         .HasForeignKey("Makho")
                         .IsRequired()
@@ -722,9 +722,9 @@ namespace WebLinhKienDienTu.Migrations
                         .IsRequired()
                         .HasConstraintName("FK_KSP_SANPHAM");
 
-                    b.Navigation("MaspNavigation");
+                    b.Navigation("MakhoNavigation");
 
-                    b.Navigation("SttNavigation");
+                    b.Navigation("MaspNavigation");
                 });
 
             modelBuilder.Entity("WebLinhKienDienTu.Models.Lichsuhoatdong", b =>

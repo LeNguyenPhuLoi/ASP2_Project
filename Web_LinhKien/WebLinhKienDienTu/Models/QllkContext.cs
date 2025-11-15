@@ -116,7 +116,7 @@ public partial class QllkContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_CTHD_SP");
 
-            entity.HasOne(d => d.SttNavigation).WithMany(p => p.Chitiethoadons)
+            entity.HasOne(d => d.MakhoNavigation).WithMany(p => p.Chitiethoadons)
                 .HasForeignKey(d => d.Makho)
                 .HasConstraintName("FK_CTHD_K");
         });
@@ -252,7 +252,7 @@ public partial class QllkContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_KSP_SANPHAM");
 
-            entity.HasOne(d => d.SttNavigation).WithMany(p => p.KhoSanphams)
+            entity.HasOne(d => d.MakhoNavigation).WithMany(p => p.KhoSanphams)
                 .HasForeignKey(d => d.Makho)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_KSP_KHO");
