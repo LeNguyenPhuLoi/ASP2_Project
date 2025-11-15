@@ -30,11 +30,11 @@ namespace WebLinhKienDienTu.Repository
         }
 
         // hàm thêm kho sản phẩm
-        public void AddKhoSanPham(int stt, string masp, DateTime ngaynhap, int soluongnhap)
+        public void AddKhoSanPham(string makho, string masp, DateTime ngaynhap, int soluongnhap)
         {
             var sp = new KhoSanpham
             {
-                Stt = stt,
+                Makho = makho,
                 Masp = masp,
                 Ngaynhap = ngaynhap,
                 Soluongnhap = soluongnhap
@@ -44,10 +44,10 @@ namespace WebLinhKienDienTu.Repository
         }
 
         // hàm sửa kho sản phẩm
-        public bool EditKhoSanPham(int stt, string masp, DateTime ngaynhap, int soluongnhap)
+        public bool EditKhoSanPham(string makho, string masp, DateTime ngaynhap, int soluongnhap)
         {
             bool flag = false;
-            var sp = _db.KhoSanphams.FirstOrDefault(k => k.Stt == stt);
+            var sp = _db.KhoSanphams.FirstOrDefault(k => k.Makho == makho);
             if (sp != null)
             {
                 sp.Masp = masp;
@@ -60,10 +60,10 @@ namespace WebLinhKienDienTu.Repository
         }
 
         // hàm xóa kho sản phẩm
-        public bool DeleteKhoSanPham(int stt)
+        public bool DeleteKhoSanPham(string makho)
         {
             bool flag = false;
-            var sp = _db.KhoSanphams.FirstOrDefault(k => k.Stt == stt);
+            var sp = _db.KhoSanphams.FirstOrDefault(k => k.Makho == makho);
             if (sp != null)
             {
                 _db.KhoSanphams.Remove(sp);

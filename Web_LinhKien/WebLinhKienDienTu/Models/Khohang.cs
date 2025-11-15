@@ -5,8 +5,6 @@ namespace WebLinhKienDienTu.Models;
 
 public partial class Khohang
 {
-    public int Stt { get; set; }
-
     public string Makho { get; set; } = null!;
 
     public string Tenkho { get; set; } = null!;

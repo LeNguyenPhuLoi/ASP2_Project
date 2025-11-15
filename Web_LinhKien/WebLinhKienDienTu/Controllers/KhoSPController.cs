@@ -18,7 +18,7 @@ namespace WebLinhKienDienTu.Controllers
 
             // Lấy toàn bộ danh sách
             var danhsach = _khoSPService.LayDanhSachKhoSanPham()
-                                             .OrderBy(k => k.Stt);
+                                             .OrderBy(k => k.Makho);
 
             // Tính toán phân trang
             var data = danhsach.Skip((page - 1) * pageSize)
@@ -33,23 +33,23 @@ namespace WebLinhKienDienTu.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddKhoSanPham(int Stt, string Masp, DateTime Ngaynhap, int Soluongnhap)
+        public IActionResult AddKhoSanPham(string makho, string Masp, DateTime Ngaynhap, int Soluongnhap)
         {
-            _khoSPService.AddKhoSanPham(Stt, Masp, Ngaynhap, Soluongnhap);
+            _khoSPService.AddKhoSanPham(makho, Masp, Ngaynhap, Soluongnhap);
             return RedirectToAction("KhoSanPham");
         }
 
         [HttpPost]
-        public IActionResult EditKhoSanPham(int Stt, string Masp, DateTime Ngaynhap, int Soluongnhap)
+        public IActionResult EditKhoSanPham(string makho, string Masp, DateTime Ngaynhap, int Soluongnhap)
         {
-            _khoSPService.EditKhoSanPham(Stt, Masp, Ngaynhap, Soluongnhap);
+            _khoSPService.EditKhoSanPham(makho, Masp, Ngaynhap, Soluongnhap);
             return RedirectToAction("KhoSanPham");
         }
 
         [HttpPost]
-        public IActionResult DeleteKhoSanPham(int Stt)
+        public IActionResult DeleteKhoSanPham(string makho)
         {
-            _khoSPService.DeleteKhoSanPham(Stt);
+            _khoSPService.DeleteKhoSanPham(makho);
             return RedirectToAction("KhoSanPham");
         }
 
