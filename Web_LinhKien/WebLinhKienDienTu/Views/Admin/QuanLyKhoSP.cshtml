@@ -2,7 +2,7 @@
     Layout = "/Views/Shared/_AdminLayout.cshtml"; // Chỉ định layout mới cho trang Index
     ViewData["Title"] = "Admin Page";
 }
-
+@model List<WebLinhKienDienTu.Models.KhoSanpham>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,29 +34,38 @@
     <div class="container mt-4">
         <div class="card shadow-lg">
             <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-                <h4 class="mb-0">Quản lý kho sản phẩm</h4>
-                <a class="btn btn-light btn-sm">+ Thêm sản phẩm</a>
+                <h4 class="mb-0">Quản lý Kho Sản Phẩm</h4>
+                <a class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#addKSP">+ Thêm <b>Kho Sản Phẩm</b></a>
             </div>
 
             <div class="card-body">
                 <!-- Thanh tìm kiếm -->
-                <form class="row mb-3">
-                    <div class="col-md-3">
-                        <input type="text" class="form-control" name="searchMa" placeholder="Tìm theo mã sản phẩm">
-                    </div>
-                    <div class="col-md-3">
-                        <input type="text" class="form-control" name="searchKhachHang" placeholder="Tìm theo tên sản phẩm">
-                    </div>
-                    <div class="col-md-3">
-                        <select class="form-select" name="trangThai">                          
-                            <option>Kho 1</option>
-                            <option>Kho 2</option>
-                            <option>Kho 3</option>
+                <form class="row mb-3" method="post" asp-action="QuanLyKhoSP" asp-controller="Admin">
+                    <div class="col-md-4">
+                        <select class="form-select" name="searchMaKho">
+                            <option value="">-- Mã Kho --</option>
+                            @foreach (var loai in ViewBag.DanhSachKho as List<Khohang>)
+                            {
+                                <option value="@loai.Makho" selected="@(ViewBag.searchMaKho == loai.Makho ? "selected" : null)">
+                                    @loai.Makho - @loai.Tenkho
+                                </option>
+                            }
                         </select>
                     </div>
-                    <div class="col-md-3 text-end">
+                    <div class="col-md-4">
+                        <select class="form-select" name="searchMaSp">
+                            <option value="">-- Mã Sản Phẩm --</option>
+                            @foreach (var loai in ViewBag.DanhSachSP as List<Sanpham>)
+                            {
+                                <option value="@loai.Masp" selected="@(ViewBag.searchMaSp == loai.Masp ? "selected" : null)">
+                                    @loai.Masp - @loai.Tensp
+                                </option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-4 text-end">
                         <button class="btn btn-primary" type="submit">Tìm kiếm</button>
-                        <a class="btn btn-secondary">Làm mới</a>
+                        <a class="btn btn-secondary" href="@Url.Action("QuanLyKhoSP", "Admin")">Làm mới</a>
                     </div>
                 </form>
 
@@ -72,28 +81,170 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>KHO01</td>
-                            <td>MP001</td>
-                            <td>12/09/2025</td>
-                            <td>1000</td>
-                            <td>
-                                <a class="btn btn-warning btn-sm">Sửa</a>
-                                <a class="btn btn-danger btn-sm">Xóa</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>KHO01</td>
-                            <td>MP002</td>
-                            <td>15/09/2025</td>
-                            <td>500</td>
-                            <td>
-                                <a class="btn btn-warning btn-sm">Sửa</a>
-                                <a class="btn btn-danger btn-sm">Xóa</a>
-                            </td>
-                        </tr>
+                        @if (Model != null)
+                        {
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Makho</td>
+                                    <td>@item.Masp</td>
+                                    <td>@item.Ngaynhap.ToShortDateString()</td>
+                                    <td>@item.Soluongnhap</td>
+                                    <td>
+                                        <a class="btn btn-warning btn-sm"
+                                           data-bs-toggle="modal"
+                                           data-bs-target="#editKSP"
+                                           data-makho="@item.Makho"
+                                           data-masp="@item.Masp"
+                                           data-ngaynhap="@item.Ngaynhap"
+                                           data-soluongnhap="@item.Soluongnhap">
+                                            Sửa
+                                        </a>
+                                        <a class="btn btn-danger btn-sm"
+                                           data-bs-toggle="modal"
+                                           data-bs-target="#deleteKSP"
+                                           data-makho="@item.Makho">
+                                            Xóa
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        }
                     </tbody>
                 </table>
+
+                <!--Chuyển Trang-->
+                <nav>
+                    <ul class="pagination justify-content-center">
+
+                        @if (ViewBag.Page > 1)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" href="@Url.Action("QuanLyKhoSP", new { page = ViewBag.Page - 1 })">Previous</a>
+                            </li>
+                        }
+
+                        @for (int i = 1; i <= ViewBag.TotalPage; i++)
+                        {
+                            <li class="page-item @(i == ViewBag.Page ? "active" : "")">
+                                <a class="page-link" href="@Url.Action("QuanLyKhoSP", new { page = i })">@i</a>
+                            </li>
+                        }
+
+                        @if (ViewBag.Page < ViewBag.TotalPage)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" href="@Url.Action("QuanLyKhoSP", new { page = ViewBag.Page + 1 })">Next</a>
+                            </li>
+                        }
+
+                    </ul>
+                </nav>
+
+                <!--Add Loại Sản Phẩm-->
+                <div id="addKSP" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            @using (Html.BeginForm("AddKhoSanPham", "Admin", FormMethod.Post))
+                            {
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Thêm Sản Phẩm</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        @Html.Label("Mã Kho")
+                                        <select name="Makho" class="form-select" required>
+                                            <option value="">-- Chọn Mã Kho --</option>
+                                            @foreach (var loai in ViewBag.DanhSachKho as List<Khohang>)
+                                            {
+                                                <option value="@loai.Makho">@loai.Makho - @loai.Tenkho</option>
+                                            }
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        @Html.Label("Mã Sản Phẩm")
+                                        <select name="Masp" class="form-select" required>
+                                            <option value="">-- Chọn Mã Sản Phẩm --</option>
+                                            @foreach (var loai in ViewBag.DanhSachSP as List<Sanpham>)
+                                            {
+                                                <option value="@loai.Masp">@loai.Masp - @loai.Tensp</option>
+                                            }
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        @Html.Label("Số lương nhập")
+                                        @Html.TextBox("Soluongnhap", "", new { @class = "form-control", required = "required" })
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <button type="submit" class="btn btn-success">Thêm</button>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <!--Edit Sản Phẩm-->
+                <div id="editKSP" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            @using (Html.BeginForm("EditKhoSanPham", "Admin", FormMethod.Post))
+                            {
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Sửa Kho Sản Phẩm</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        @Html.Label("Mã Kho")
+                                        @Html.TextBox("Makho", "", new { @class = "form-control", id = "modal-makho", required = "required", @readonly = "readonly" })
+                                    </div>
+                                    <div class="mb-3">
+                                        @Html.Label("Mã Sản Phẩm")
+                                        @Html.TextBox("Masp", "", new { @class = "form-control", id = "modal-masp", required = "required", @readonly = "readonly" })
+                                    </div>
+                                    <div class="mb-3">
+                                        @Html.Label("Ngày Nhập")
+                                        @Html.TextBox("Ngaynhap", "", new { @class = "form-control", id = "modal-ngaynhap", required = "required", @readonly = "readonly" })
+                                    </div>
+                                    <div class="mb-3">
+                                        @Html.Label("Số lượng nhập")
+                                        @Html.TextBox("Soluongnhap", "", new { @class = "form-control", id = "modal-soluongnhap" })
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <button type="submit" class="btn btn-info">Sửa</button>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <!--Delete Sản Phẩm-->
+                <div id="deleteKSP" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            @using (Html.BeginForm("DeleteKhoSanPham", "Admin", FormMethod.Post))
+                            {
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Xóa Kho Sản Phẩm</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    @Html.TextBox("Makho", "", new { @class = "form-control", id = "modal-delete-makho", required = "required", @readonly = "readonly" })
+                                    <p>Bạn có muốn xóa kho sản phẩm này?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <button type="submit" class="btn btn-danger">Xóa</button>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -101,3 +252,22 @@
 </body>
 
 </html>
+
+<script>
+    var editModal = document.getElementById('editKSP');
+    editModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget;
+
+        document.getElementById('modal-makho').value = button.getAttribute('data-makho');
+        document.getElementById('modal-masp').value = button.getAttribute('data-masp');
+        document.getElementById('modal-ngaynhap').value = button.getAttribute('data-ngaynhap');
+        document.getElementById('modal-soluongnhap').value = button.getAttribute('data-soluongnhap');
+    });
+
+    var deleteModal = document.getElementById('deleteKSP');
+    deleteModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget;
+        var makho = button.getAttribute('data-makho');
+        document.getElementById('modal-delete-makho').value = makho;
+    });
+</script>

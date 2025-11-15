@@ -30,13 +30,13 @@ namespace WebLinhKienDienTu.Repository
         }
 
         // hàm thêm kho sản phẩm
-        public void AddKhoSanPham(string makho, string masp, DateTime ngaynhap, int soluongnhap)
+        public void AddKhoSanPham(string makho, string masp, int soluongnhap)
         {
             var sp = new KhoSanpham
             {
                 Makho = makho,
                 Masp = masp,
-                Ngaynhap = ngaynhap,
+                Ngaynhap = DateTime.Now.Date,
                 Soluongnhap = soluongnhap
             };
             _db.KhoSanphams.Add(sp);
@@ -50,8 +50,7 @@ namespace WebLinhKienDienTu.Repository
             var sp = _db.KhoSanphams.FirstOrDefault(k => k.Makho == makho);
             if (sp != null)
             {
-                sp.Masp = masp;
-                sp.Ngaynhap = ngaynhap;
+                sp.Ngaynhap = Convert.ToDateTime(ngaynhap);
                 sp.Soluongnhap = soluongnhap;
                 _db.SaveChanges();
                 flag = true;
@@ -74,13 +73,18 @@ namespace WebLinhKienDienTu.Repository
         }
 
         // hàm tìm kiếm
-        public List<KhoSanpham> TimKiem(string searchMaSP)
+        public List<KhoSanpham> TimKiem(string searchMaSp, string searchMaKho)
         {
             var query = _db.KhoSanphams.AsQueryable();
 
-            if (!string.IsNullOrEmpty(searchMaSP))
+            if (!string.IsNullOrEmpty(searchMaSp))
             {
-                query = query.Where(k => k.Masp.Contains(searchMaSP));
+                query = query.Where(k => k.Masp.Contains(searchMaSp));
+            }
+
+            if (!string.IsNullOrEmpty(searchMaKho))
+            {
+                query = query.Where(k => k.Makho.Contains(searchMaKho));
             }
 
             return query.ToList();
