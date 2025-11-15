@@ -21,5 +21,5 @@ public partial class Chitiethoadon
 
     public virtual Sanpham MaspNavigation { get; set; } = null!;
 
-    public virtual Khohang? SttNavigation { get; set; }
+    public virtual Khohang? MakhoNavigation { get; set; }
 }
