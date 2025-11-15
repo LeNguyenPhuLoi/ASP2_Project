@@ -38,32 +38,27 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <!-- Shop dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">All Products</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#">2</a></li>
-                                <li><a class="dropdown-item" href="#">1</a></li>
-                            </ul>
-                        </li>
                     </ul>
 
                     <!-- Thanh tìm kiếm -->
                     <div class="header-search mx-3">
-                        <form action='store.php' method='get'>
-                            <select class="input-select" name='cat-id'>
-                                <option value='all'>Tất cả</option>
-                                <option value='1'>value 1</option>
-                                <option value='2'>value 2</option>
-                                <option value='3'>value 3</option>
+                        <form class="search-bar" method="post" asp-action="Search" asp-controller="Home">
+                            <select class="form-select search-select" name="searchLoai">
+                                <option value="">Tất cả loại</option>
+                                @foreach (var loai in ViewBag.DanhSachLoai as List<Loaisanpham>)
+                                {
+                                    <option value="@loai.Maloai" selected="@(ViewBag.searchLoai == loai.Maloai ? "selected" : null)">
+                                        @loai.Tenloai
+                                    </option>
+                                }
                             </select>
-                            <input class="input" name='key' placeholder="Tìm kiếm ở đây...">
-                            <input type='hidden' name='mode' value='product'>
-                            <input type='hidden' name='ac' value='search'>
-                            <button class="search-btn" name='basic-search' value='Search'>Search</button>
+
+                            <input class="input" type="text" name="searchTenSp"
+                                   placeholder="Tìm kiếm ở đây..."
+                                   value="@ViewBag.searchTenSp"
+                                   style="border:none; outline:none; box-shadow:none;">
+
+                            <button class="search-btn" type="submit">Search</button>
                         </form>
                     </div>
 

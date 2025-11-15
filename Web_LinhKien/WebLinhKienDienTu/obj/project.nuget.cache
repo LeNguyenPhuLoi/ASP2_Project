@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bCalvwNXdb4=",
+  "dgSpecHash": "6wm6VQsKLSg=",
   "success": true,
-  "projectFilePath": "D:\\Kì 5\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\WebLinhKienDienTu.csproj",
+  "projectFilePath": "D:\\Kì 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\WebLinhKienDienTu.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ADMIN\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

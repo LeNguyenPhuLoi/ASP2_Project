@@ -1,54 +1,12 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\K\u00EC 5\\ASP2_Project\\Web_LinhKien\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|d:\\k\u00EC 5\\asp2_project\\web_linhkien\\weblinhkiendientu\\controllers\\giohangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\controllers\\giohangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|d:\\k\u00EC 5\\asp2_project\\web_linhkien\\weblinhkiendientu\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "D:\\K\u00EC 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GioHangController.cs",
-              "DocumentMoniker": "D:\\K\u00EC 5\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Controllers\\GioHangController.cs",
-              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Controllers\\GioHangController.cs",
-              "ToolTip": "D:\\K\u00EC 5\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Controllers\\GioHangController.cs",
-              "RelativeToolTip": "WebLinhKienDienTu\\Controllers\\GioHangController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-15T04:48:28.156Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "D:\\K\u00EC 5\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Controllers\\AdminController.cs",
-              "ToolTip": "D:\\K\u00EC 5\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "WebLinhKienDienTu\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-15T04:43:57.943Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }
