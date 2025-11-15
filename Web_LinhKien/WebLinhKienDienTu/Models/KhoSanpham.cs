@@ -5,7 +5,7 @@ namespace WebLinhKienDienTu.Models;
 
 public partial class KhoSanpham
 {
-    public int Stt { get; set; }
+    public string Makho { get; set; } = null!;
 
     public string Masp { get; set; } = null!;
 

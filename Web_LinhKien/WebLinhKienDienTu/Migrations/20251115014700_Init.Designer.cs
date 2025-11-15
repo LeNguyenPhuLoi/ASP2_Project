@@ -12,7 +12,7 @@ using WebLinhKienDienTu.Models;
 namespace WebLinhKienDienTu.Migrations
 {
     [DbContext(typeof(QllkContext))]
-    [Migration("20251112164619_Init")]
+    [Migration("20251115014700_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -79,13 +79,14 @@ namespace WebLinhKienDienTu.Migrations
                         .HasColumnType("decimal(18,0)")
                         .HasColumnName("DONGIA");
 
+                    b.Property<string>("Makho")
+                        .IsRequired()
+                        .HasColumnType("char(20)")
+                        .HasColumnName("MAKHO");
+
                     b.Property<int?>("Soluong")
                         .HasColumnType("int")
                         .HasColumnName("SOLUONG");
-
-                    b.Property<int?>("Stt")
-                        .HasColumnType("int")
-                        .HasColumnName("STT");
 
                     b.Property<decimal?>("Thanhtien")
                         .HasColumnType("decimal(18,0)")
@@ -94,9 +95,9 @@ namespace WebLinhKienDienTu.Migrations
                     b.HasKey("Mahd", "Masp")
                         .HasName("PK_CTHD");
 
-                    b.HasIndex("Masp");
+                    b.HasIndex("Makho");
 
-                    b.HasIndex("Stt");
+                    b.HasIndex("Masp");
 
                     b.ToTable("CHITIETHOADON", (string)null);
                 });
@@ -237,25 +238,17 @@ namespace WebLinhKienDienTu.Migrations
 
             modelBuilder.Entity("WebLinhKienDienTu.Models.Khohang", b =>
                 {
-                    b.Property<int>("Stt")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("STT");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Stt"), 1L, 1);
-
-                    b.Property<string>("Diachikho")
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)")
-                        .HasColumnName("DIACHIKHO");
-
                     b.Property<string>("Makho")
-                        .IsRequired()
                         .HasMaxLength(20)
                         .IsUnicode(false)
                         .HasColumnType("char(20)")
                         .HasColumnName("MAKHO")
                         .IsFixedLength();
+
+                    b.Property<string>("Diachikho")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)")
+                        .HasColumnName("DIACHIKHO");
 
                     b.Property<string>("Manv")
                         .HasMaxLength(20)
@@ -275,7 +268,7 @@ namespace WebLinhKienDienTu.Migrations
                         .HasColumnType("nvarchar(200)")
                         .HasColumnName("TENKHO");
 
-                    b.HasKey("Stt")
+                    b.HasKey("Makho")
                         .HasName("PK__KHOHANG__CA1EB690DBCC293B");
 
                     b.ToTable("KHOHANG", (string)null);
@@ -283,9 +276,9 @@ namespace WebLinhKienDienTu.Migrations
 
             modelBuilder.Entity("WebLinhKienDienTu.Models.KhoSanpham", b =>
                 {
-                    b.Property<int>("Stt")
-                        .HasColumnType("int")
-                        .HasColumnName("STT");
+                    b.Property<string>("Makho")
+                        .HasColumnType("char(20)")
+                        .HasColumnName("MAKHO");
 
                     b.Property<string>("Masp")
                         .HasMaxLength(20)
@@ -302,7 +295,7 @@ namespace WebLinhKienDienTu.Migrations
                         .HasColumnType("int")
                         .HasColumnName("SOLUONGNHAP");
 
-                    b.HasKey("Stt", "Masp", "Ngaynhap")
+                    b.HasKey("Makho", "Masp", "Ngaynhap")
                         .HasName("PK_K_SP");
 
                     b.HasIndex("Masp");
@@ -644,16 +637,18 @@ namespace WebLinhKienDienTu.Migrations
                         .IsRequired()
                         .HasConstraintName("FK_CTHD_HD");
 
+                    b.HasOne("WebLinhKienDienTu.Models.Khohang", "SttNavigation")
+                        .WithMany("Chitiethoadons")
+                        .HasForeignKey("Makho")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_CTHD_K");
+
                     b.HasOne("WebLinhKienDienTu.Models.Sanpham", "MaspNavigation")
                         .WithMany("Chitiethoadons")
                         .HasForeignKey("Masp")
                         .IsRequired()
                         .HasConstraintName("FK_CTHD_SP");
-
-                    b.HasOne("WebLinhKienDienTu.Models.Khohang", "SttNavigation")
-                        .WithMany("Chitiethoadons")
-                        .HasForeignKey("Stt")
-                        .HasConstraintName("FK_CTHD_K");
 
                     b.Navigation("MahdNavigation");
 
@@ -717,17 +712,17 @@ namespace WebLinhKienDienTu.Migrations
 
             modelBuilder.Entity("WebLinhKienDienTu.Models.KhoSanpham", b =>
                 {
+                    b.HasOne("WebLinhKienDienTu.Models.Khohang", "SttNavigation")
+                        .WithMany("KhoSanphams")
+                        .HasForeignKey("Makho")
+                        .IsRequired()
+                        .HasConstraintName("FK_KSP_KHO");
+
                     b.HasOne("WebLinhKienDienTu.Models.Sanpham", "MaspNavigation")
                         .WithMany("KhoSanphams")
                         .HasForeignKey("Masp")
                         .IsRequired()
                         .HasConstraintName("FK_KSP_SANPHAM");
-
-                    b.HasOne("WebLinhKienDienTu.Models.Khohang", "SttNavigation")
-                        .WithMany("KhoSanphams")
-                        .HasForeignKey("Stt")
-                        .IsRequired()
-                        .HasConstraintName("FK_KSP_KHO");
 
                     b.Navigation("MaspNavigation");
 

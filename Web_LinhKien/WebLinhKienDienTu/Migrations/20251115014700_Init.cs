@@ -13,8 +13,6 @@ namespace WebLinhKienDienTu.Migrations
                 name: "KHOHANG",
                 columns: table => new
                 {
-                    STT = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
                     MAKHO = table.Column<string>(type: "char(20)", unicode: false, fixedLength: true, maxLength: 20, nullable: false),
                     TENKHO = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     DIACHIKHO = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: true),
@@ -23,7 +21,7 @@ namespace WebLinhKienDienTu.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__KHOHANG__CA1EB690DBCC293B", x => x.STT);
+                    table.PrimaryKey("PK__KHOHANG__CA1EB690DBCC293B", x => x.MAKHO);
                 });
 
             migrationBuilder.CreateTable(
@@ -147,19 +145,19 @@ namespace WebLinhKienDienTu.Migrations
                 name: "KHO_SANPHAM",
                 columns: table => new
                 {
-                    STT = table.Column<int>(type: "int", nullable: false),
+                    MAKHO = table.Column<string>(type: "char(20)", nullable: false),
                     MASP = table.Column<string>(type: "char(20)", unicode: false, fixedLength: true, maxLength: 20, nullable: false),
                     NGAYNHAP = table.Column<DateTime>(type: "datetime", nullable: false),
                     SOLUONGNHAP = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_K_SP", x => new { x.STT, x.MASP, x.NGAYNHAP });
+                    table.PrimaryKey("PK_K_SP", x => new { x.MAKHO, x.MASP, x.NGAYNHAP });
                     table.ForeignKey(
                         name: "FK_KSP_KHO",
-                        column: x => x.STT,
+                        column: x => x.MAKHO,
                         principalTable: "KHOHANG",
-                        principalColumn: "STT");
+                        principalColumn: "MAKHO");
                     table.ForeignKey(
                         name: "FK_KSP_SANPHAM",
                         column: x => x.MASP,
@@ -199,7 +197,7 @@ namespace WebLinhKienDienTu.Migrations
                 {
                     MAHD = table.Column<string>(type: "char(20)", unicode: false, fixedLength: true, maxLength: 20, nullable: false),
                     MASP = table.Column<string>(type: "char(20)", unicode: false, fixedLength: true, maxLength: 20, nullable: false),
-                    STT = table.Column<int>(type: "int", nullable: true),
+                    MAKHO = table.Column<string>(type: "char(20)", nullable: false),
                     SOLUONG = table.Column<int>(type: "int", nullable: true),
                     DONGIA = table.Column<decimal>(type: "decimal(18,0)", nullable: true),
                     THANHTIEN = table.Column<decimal>(type: "decimal(18,0)", nullable: true)
@@ -214,9 +212,10 @@ namespace WebLinhKienDienTu.Migrations
                         principalColumn: "MAHD");
                     table.ForeignKey(
                         name: "FK_CTHD_K",
-                        column: x => x.STT,
+                        column: x => x.MAKHO,
                         principalTable: "KHOHANG",
-                        principalColumn: "STT");
+                        principalColumn: "MAKHO",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_CTHD_SP",
                         column: x => x.MASP,
@@ -333,14 +332,14 @@ namespace WebLinhKienDienTu.Migrations
                 column: "MASP");
 
             migrationBuilder.CreateIndex(
+                name: "IX_CHITIETHOADON_MAKHO",
+                table: "CHITIETHOADON",
+                column: "MAKHO");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_CHITIETHOADON_MASP",
                 table: "CHITIETHOADON",
                 column: "MASP");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CHITIETHOADON_STT",
-                table: "CHITIETHOADON",
-                column: "STT");
 
             migrationBuilder.CreateIndex(
                 name: "IX_GIOHANG_MAHD",

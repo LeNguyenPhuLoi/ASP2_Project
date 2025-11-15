@@ -47,28 +47,6 @@ VALUES
 ('SP019', N'Tản nhiệt Cooler Master Hyper 212 LED Turbo', 750000, N'VND', N'Tản nhiệt khí Cooler Master Hyper 212 LED Turbo, hiệu quả và êm ái', 'coolermaster_hyper212ledturbo.jpg', 20, 'LSP05'),
 ('SP020', N'Tản nhiệt nước Cooler Master ML240L', 1750000, N'VND', N'Tản nhiệt nước Cooler Master ML240L, làm mát tốt cho CPU hiệu năng cao', 'coolermaster_ml240l.jpg', 10, 'LSP05');
 
---THEM DU LIEU KHO SAN PHAM
---GO
---INSERT INTO KHO_SANPHAM (MAKHO, MASP, NGAYNHAP, SOLUONGNHAP)
---VALUES
---('KHO01', 'SP001', '05/01/2025', 50),
---('KHO01', 'SP002', '10/01/2025', 40),
---('KHO01', 'SP003', '15/01/2025', 60),
---('KHO01', 'SP004', '20/01/2025', 30),
---('KHO01', 'SP005', '25/01/2025', 20),
-
---('KHO02', 'SP006', '05/02/2025', 80),
---('KHO02', 'SP007', '10/02/2025', 45),
---('KHO02', 'SP008', '15/02/2025', 70),
---('KHO02', 'SP009', '20/02/2025', 55),
---('KHO02', 'SP010', '25/02/2025', 35),
-
---('KHO03', 'SP001', '05/03/2025', 40),
---('KHO03', 'SP004', '10/03/2025', 25),
---('KHO03', 'SP006', '15/03/2025', 65),
---('KHO03', 'SP008', '20/03/2025', 50),
---('KHO03', 'SP010', '25/03/2025', 30);
-
 --THEM DU LIEU TAI KHOAN
 GO
 INSERT INTO TAIKHOAN(EMAIL, PASS, QUYEN, TRANGTHAI)
@@ -98,17 +76,7 @@ VALUES
 ('KHO007', N'Kho thiết bị âm thanh Quận 10', N'190 Lý Thái Tổ, Quận 10', 'NV007', N'18 loại thiết bị âm thanh'),
 ('KHO008', N'Kho màn hình & thiết bị hiển thị Quận 1', N'22 Nguyễn Trãi, Quận 1', 'NV008', N'25 loại màn hình và thiết bị hiển thị'),
 ('KHO009', N'Kho thiết bị lưu trữ Tân Phú', N'65 Âu Cơ, Tân Phú', 'NV009', N'27 loại thiết bị lưu trữ'),
-('KHO010', N'Kho dây cáp và phụ kiện Quận 4', N'11 Hoàng Diệu, Quận 4', 'NV010', N'19 loại dây cáp và phụ kiện'),
-('KHO011', N'Kho linh kiện máy in Quận 3', N'52 Võ Văn Tần, Quận 3', 'NV011', N'17 loại linh kiện máy in'),
-('KHO012', N'Kho bo mạch & IC Gia Định', N'234 Phan Đăng Lưu, Phú Nhuận', 'NV012', N'38 loại bo mạch và vi mạch'),
-('KHO013', N'Kho thiết bị văn phòng Quận 6', N'90 Hậu Giang, Quận 6', 'NV013', N'21 loại thiết bị văn phòng'),
-('KHO014', N'Kho phụ kiện máy tính Quận 12', N'14 Tô Ký, Quận 12', 'NV014', N'29 loại phụ kiện máy tính'),
-('KHO015', N'Kho dây điện – cáp mạng Bình Tân', N'67 Mã Lò, Bình Tân', 'NV015', N'24 loại dây & cáp mạng'),
-('KHO016', N'Kho thiết bị camera giám sát Tân Bình', N'120 Cộng Hòa, Tân Bình', 'NV016', N'31 loại thiết bị camera & giám sát'),
-('KHO017', N'Kho nguồn máy tính & UPS Gò Vấp', N'88 Nguyễn Oanh, Gò Vấp', 'NV017', N'16 loại nguồn máy & UPS'),
-('KHO018', N'Kho CPU & bộ vi xử lý Quận 1', N'15 Pasteur, Quận 1', 'NV018', N'14 loại CPU và vi xử lý'),
-('KHO019', N'Kho mainboard & thiết bị máy chủ Quận 7', N'300 Nguyễn Văn Linh, Quận 7', 'NV019', N'26 loại mainboard & linh kiện máy chủ'),
-('KHO020', N'Kho RAM & bộ nhớ máy tính Bình Thạnh', N'102 Ung Văn Khiêm, Bình Thạnh', 'NV020', N'18 loại RAM & thiết bị bộ nhớ');
+('KHO010', N'Kho dây cáp và phụ kiện Quận 4', N'11 Hoàng Diệu, Quận 4', 'NV010', N'19 loại dây cáp và phụ kiện')
 
 
 GO
@@ -134,3 +102,25 @@ VALUES
   ('HD018', '08/11/2018', 2800000, 'KH001', 'NV001', N'Chưa thanh toán'),
   ('HD019', '09/11/2018', 5700000, 'KH001', 'NV001', N'Đã thanh toán'),
   ('HD020', '10/11/2018', 3300000, 'KH001', 'NV001', N'Chưa thanh toán');
+
+  --THEM DU LIEU KHO SAN PHAM
+GO
+INSERT INTO KHO_SANPHAM (MAKHO, MASP, NGAYNHAP, SOLUONGNHAP)
+VALUES
+('KHO001', 'SP001', '05/01/2025', 50),
+('KHO001', 'SP002', '10/01/2025', 40),
+('KHO001', 'SP003', '15/01/2025', 60),
+('KHO001', 'SP004', '20/01/2025', 30),
+('KHO001', 'SP005', '25/01/2025', 20),
+
+('KHO002', 'SP006', '05/02/2025', 80),
+('KHO002', 'SP007', '10/02/2025', 45),
+('KHO002', 'SP008', '15/02/2025', 70),
+('KHO002', 'SP009', '20/02/2025', 55),
+('KHO002', 'SP010', '25/02/2025', 35),
+
+('KHO003', 'SP001', '05/03/2025', 40),
+('KHO003', 'SP004', '10/03/2025', 25),
+('KHO003', 'SP006', '15/03/2025', 65),
+('KHO003', 'SP008', '20/03/2025', 50),
+('KHO003', 'SP010', '25/03/2025', 30);

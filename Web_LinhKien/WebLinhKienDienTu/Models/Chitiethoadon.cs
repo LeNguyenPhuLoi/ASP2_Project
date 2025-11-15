@@ -9,7 +9,7 @@ public partial class Chitiethoadon
 
     public string Masp { get; set; } = null!;
 
-    public int? Stt { get; set; }
+    public string Makho { get; set; } = null!;
 
     public int? Soluong { get; set; }
 

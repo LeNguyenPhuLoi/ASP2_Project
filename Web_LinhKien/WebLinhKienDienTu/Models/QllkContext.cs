@@ -101,7 +101,7 @@ public partial class QllkContext : DbContext
                 .HasColumnType("decimal(18, 0)")
                 .HasColumnName("DONGIA");
             entity.Property(e => e.Soluong).HasColumnName("SOLUONG");
-            entity.Property(e => e.Stt).HasColumnName("STT");
+            entity.Property(e => e.Makho).HasColumnName("MAKHO");
             entity.Property(e => e.Thanhtien)
                 .HasColumnType("decimal(18, 0)")
                 .HasColumnName("THANHTIEN");
@@ -117,7 +117,7 @@ public partial class QllkContext : DbContext
                 .HasConstraintName("FK_CTHD_SP");
 
             entity.HasOne(d => d.SttNavigation).WithMany(p => p.Chitiethoadons)
-                .HasForeignKey(d => d.Stt)
+                .HasForeignKey(d => d.Makho)
                 .HasConstraintName("FK_CTHD_K");
         });
 
@@ -232,11 +232,11 @@ public partial class QllkContext : DbContext
 
         modelBuilder.Entity<KhoSanpham>(entity =>
         {
-            entity.HasKey(e => new { e.Stt, e.Masp, e.Ngaynhap }).HasName("PK_K_SP");
+            entity.HasKey(e => new { e.Makho, e.Masp, e.Ngaynhap }).HasName("PK_K_SP");
 
             entity.ToTable("KHO_SANPHAM");
 
-            entity.Property(e => e.Stt).HasColumnName("STT");
+            entity.Property(e => e.Makho).HasColumnName("MAKHO");
             entity.Property(e => e.Masp)
                 .HasMaxLength(20)
                 .IsUnicode(false)
@@ -253,18 +253,17 @@ public partial class QllkContext : DbContext
                 .HasConstraintName("FK_KSP_SANPHAM");
 
             entity.HasOne(d => d.SttNavigation).WithMany(p => p.KhoSanphams)
-                .HasForeignKey(d => d.Stt)
+                .HasForeignKey(d => d.Makho)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_KSP_KHO");
         });
 
         modelBuilder.Entity<Khohang>(entity =>
         {
-            entity.HasKey(e => e.Stt).HasName("PK__KHOHANG__CA1EB690DBCC293B");
+            entity.HasKey(e => e.Makho).HasName("PK__KHOHANG__CA1EB690DBCC293B");
 
             entity.ToTable("KHOHANG");
 
-            entity.Property(e => e.Stt).HasColumnName("STT");
             entity.Property(e => e.Diachikho)
                 .HasMaxLength(300)
                 .HasColumnName("DIACHIKHO");
