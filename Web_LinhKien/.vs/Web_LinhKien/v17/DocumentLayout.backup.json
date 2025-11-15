@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\K\u00EC 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|d:\\k\u00EC 5\\aspnet 2\\asp2_project\\web_linhkien\\weblinhkiendientu\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D20E9ED7-DAE0-4C0C-83C7-4EEB0F848771}|WebLinhKienDienTu\\WebLinhKienDienTu.csproj|solutionrelative:weblinhkiendientu\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\K\u00EC 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "WebLinhKienDienTu\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\K\u00EC 5\\ASPNET 2\\ASP2_Project\\Web_LinhKien\\WebLinhKienDienTu\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "WebLinhKienDienTu\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAABoAAAAAAAAAAAAcwDkAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-15T15:36:53.229Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
