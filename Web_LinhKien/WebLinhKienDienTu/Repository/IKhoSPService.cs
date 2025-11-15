@@ -11,7 +11,7 @@ namespace WebLinhKienDienTu.Repository
         public List<KhoSanpham> TimKhoSanPhamTheoMaSP(string masp);
 
         //hàm thêm kho sản phẩm
-        public void AddKhoSanPham(string makho, string masp, DateTime ngaynhap, int soluongnhap);
+        public void AddKhoSanPham(string makho, string masp, int soluongnhap);
 
         //hàm sửa kho sản phẩm
         public bool EditKhoSanPham(string makho, string masp, DateTime ngaynhap, int soluongnhap);
@@ -20,6 +20,6 @@ namespace WebLinhKienDienTu.Repository
         public bool DeleteKhoSanPham(string makho);
 
         //hàm tìm kiếm kho sản phẩm
-        public List<KhoSanpham> TimKiem(string searchMaSP);
+        public List<KhoSanpham> TimKiem(string searchMaSp, string searchMaKho);
     }
 }

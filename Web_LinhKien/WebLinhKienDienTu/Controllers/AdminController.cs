@@ -10,12 +10,16 @@ namespace WebLinhKienDienTu.Controllers
         public readonly ILoaiSPService _loaiSPService;
         public readonly ISanPhamService _sanphamservice;
         public readonly IHoaDonService _hoadonservice;
+        public readonly IKhoSPService _khoSPService;
+        public readonly IKhoHangService _khohangservice;
 
-        public AdminController(ILoaiSPService loaiSanPhamService, ISanPhamService sanphamservice, IHoaDonService hoadonservice)
+        public AdminController(ILoaiSPService loaiSanPhamService, ISanPhamService sanphamservice, IHoaDonService hoadonservice, IKhoSPService khoSanPhamService, IKhoHangService khohangservice)
         {
             _loaiSPService = loaiSanPhamService;
             _sanphamservice = sanphamservice;
             _hoadonservice = hoadonservice;
+            _khoSPService = khoSanPhamService;
+            _khohangservice = khohangservice;
         }
 
         public IActionResult QuanLyHoaDon(int page = 1)
@@ -78,9 +82,69 @@ namespace WebLinhKienDienTu.Controllers
             return RedirectToAction("QuanLyHoaDon");
         }
 
-        public IActionResult QuanLyKhoSP()
+        public IActionResult QuanLyKhoSP(int page = 1)
         {
-            return View();
+            int pageSize = 5; // Số dòng mỗi trang
+
+            // Lấy toàn bộ danh sách
+            var danhsach = _khoSPService.LayDanhSachKhoSanPham()
+                                             .OrderBy(k => k.Makho);
+
+            // Tính toán phân trang
+            var data = danhsach.Skip((page - 1) * pageSize)
+                               .Take(pageSize)
+                               .ToList();
+
+            // Gửi thông tin phân trang sang View
+            ViewBag.Page = page;
+            ViewBag.TotalPage = (int)Math.Ceiling((double)danhsach.Count() / pageSize);
+
+            // Truyền danh sách kho hàng vào View
+            ViewBag.DanhSachKho = _khohangservice.LayDanhSachKhoHang();
+            ViewBag.DanhSachSP = _sanphamservice.GetAllSP();
+
+            // **Giữ ô tìm kiếm trống ban đầu**
+            ViewBag.searchMaSp = "";
+            ViewBag.searchMaKho = "";
+
+            return View(data);
+        }
+
+        [HttpPost]
+        public IActionResult QuanLyKhoSP(string searchMaSp, string searchMaKho)
+        {
+            var model = _khoSPService.TimKiem(searchMaSp, searchMaKho);
+
+            // Truyền danh sách kho hàng vào View
+            ViewBag.DanhSachKho = _khohangservice.LayDanhSachKhoHang();
+            ViewBag.DanhSachSP = _sanphamservice.GetAllSP();
+
+            // Giữ lại giá trị đã nhập/tìm
+            ViewBag.searchMaSp = searchMaSp;
+            ViewBag.searchMaKho = searchMaKho;
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult AddKhoSanPham(string makho, string Masp, int Soluongnhap)
+        {
+            _khoSPService.AddKhoSanPham(makho, Masp, Soluongnhap);
+            return RedirectToAction("QuanLyKhoSP");
+        }
+
+        [HttpPost]
+        public IActionResult EditKhoSanPham(string makho, string Masp, DateTime Ngaynhap, int Soluongnhap)
+        {
+            _khoSPService.EditKhoSanPham(makho, Masp, Ngaynhap, Soluongnhap);
+            return RedirectToAction("QuanLyKhoSP");
+        }
+
+        [HttpPost]
+        public IActionResult DeleteKhoSanPham(string makho)
+        {
+            _khoSPService.DeleteKhoSanPham(makho);
+            return RedirectToAction("QuanLyKhoSP");
         }
 
         public IActionResult QuanLySP(int page = 1)
