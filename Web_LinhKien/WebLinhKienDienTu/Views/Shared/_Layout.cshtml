@@ -70,7 +70,7 @@
                     {
                         <div class="header-cart">
                             @* CART *@
-                            <form class="d-flex" asp-controller="GioHang" asp-action="GioHang">
+                            <form class="d-flex" asp-controller="GioHang" asp-action="GioHang" asp-route-email="@User.Identity.Name">
                                 <button style="border:none;" class="btn btn-outline-dark" type="submit">
                                     <i class="fa fa-shopping-cart"></i>
                                     <span>Carts</span>
