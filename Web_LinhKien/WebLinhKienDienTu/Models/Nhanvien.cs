@@ -19,7 +19,7 @@ public partial class Nhanvien
 
     public string? Diachi { get; set; }
 
-    public int? Sdt { get; set; }
+    public string? Sdt { get; set; }
 
     public string? Email { get; set; }
 

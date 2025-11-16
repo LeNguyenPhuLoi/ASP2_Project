@@ -2,6 +2,15 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
 
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,15 +19,6 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.WebUtilities;
-using Microsoft.Extensions.Logging;
-
 using WebLinhKienDienTu.Models;
 
 namespace WebLinhKienDienTu.Areas.Identity.Pages.Account
@@ -31,13 +31,14 @@ namespace WebLinhKienDienTu.Areas.Identity.Pages.Account
         private readonly IUserEmailStore<ApplicationUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
-
+        private readonly QllkContext _qllkContext;
         public RegisterModel(
             UserManager<ApplicationUser> userManager,
             IUserStore<ApplicationUser> userStore,
             SignInManager<ApplicationUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            QllkContext qllkContext)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -45,6 +46,7 @@ namespace WebLinhKienDienTu.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _qllkContext = qllkContext;
         }
 
         /// <summary>
@@ -72,6 +74,18 @@ namespace WebLinhKienDienTu.Areas.Identity.Pages.Account
         /// </summary>
         public class InputModel
         {
+            [Required(ErrorMessage = "Vui lòng nhập họ tên")]
+            [Display(Name = "FullName")]
+            public string FullName { get; set; }
+
+            [Required(ErrorMessage = "Vui lòng nhập số điện thoại")]
+            [RegularExpression(@"^\d{10}$", ErrorMessage = "Số điện thoại phải đúng 10 chữ số")]
+            [Display(Name = "PhoneNumber")]
+            public string PhoneNumber { get; set; }
+
+            [Required(ErrorMessage = "Vui lòng nhập địa chỉ")]
+            [Display(Name = "Address")]
+            public string Address { get; set; }
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
@@ -99,8 +113,8 @@ namespace WebLinhKienDienTu.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
-        }
 
+        }
 
         public async Task OnGetAsync(string returnUrl = null)
         {
@@ -116,6 +130,11 @@ namespace WebLinhKienDienTu.Areas.Identity.Pages.Account
             {
                 var user = CreateUser();
 
+                // GÁN THÊM THUỘC TÍNH
+                user.FullName = Input.FullName;
+                user.PhoneNumber = Input.PhoneNumber;
+                user.Address = Input.Address;
+                await _userManager.SetPhoneNumberAsync(user, Input.PhoneNumber);
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                 var result = await _userManager.CreateAsync(user, Input.Password);
@@ -124,7 +143,36 @@ namespace WebLinhKienDienTu.Areas.Identity.Pages.Account
                 {
                     await _userManager.AddToRoleAsync(user, "User");
                     _logger.LogInformation("User created a new account with password.");
+                    // 🔥 Lưu vào bảng Taikhoan
+                    var taiKhoanMoi = new Taikhoan
+                    {
+                        Email = user.Email,
+                        Pass = user.PasswordHash,  // ⚠ Không lưu mật khẩu dạng text
+                        Quyen = "User",
+                        Trangthai = "Active"
+                    };
 
+                    _qllkContext.Taikhoans.Add(taiKhoanMoi);
+                    await _qllkContext.SaveChangesAsync();
+
+                    // 🔥 Tự động sinh mã khách hàng
+                    string newMaKh = GenerateNewMaKh();
+
+                    // 🔥 Tạo bản ghi Khachhang
+                    var khachHangMoi = new Khachhang
+                    {
+                        Makh = newMaKh,
+                        Tenkh = user.FullName,
+                        Sdt = user.PhoneNumber,
+                        Email = user.Email,
+                        Diachi = user.Address,
+                        Ngaytao = DateTime.Now
+                    };
+
+                    _qllkContext.Khachhangs.Add(khachHangMoi);
+                    await _qllkContext.SaveChangesAsync();
+
+                    // Gửi email xác nhận
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
@@ -155,6 +203,31 @@ namespace WebLinhKienDienTu.Areas.Identity.Pages.Account
 
             // If we got this far, something failed, redisplay form
             return Page();
+        }
+
+        private string GenerateNewMaKh()
+        {
+            // Lấy mã khách hàng lớn nhất hiện có
+            var lastMaKh = _qllkContext.Khachhangs
+                            .OrderByDescending(k => k.Makh)
+                            .Select(k => k.Makh)
+                            .FirstOrDefault();
+
+            int newNumber = 1;
+
+            if (!string.IsNullOrEmpty(lastMaKh))
+            {
+                // Lấy phần số của mã KH (bỏ "KH")
+                if (int.TryParse(lastMaKh.Substring(2), out int lastNumber))
+                {
+                    newNumber = lastNumber + 1;
+                }
+            }
+
+            // Tạo mã mới dạng KH0001, KH0002, ...
+            string newMaKh = "KH" + newNumber.ToString("D3");
+
+            return newMaKh;
         }
 
         private ApplicationUser CreateUser()
