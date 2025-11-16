@@ -71,7 +71,7 @@ namespace WebLinhKienDienTu.Migrations
                 columns: table => new
                 {
                     EMAIL = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: false),
-                    PASS = table.Column<string>(type: "char(50)", unicode: false, fixedLength: true, maxLength: 50, nullable: true),
+                    PASS = table.Column<string>(type: "varchar(256)", unicode: false, fixedLength: true, maxLength: 256, nullable: true),
                     QUYEN = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     TRANGTHAI = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true)
                 },
@@ -163,7 +163,7 @@ namespace WebLinhKienDienTu.Migrations
                     CHUC = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     LUONG = table.Column<decimal>(type: "decimal(18,0)", nullable: true),
                     DIACHI = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    SDT = table.Column<int>(type: "int", nullable: true),
+                    SDT = table.Column<int>(type: "varchar(10)", maxLength: 10, nullable: true),
                     EMAIL = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true)
                 },
                 constraints: table =>
