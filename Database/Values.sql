@@ -14,14 +14,18 @@ GO
 INSERT INTO AspNetUsers(Id,UserName,NormalizedUserName,Email,NormalizedEmail,EmailConfirmed,PasswordHash,SecurityStamp,ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled,AccessFailedCount,Address,DateOfBirth,FullName)
 VALUES(N'04c4d31d-8960-41b4-8bbe-4823ba4db4e6',N'admin@local.test',N'ADMIN@LOCAL.TEST',N'admin@local.test',N'ADMIN@LOCAL.TEST',1,N'AQAAAAEAACcQAAAAEObgeg7NP3bMR3P8KP3chrrUHQhEtUETJUpIuHkO6YZm73j00j8oS6Ibj3diw5q/1g==',N'STYRKRHBLTS3NU5DM4XUO74RL2UMCMIK',N'b040131b-a5d5-4250-9a81-2c44af2d5adf',null,0,0,null,1,0,null,null,null),
 		(N'c8be8d9d-8a69-4f1a-9a9d-f2d4d5acb001',N'namle75@gmail.com',N'NAMLE75@GMAIL.COM',N'namle75@gmail.com',N'NAMLE75@GMAIL.COM',1,N'AQAAAAEAACcQAAAAELNzunqKm62t0O/WxidAevmMlrvGjeqni/j4+sXNRpTGYmT9Rmx/pm6yl/VOMfgV9w==',N'6f2b2e5f-508c-4bca-a7b3-22394c30cd10',N'cf74daef-2c4d-48a6-a0a4-85e65e92b20f',NULL,0,0,NULL,1,0,NULL,NULL,N'Lê Nam'),
-		(N'd920e2b6-7b94-4e59-93ae-3c2c6345d002',N'tung98@gmail.com',N'TUNG98@GMAIL.COM',N'tung98@gmail.com',N'TUNG98@GMAIL.COM',1,N'AQAAAAEAACcQAAAAEBnmM5nvBxeKmawf3y3beqQEalr3xrm90BENXmCG0f4FoVq8U7vksFB50fhaZN3lgA==',N'8b99aa3d-94fd-4b1b-9a45-b623eaf13ab2',N'3e6b8db2-0816-4e71-9dbe-093cb05a5214',NULL,0,0,NULL,1,0,NULL,NULL,N'Nguyễn Tùng')
+		(N'd920e2b6-7b94-4e59-93ae-3c2c6345d002',N'tung98@gmail.com',N'TUNG98@GMAIL.COM',N'tung98@gmail.com',N'TUNG98@GMAIL.COM',1,N'AQAAAAEAACcQAAAAEBnmM5nvBxeKmawf3y3beqQEalr3xrm90BENXmCG0f4FoVq8U7vksFB50fhaZN3lgA==',N'8b99aa3d-94fd-4b1b-9a45-b623eaf13ab2',N'3e6b8db2-0816-4e71-9dbe-093cb05a5214',NULL,0,0,NULL,1,0,NULL,NULL,N'Nguyễn Tùng'),
+		(N'e12f8cd3-9c1a-4aa0-9b71-6c2f4c39a111',N'thanhlong87@gmail.com',N'THANHLONG87@GMAIL.COM',N'thanhlong87@gmail.com',N'THANHLONG87@GMAIL.COM',1,N'AQAAAAEAACcQAAAAEApqRL6oRp0iS/CwnfKqr3Tbooh0YzjPlyIRM4EepyTQ704H/V+eZX2w7tUkRqnZhg==',N'3f2d9c4e-9d44-4c1e-bc17-5b6a6f4c8c32',N'c4a1f2c1-6e3d-4b8e-bc41-4fd977c5b6f9',NULL,0,0,NULL,1,0,NULL,NULL,N'Thành Long'),
+		(N'7b62a8f4-9984-49c5-b13d-5ac3632fd222',N'huunghi123@gmail.com',N'HUUNGHI123@GMAIL.COM',N'huunghi123@gmail.com',N'HUUNGHI123@GMAIL.COM',1,N'AQAAAAEAACcQAAAAEBFfxB5zBLvtUry1CR/Z61m5ULp4M0H8yMeNz5IEF2VVv7HrdRnVDSHgcCyZhK7P1w==',N'8f1c2e4b-bc72-4c1a-8c9e-3f4a6d7289d1',N'5e9b3c1d-47a2-4b8d-ae3f-9c2d7a4f11b8',NULL,0,0,NULL,1,0,NULL,NULL,N'Hữu Nghi')
 
 --THEM DU LIEU ASPNETUSERROLES
 GO
 INSERT INTO AspNetUserRoles(UserId,RoleId)
 VALUES(N'04c4d31d-8960-41b4-8bbe-4823ba4db4e6',N'ff980498-3cc9-47e6-9af8-8d27d498b436'),
-		(N'c8be8d9d-8a69-4f1a-9a9d-f2d4d5acb001',N'07966728-3f96-465e-b7cb-f7bccb599965'),
-		(N'd920e2b6-7b94-4e59-93ae-3c2c6345d002',N'07966728-3f96-465e-b7cb-f7bccb599965')
+		(N'c8be8d9d-8a69-4f1a-9a9d-f2d4d5acb001',N'ff980498-3cc9-47e6-9af8-8d27d498b436'),
+		(N'd920e2b6-7b94-4e59-93ae-3c2c6345d002',N'07966728-3f96-465e-b7cb-f7bccb599965'),
+		(N'e12f8cd3-9c1a-4aa0-9b71-6c2f4c39a111',N'07966728-3f96-465e-b7cb-f7bccb599965'),
+		(N'7b62a8f4-9984-49c5-b13d-5ac3632fd222',N'07966728-3f96-465e-b7cb-f7bccb599965')
 
 ---THEM DU LIEU LOAI SAN PHAM
 GO
@@ -70,8 +74,10 @@ VALUES
 --THEM DU LIEU TAI KHOAN
 GO
 INSERT INTO TAIKHOAN(EMAIL, PASS, QUYEN, TRANGTHAI)
-VALUES (N'namle75@gmail.com','namle@123', N'USER', N'HOẠT ĐỘNG'),
-		(N'tung98@gmail.com','tung@123', N'USER', N'HOẠT ĐỘNG')
+VALUES (N'namle75@gmail.com','namle@123', N'ADMIN', N'HOẠT ĐỘNG'),
+		(N'tung98@gmail.com','tung@123', N'USER', N'HOẠT ĐỘNG'),
+		(N'thanhlong87@gmail.com','thanhlong@123', N'USER', N'HOẠT ĐỘNG'),
+		(N'huunghi123@gmail.com','huunghi@123', N'USER', N'HOẠT ĐỘNG')
 
 --THEM DU LIEU NHAN VIEN
 GO
@@ -81,7 +87,9 @@ VALUES ('NV001', N'Lê Hoài Nam', N'Nam', '30/04/1975', N'Nhân viên quản kh
 --THEM DU LIEU KHACH HANG
 GO
 INSERT INTO KHACHHANG(MAKH, TENKH, SDT, EMAIL, DIACHI, NGAYTAO)
-VALUES ('KH001', N'Nguyễn Thanh Tùng', 0972581443, N'tung98@gmail.com', N'987 Võ Thượng Thái Quân', '30/04/2018')
+VALUES ('KH001', N'Nguyễn Thanh Tùng', 0972581443, N'tung98@gmail.com', N'987 Võ Thượng Thái Quân', '30/04/2018'),
+		('KH002', N'Trần Thành Long', 0972581443, N'thanhlong87@gmail.com', N'715 La Hán', '07/12/2018'),
+		('KH003', N'Phạm Hữu Nghi', 0972581443, N'huunghi123@gmail.com', N'36 Hoàng Hà', '31/12/2018')
 
 --THEM DU LIEU KHO HANG
 GO
@@ -105,13 +113,13 @@ VALUES
   ('HD001', '22/10/2018', 2800000, 'KH001', 'NV001', N'Đã thanh toán'),
   ('HD002', '23/10/2018', 16800000, 'KH001', 'NV001', N'Chưa thanh toán'),
   ('HD003', '24/10/2018', 15000000, 'KH001', 'NV001', N'Đã thanh toán'),
-  ('HD004', '25/10/2018', 5700000, 'KH001', 'NV001', N'Chưa thanh toán'),
-  ('HD005', '26/10/2018', 6000000, 'KH001', 'NV001', N'Đã thanh toán'),
-  ('HD006', '27/10/2018', 2600000, 'KH001', 'NV001', N'Chưa thanh toán'),
-  ('HD007', '28/10/2018', 1150000, 'KH001', 'NV001', N'Đã thanh toán'),
-  ('HD008', '29/10/2018', 4600000, 'KH001', 'NV001', N'Chưa thanh toán'),
-  ('HD009', '30/10/2018', 3400000, 'KH001', 'NV001', N'Đã thanh toán'),
-  ('HD010', '31/10/2018', 42000000, 'KH001', 'NV001', N'Chưa thanh toán')
+  ('HD004', '25/10/2018', 5700000, 'KH002', 'NV001', N'Chưa thanh toán'),
+  ('HD005', '26/10/2018', 6000000, 'KH002', 'NV001', N'Đã thanh toán'),
+  ('HD006', '27/10/2018', 2600000, 'KH002', 'NV001', N'Chưa thanh toán'),
+  ('HD007', '28/10/2018', 1150000, 'KH003', 'NV001', N'Đã thanh toán'),
+  ('HD008', '29/10/2018', 4600000, 'KH003', 'NV001', N'Chưa thanh toán'),
+  ('HD009', '30/10/2018', 3400000, 'KH003', 'NV001', N'Đã thanh toán'),
+  ('HD010', '31/10/2018', 42000000, 'KH003', 'NV001', N'Chưa thanh toán')
 
   --THEM DU LIEU KHO SAN PHAM
 GO
@@ -148,3 +156,35 @@ VALUES ('HD001', 'SP001', 'KHO001', 1 , 2800000, 2800000),
 		('HD008', 'SP008', 'KHO001', 2 , 2300000, 4600000),
 		('HD009', 'SP009', 'KHO001', 1 , 3400000, 3400000),
 		('HD010', 'SP010', 'KHO001', 4 , 10500000, 42000000)
+
+--THEM DU LIEU GIO HANG
+GO
+INSERT INTO GIOHANG(MAKH, MASP, SOLUONG, MAHD)
+VALUES ('KH001', 'SP001', 1, 'HD001'),
+		('KH001', 'SP002', 4, 'HD002'),
+		('KH001', 'SP003', 2, 'HD003'),
+		('KH002', 'SP004', 3, 'HD004'),
+		('KH002', 'SP005', 5, 'HD005'),
+		('KH002', 'SP006', 2, 'HD006'),
+		('KH003', 'SP007', 1, 'HD007'),
+		('KH003', 'SP008', 2, 'HD008'),
+		('KH003', 'SP009', 1, 'HD009'),
+		('KH003', 'SP010', 4, 'HD010')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GO
+USE master

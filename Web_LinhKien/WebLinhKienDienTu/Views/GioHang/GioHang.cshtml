@@ -1,6 +1,13 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Identity
+@using WebLinhKienDienTu.Models
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@{
     ViewData["Title"] = "Home Page";
 }
+
+@model List<WebLinhKienDienTu.ViewModels.GioHangViewModel>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,52 +36,104 @@
 </head>
 
 <body>
-
-	<div class="container mt-4">
-		<div class="card shadow-lg">
-			<div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-				<h4 class="mb-0"><b>Giỏ Hàng Của Bạn</b></h4>
-                <div class="float-end">
-                    <a class="btn btn-success btn-sm" asp-controller="GioHang" asp-action="LichSuMuaHang"><b>Lịch Sử Mua Hàng</b></a>
-                    <a class="btn btn-outline-dark btn-warning mt-auto"><b>Làm Trống Giỏ Hàng</b></a>
+    @if (SignInManager.IsSignedIn(User) && User.IsInRole("User") )
+    {
+        if(Model != null)
+        {
+            <div class="container mt-4">
+            <div class="card shadow-lg">
+                <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                    <h4 class="mb-0"><b>Giỏ Hàng Của Bạn</b></h4>
+                    <div class="float-end">
+                        <a class="btn btn-success btn-sm" asp-controller="GioHang" asp-action="LichSuMuaHang"><b>Lịch Sử Mua Hàng</b></a>
+                        <a class="btn btn-outline-dark btn-warning mt-auto" asp-controller="GioHang" asp-action="DeleteAllGioHang" asp-route-email="@User.Identity.Name"><b>Làm Trống Giỏ Hàng</b></a>
+                    </div>
                 </div>
-			</div>
 
-			<div class="card-body">
+                <div class="card-body">
 
-				<!-- Bảng danh sách -->
-				<table class="table table-bordered text-center align-middle">
-					<thead class="table-secondary">
-						<tr>
-                            <th>Mã Sản Phẩm</th>
-                            <th>Tên Sản Phẩm</th>
-                            <th>Số Lượng</th>
-                            <th>Giá<br>( in $)</th>
-                            <th>Tổng<br>( in $)</th>
-							<th width="20%">Thao tác</th>
-						</tr>
-					</thead>
-					<tbody>
+                    <!-- Bảng danh sách -->
+                    <table class="table table-bordered text-center align-middle">
+                        <thead class="table-secondary">
+                            <tr>
+                                <th>Mã Sản Phẩm</th>
+                                <th>Tên Sản Phẩm</th>
+                                <th>Số Lượng</th>
+                                <th>Giá<br>( in $)</th>
+                                <th>Tổng<br>( in $)</th>
+                                <th width="20%">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach(var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Masp</td>
+                                    <td>@item.Tensp</td>
+                                    <td>@item.Soluong</td>
+                                    <td>@item.Gia</td>
+                                    <td>@(item.Soluong * item.Gia)</td>
+                                    <td>
+                                        <a class="btn btn-info btn-sm">Thanh Toán</a>
+                                        <a class="btn btn-danger btn-sm delete-btn"
+                                           data-bs-toggle="modal"
+                                           data-bs-target="#deleteHoaDon"
+                                           data-mahoadon="@item.Mahd">
+                                            Xóa
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
 
-						<tr>
-                            <td>asus_1050_4gb_ddr5</td>
-                            <td>Card Asus GTX 1050 4GB DDR5</td>
-							<td>2</td>
-							<td>350$</td>
-							<td>700$</td>
-							<td>
-								<a class="btn btn-info btn-sm">Thanh Toán</a>
-								<a class="btn btn-danger btn-sm">Xóa</a>
-							</td>
-						</tr>
+                    <div id="deleteHoaDon" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                @using (Html.BeginForm("DeleteHoaDon", "GioHang", FormMethod.Post))
+                                {
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Xóa Giỏ Hàng</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    
+                                    <div class="modal-body">
+                                        @Html.TextBox("Mahoadon", "", new { @class = "form-control", id = "modal-delete-mahoadon", required = "required", @readonly = "readonly" })
+                                        <p>Bạn có muốn xóa giỏ hàng này?</p>
+                                    </div>
+                                    @Html.Hidden("Email", User.Identity.Name, new { id = "modal-delete-email" })
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                        <button type="submit" class="btn btn-danger">Xóa</button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
 
-					</tbody>
-				</table>
+                </div>
+            </div>
+            </div>
+        }
+        else
+        {
+            <div class="center">
+                <h1>Giỏ hàng trống!</h1>
+            </div>
+        }
 
-			</div>
-		</div>
-	</div>
-
+    }
 </body>
 
 </html>
+<script>
+
+        var deleteModal = document.getElementById('deleteHoaDon');
+    deleteModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget;
+        var makho = button.getAttribute('data-mahoadon');
+        document.getElementById('modal-delete-mahoadon').value = makho;
+    });
+
+
+</script>

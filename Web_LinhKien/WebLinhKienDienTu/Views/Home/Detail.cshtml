@@ -43,12 +43,10 @@
                         <span>@Model.Dongia</span>
                         </div>
                     <p class="lead">@Model.Mota</p>
-                        <form action="cartProcess.php">
-                            <input type="hidden" name="masp" value="" />
-                            <input type="hidden" name="type" value="add" />
+                    <form method="post" asp-controller="GioHang" asp-action="AddGioHang" asp-route-email="@User.Identity.Name" asp-route-masp="@Model.Masp">
                             <div class="d-flex">
                                 <label for="inputQuantity">Số lượng:</label>
-                                <input class="form-control text-center me-3 mx-2 pt-1" name="inputQuantity" type="number" value="1" min="1" max="9" style="max-width: 3rem" />
+                            <input class="form-control text-center me-3 mx-2 pt-1" name="soluong" type="number" value="1" min="1" max="9" style="max-width: 3rem" />
                                 <button class="btn btn-outline-dark flex-shrink-0" type="submit">
                                     <i class="bi-cart-fill me-1"></i>
                                     Add to cart
