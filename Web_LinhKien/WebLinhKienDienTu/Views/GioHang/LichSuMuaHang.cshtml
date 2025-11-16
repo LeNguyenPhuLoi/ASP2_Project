@@ -1,6 +1,13 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Identity
+@using WebLinhKienDienTu.Models
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@{
     ViewData["Title"] = "Home Page";
 }
+
+@model List<WebLinhKienDienTu.Models.Hoadon>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,35 +36,38 @@
 </head>
 
 <body>
-
-    <div class="container mt-4">
-        <div class="card shadow-lg">
+    @if (SignInManager.IsSignedIn(User) && User.IsInRole("User") && Model != null)
+    {
+        <div class="container mt-4">
+            <div class="card shadow-lg">
             <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
                 <h4 class="mb-0">Lịch sử mua hàng</h4>
-                <a class="btn btn-light btn-sm" asp-controller="GioHang" asp-action="GioHang">← Quay lại</a>
+                    <a class="btn btn-light btn-sm" asp-controller="GioHang" asp-action="GioHang" asp-route-email="@User.Identity.Name">← Quay lại</a>
             </div>
 
             <div class="card-body">
                 <!-- Bộ lọc -->
-                <form class="row mb-3">
+                <form class="row mb-3" method="post" asp-action="LichSuMuaHang" asp-controller="GioHang">
                     <div class="col-md-3">
-                        <input type="text" name="search" class="form-control" placeholder="Tìm theo mã hóa đơn...">
+                        <input type="text" name="searchMa" class="form-control" placeholder="Tìm theo mã hóa đơn..." value="@ViewBag.searchMa">
                     </div>
                     <div class="col-md-3">
-                        <select name="trangThai" class="form-select">
-                            <option value="">-- Tất cả trạng thái --</option>
+                        <select class="form-select" name="searchTrangThai" value="@ViewBag.searchTrangThai">
+                            <option value="">-- Trạng thái --</option>
                             <option>Đã thanh toán</option>
-                            <option>Đang xử lý</option>
+                            <option>Chưa thanh toán</option>
                             <option>Đã hủy</option>
                         </select>
                     </div>
                     <div class="col-md-4">
                         <div class="d-flex gap-2">
-                            <input type="date" name="from" class="form-control">
+                            <input type="date" name="searchNgay" class="form-control" value="@ViewBag.searchNgay">
                         </div>
                     </div>
+                        <input type="hidden" name="email" value="@User.Identity.Name" />
                     <div class="col-md-2 text-end">
                         <button class="btn btn-success" type="submit">Lọc</button>
+                        <a class="btn btn-secondary" href="@Url.Action("LichSuMuaHang", "GioHang", new { email = User.Identity.Name })">Làm mới</a>
                     </div>
                 </form>
 
@@ -73,26 +83,55 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>HD001</td>
-                            <td>18/10/2025</td>
-                            <td>1.750.000</td>
-                            <td><span class="badge bg-success">Đã thanh toán</span></td>
-                            <td>
-                                <a asp-controller="GioHang" asp-action="ChiTietHoaDon" class="btn btn-info btn-sm">Chi tiết</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>HD002</td>
-                            <td>14/10/2025</td>
-                            <td>950.000</td>
-                            <td><span class="badge bg-warning text-dark">Đang xử lý</span></td>
-                            <td>
-                                <a href="" class="btn btn-info btn-sm">Chi tiết</a>
-                            </td>
-                        </tr>
+                            @foreach(var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Mahd</td>
+                                    <td>@item.Ngaylap.Value.ToShortDateString()</td>
+                                    <td>@item.Tongtien</td>
+                                    @if (@item.Trangthai == "Đã thanh toán")
+                                    {
+                                        <td><span class="badge bg-success">Đã thanh toán</span></td>
+                                    }
+                                    else
+                                    {
+                                        <td><span class="badge bg-danger">Đã thanh toán</span></td>
+                                    }
+                                    
+                                    <td>
+                                        <a asp-controller="GioHang" asp-action="ChiTietHoaDon" asp-route-mahd="@item.Mahd" class="btn btn-info btn-sm">Chi tiết</a>
+                                    </td>
+                                </tr>
+                            }
                     </tbody>
                 </table>
+
+                    <nav>
+                        <ul class="pagination justify-content-center">
+
+                            @if (ViewBag.Page > 1)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link" href="@Url.Action("LichSuMuaHang", new { page = ViewBag.Page - 1 })">Previous</a>
+                                </li>
+                            }
+
+                            @for (int i = 1; i <= ViewBag.TotalPage; i++)
+                            {
+                                <li class="page-item @(i == ViewBag.Page ? "active" : "")">
+                                    <a class="page-link" href="@Url.Action("LichSuMuaHang", new { page = i })">@i</a>
+                                </li>
+                            }
+
+                            @if (ViewBag.Page < ViewBag.TotalPage)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link" href="@Url.Action("LichSuMuaHang", new { page = ViewBag.Page + 1 })">Next</a>
+                                </li>
+                            }
+
+                        </ul>
+                    </nav>
 
                 <!-- Nếu không có đơn
                 <div class="text-center text-muted mt-3">
@@ -100,9 +139,9 @@
                 </div> -->
 
             </div>
+            </div>
         </div>
-    </div>
-
+    }
 </body>
 
 </html>
