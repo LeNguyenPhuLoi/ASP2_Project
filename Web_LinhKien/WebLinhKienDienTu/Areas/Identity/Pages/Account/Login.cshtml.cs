@@ -2,18 +2,19 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
 
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
 using WebLinhKienDienTu.Models;
 
 namespace WebLinhKienDienTu.Areas.Identity.Pages.Account
@@ -23,12 +24,14 @@ namespace WebLinhKienDienTu.Areas.Identity.Pages.Account
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
+        private readonly QllkContext _context;
 
-        public LoginModel(SignInManager<ApplicationUser> signInManager, ILogger<LoginModel> logger, UserManager<ApplicationUser> userManager)
+        public LoginModel(SignInManager<ApplicationUser> signInManager, ILogger<LoginModel> logger, UserManager<ApplicationUser> userManager, QllkContext context)
         {
             _signInManager = signInManager;
             _logger = logger;
             _userManager = userManager;
+            _context = context;
         }
 
         /// <summary>
@@ -107,21 +110,46 @@ namespace WebLinhKienDienTu.Areas.Identity.Pages.Account
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl ??= Url.Content("~/");
+
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
 
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+                // 1️⃣ KIỂM TRA USER CÓ TỒN TẠI TRONG ASPNETUSER KHÔNG
+                var user = await _userManager.FindByEmailAsync(Input.Email);
+                if (user == null)
+                {
+                    ModelState.AddModelError(string.Empty, "Tài khoản không tồn tại.");
+                    return Page();
+                }
+
+                // 2️⃣ KIỂM TRA USER CÓ TỒN TẠI TRONG BẢNG TAIKHOAN KHÔNG
+                var taiKhoan = await _context.Taikhoans.FindAsync(Input.Email);
+                if (taiKhoan == null)
+                {
+                    ModelState.AddModelError(string.Empty, "Tài khoản không tồn tại trong hệ thống cửa hàng.");
+                    return Page();
+                }
+
+                // 3️⃣ KIỂM TRA TRẠNG THÁI
+                if (taiKhoan.Trangthai != "Active")
+                {
+                    ModelState.AddModelError(string.Empty, "Tài khoản đã bị khóa.");
+                    return Page();
+                }
+
+                // 4️⃣ KIỂM TRA MẬT KHẨU (Identity quản lý)
+                var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: true);
 
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
 
                     // Lấy user đã đăng nhập
-                    var user = await _userManager.FindByEmailAsync(Input.Email);
+                    var userl = await _userManager.FindByEmailAsync(Input.Email);
 
                     // Kiểm tra role
-                    if (await _userManager.IsInRoleAsync(user, "Admin"))
+                    if (await _userManager.IsInRoleAsync(userl, "Admin"))
                     {
                         return RedirectToAction("QuanLySP", "Admin"); // Trang Admin
                     }
@@ -141,9 +169,11 @@ namespace WebLinhKienDienTu.Areas.Identity.Pages.Account
                     _logger.LogWarning("User account locked out.");
                     return RedirectToPage("./Lockout");
                 }
-
-                ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-                return Page();
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Sai mật khẩu.");
+                    return Page();
+                }
             }
 
             return Page();

@@ -12,14 +12,18 @@ namespace WebLinhKienDienTu.Controllers
         public readonly IHoaDonService _hoadonservice;
         public readonly IKhoSPService _khoSPService;
         public readonly IKhoHangService _khohangservice;
+        public readonly IKhachHangService _khachHangService;
+        public readonly INhanVienService _nhanvienService;
 
-        public AdminController(ILoaiSPService loaiSanPhamService, ISanPhamService sanphamservice, IHoaDonService hoadonservice, IKhoSPService khoSanPhamService, IKhoHangService khohangservice)
+        public AdminController(ILoaiSPService loaiSanPhamService, ISanPhamService sanphamservice, IHoaDonService hoadonservice, IKhoSPService khoSanPhamService, IKhoHangService khohangservice,INhanVienService nhanVienService,IKhachHangService khachHangService)
         {
             _loaiSPService = loaiSanPhamService;
             _sanphamservice = sanphamservice;
             _hoadonservice = hoadonservice;
             _khoSPService = khoSanPhamService;
             _khohangservice = khohangservice;
+            _nhanvienService = nhanVienService;
+            _khachHangService = khachHangService;
         }
 
         public IActionResult QuanLyHoaDon(int page = 1)
@@ -313,9 +317,109 @@ namespace WebLinhKienDienTu.Controllers
             return RedirectToAction("QuanLyLoaiSP");
         }
 
-        public IActionResult NhanVien()
+        public IActionResult NhanVien(int page = 1)
         {
-            return View();
+            int pageSize = 5; // Số dòng mỗi trang
+
+            // Lấy toàn bộ danh sách
+            var nhanvien = _nhanvienService.LoadDSNhanVien()
+                                          .OrderBy(k => k.Manv);
+
+            // Tính toán phân trang
+            var data = nhanvien.Skip((page - 1) * pageSize)
+                               .Take(pageSize)
+                               .ToList();
+
+            // Gửi thông tin phân trang sang View
+            ViewBag.Page = page;
+            ViewBag.TotalPage = (int)Math.Ceiling((double)nhanvien.Count() / pageSize);
+
+            return View(data);
+        }
+
+        [HttpPost]
+        public IActionResult NhanVien(string searchMa, string searchTen)
+        {
+            var model = _nhanvienService.TimKiem(searchMa, searchTen);
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddNhanVien(string tennv, string sdt, string gioitinh, string ngaysinh,
+                              string chuc, string luong, string diachi, string pass, string email, string confirmpass)
+        {
+            // Kiểm tra mật khẩu
+            if (pass != confirmpass)
+            {
+                ViewBag.Error = "Mật khẩu xác nhận không khớp.";
+                return RedirectToAction("NhanVien");
+            }
+
+            // Kiểm tra số điện thoại hợp lệ: chỉ gồm 10-11 số
+            if (!System.Text.RegularExpressions.Regex.IsMatch(sdt, @"^\d{10,11}$"))
+            {
+                ViewBag.Error = "Số điện thoại không hợp lệ. Vui lòng nhập 10-11 chữ số.";
+                return RedirectToAction("NhanVien");
+            }
+
+            // Kiểm tra email hợp lệ
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                if (addr.Address != email)
+                {
+                    ViewBag.Error = "Email không hợp lệ!";
+                    return RedirectToAction("NhanVien");
+                }
+            }
+            catch
+            {
+                ViewBag.Error = "Email không hợp lệ!";
+                return RedirectToAction("NhanVien");
+            }
+
+            try
+            {
+                await _nhanvienService.AddNhanVien(tennv, sdt, gioitinh, ngaysinh, chuc, luong, email, pass, diachi);
+                ViewBag.Success = "Thêm nhân viên thành công!";
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+            }
+
+            return RedirectToAction("NhanVien"); // quay về Index
+        }
+
+        [HttpPost]
+        public IActionResult EditNhanVien(string manv, string tennv, string sdt, string gioitinh, string ngaysinh,
+                              string chuc, string luong, string diachi)
+        {
+            _nhanvienService.EditNhanVien(manv, tennv, sdt, gioitinh, ngaysinh, chuc, luong, diachi);
+            return RedirectToAction("NhanVien");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteNhanVien(string manv)
+        {
+            try
+            {
+                bool success = await _nhanvienService.DeleteNhanVien(manv);
+                if (success)
+                {
+                    ViewBag.Success = "Xóa Nhân viên thành công!";
+                }
+                else
+                {
+                    ViewBag.Error = "Không tìm thấy nhân viên để xóa.";
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = $"Xóa thất bại: {ex.Message}";
+            }
+
+            return RedirectToAction("NhanVien");
         }
 
         public IActionResult TaiKhoan()
@@ -328,9 +432,107 @@ namespace WebLinhKienDienTu.Controllers
             return View();
         }
 
-        public IActionResult KhachHang()
+        public IActionResult KhachHang(int page = 1)
         {
-            return View();
+            int pageSize = 5; // Số dòng mỗi trang
+
+            // Lấy toàn bộ danh sách
+            var khachhang = _khachHangService.LoadDSKhachHang()
+                                          .OrderBy(k => k.Makh);
+
+            // Tính toán phân trang
+            var data = khachhang.Skip((page - 1) * pageSize)
+                               .Take(pageSize)
+                               .ToList();
+
+            // Gửi thông tin phân trang sang View
+            ViewBag.Page = page;
+            ViewBag.TotalPage = (int)Math.Ceiling((double)khachhang.Count() / pageSize);
+
+            return View(data);
+        }
+
+        [HttpPost]
+        public IActionResult KhachHang(string searchMa, string searchKhachHang)
+        {
+            var model = _khachHangService.TimKiem(searchMa, searchKhachHang);
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddCustomer(string tenkh, string sdt, string email, string pass, string confirmpass, string diachi)
+        {
+            // Kiểm tra mật khẩu
+            if (pass != confirmpass)
+            {
+                ViewBag.Error = "Mật khẩu xác nhận không khớp.";
+                return RedirectToAction("KhachHang");
+            }
+
+            // Kiểm tra số điện thoại hợp lệ: chỉ gồm 10-11 số
+            if (!System.Text.RegularExpressions.Regex.IsMatch(sdt, @"^\d{10,11}$"))
+            {
+                ViewBag.Error = "Số điện thoại không hợp lệ. Vui lòng nhập 10-11 chữ số.";
+                return RedirectToAction("KhachHang");
+            }
+
+            // Kiểm tra email hợp lệ
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                if (addr.Address != email)
+                {
+                    ViewBag.Error = "Email không hợp lệ!";
+                    return RedirectToAction("KhachHang");
+                }
+            }
+            catch
+            {
+                ViewBag.Error = "Email không hợp lệ!";
+                return RedirectToAction("KhachHang");
+            }
+
+            try
+            {
+                await _khachHangService.AddCustomer(tenkh, sdt, email, pass, diachi);
+                ViewBag.Success = "Thêm khách hàng thành công!";
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+            }
+
+            return RedirectToAction("KhachHang"); // quay về Index
+        }
+
+        [HttpPost]
+        public IActionResult EditCustomer(string makh, string tenkh, string sdt, string diachi)
+        {
+            _khachHangService.EditCustomer(makh, tenkh, sdt, diachi);
+            return RedirectToAction("KhachHang");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteCustomer(string makh)
+        {
+            try
+            {
+                bool success = await _khachHangService.DeleteCustomer(makh);
+                if (success)
+                {
+                    ViewBag.Success = "Xóa khách hàng thành công!";
+                }
+                else
+                {
+                    ViewBag.Error = "Không tìm thấy khách hàng để xóa.";
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = $"Xóa thất bại: {ex.Message}";
+            }
+
+            return RedirectToAction("KhachHang");
         }
 
     }

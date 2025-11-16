@@ -1,11 +1,12 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using Microsoft.AspNetCore.Identity
+@using WebLinhKienDienTu.Models
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 @{
     Layout = "/Views/Shared/_AdminLayout.cshtml"; // Chỉ định layout mới cho trang Index
     ViewData["Title"] = "Admin Page";
 }
-
+@model List<Nhanvien>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,27 +33,28 @@
 </head>
 
 <body>
-
+    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+    {
     <div class="container mt-4">
         <div class="card shadow-lg">
             <div class="card-header bg-danger text-white d-flex justify-content-between align-items-center">
                 <h4 class="mb-0">Quản lý Nhân Viên</h4>
                 @* <a class="btn btn-success btn-sm">+ Thêm Nhân Viên</a> *@
-                <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addEmployeeModal"><i class="bi bi-pencil"></i><span> Thêm sản phẩm</span></a>
+                <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addNhanVienModal"><i class="bi bi-pencil"></i><span> Thêm Nhân Viên</span></a>
             </div>
 
             <div class="card-body">
                 <!-- Thanh tìm kiếm -->
-                <form class="row mb-3">
+                <form class="row mb-3" method="post" asp-action="NhanVien" asp-controller="Admin">
                     <div class="col-md-4">
-                        <input type="text" class="form-control" name="searchMa" placeholder="Tìm theo mã nhân viên">
+                        <input type="text" class="form-control" name="searchMa" placeholder="Tìm theo mã nhân viên" value="@ViewBag.searchMa">
                     </div>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" name="searchKhachHang" placeholder="Tìm theo tên nhân viên">
+                        <input type="text" class="form-control" name="searchTen" placeholder="Tìm theo tên nhân viên" value="@ViewBag.searchTen">
                     </div>
                     <div class="col-md-4 text-end">
                         <button class="btn btn-info" type="submit">Tìm kiếm</button>
-                        <a class="btn btn-secondary">Làm mới</a>
+                        <a class="btn btn-secondary" href="@Url.Action("NhanVien", "Admin")">Làm mới</a>
                     </div>
                 </form>
 
@@ -70,110 +72,296 @@
                             <th>Tên Nhân viên</th>
                             <th>Giới tính</th>
                             <th>Ngày sinh</th>
-                            <th>CCCD/CMND</th>
                             <th>Chức</th>
                             <th>Lương</th>
                             <th>Địa chỉ</th>
                             <th>Số điện thoại</th>
-                            <th>Mã tài khoản</th>
+                            <th>Email</th>
                             <th width="10%">Thao tác</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                    <label for="checkbox1"></label>
-                                </span>
-                            </td>
-                            <td>NV001</td>
-                            <td>Nguyễn Văn A</td>
-                            <td>Nam</td>
-                            <td>1995-02-15</td>
-                            <td>079562341234</td>
-                            <td>Giao dịch viên</td>
-                            <td>12,000,000</td>
-                            <td>45 Lê Lợi, Q1, TP.HCM</td>
-                            <td>0909123456</td>
-                            <td>TK001</td>
-                            <td>
-                                <a class="btn btn-warning btn-sm">Sửa</a>
-                                <a class="btn btn-danger btn-sm">Xóa</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                    <label for="checkbox1"></label>
-                                </span>
-                            </td>
-                            <td>NV002</td>
-                            <td>Trần Thị B</td>
-                            <td>Nữ</td>
-                            <td>1998-07-09</td>
-                            <td>083459871245</td>
-                            <td>Kế toán</td>
-                            <td>13,500,000</td>
-                            <td>12 Nguyễn Trãi, Q5, TP.HCM</td>
-                            <td>0918234567</td>
-                            <td>TK002</td>
-                            <td>
-                                <a class="btn btn-warning btn-sm">Sửa</a>
-                                <a class="btn btn-danger btn-sm">Xóa</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                    <label for="checkbox1"></label>
-                                </span>
-                            </td>
-                            <td>NV003</td>
-                            <td>Lê Quốc C</td>
-                            <td>Nam</td>
-                            <td>1993-11-21</td>
-                            <td>072365987456</td>
-                            <td>Quản lý chi nhánh</td>
-                            <td>18,000,000</td>
-                            <td>88 Điện Biên Phủ, Q3, TP.HCM</td>
-                            <td>0905345678</td>
-                            <td>TK003</td>
-                            <td>
-                                <a class="btn btn-warning btn-sm">Sửa</a>
-                                <a class="btn btn-danger btn-sm">Xóa</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                    <label for="checkbox1"></label>
-                                </span>
-                            </td>
-                            <td>NV004</td>
-                            <td>Phạm Thị D</td>
-                            <td>Nữ</td>
-                            <td>2000-05-17</td>
-                            <td>074598632157</td>
-                            <td>Thủ quỹ</td>
-                            <td>11,000,000</td>
-                            <td>23 Võ Văn Ngân, Thủ Đức</td>
-                            <td>0934234567</td>
-                            <td>TK004</td>
-                            <td>
-                                <a class="btn btn-warning btn-sm">Sửa</a>
-                                <a class="btn btn-danger btn-sm">Xóa</a>
-                            </td>
-                        </tr>
+                        @foreach (var nhanvien in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <span class="custom-checkbox">
+                                        <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                        <label for="checkbox1"></label>
+                                    </span>
+                                </td>
+                                <td>@nhanvien.Manv</td>
+                                <td>@nhanvien.Tennv</td>
+                                <td>@nhanvien.Gioitinh</td>
+                                <td>@nhanvien.Ngaysinh</td>
+                                <td>@nhanvien.Chuc</td>
+                                <td>@nhanvien.Luong</td>
+                                <td>@nhanvien.Diachi</td>
+                                <td>@nhanvien.Sdt</td>
+                                <td>@nhanvien.Email</td>
+                                <td>
+                                    <a class="btn btn-warning btn-sm"
+                                       data-bs-toggle="modal"
+                                       data-bs-target="#editNhanVienModal"
+                                       data-manv="@nhanvien.Manv"
+                                       data-tennv="@nhanvien.Tennv"
+                                       data-gioitinh="@nhanvien.Gioitinh"
+                                       data-ngaysinh="@nhanvien.Ngaysinh.ToString("yyyy-MM-dd")"
+                                       data-chuc="@nhanvien.Chuc"
+                                       data-luong="@nhanvien.Luong"
+                                       data-diachi="@nhanvien.Diachi"
+                                       data-sdt="@nhanvien.Sdt"
+                                       data-email="@nhanvien.Email">Sửa</a>
+
+                                    <a class="btn btn-danger btn-sm"
+                                       data-bs-toggle="modal"
+                                       data-bs-target="#deleteNhanVien"
+                                       data-manv="@nhanvien.Manv">Xóa</a>
+                                </td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
+
+                <nav>
+                    <ul class="pagination justify-content-center">
+
+                        @if (ViewBag.Page > 1)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" href="@Url.Action("NhanVien", new { page = ViewBag.Page - 1 })">Previous</a>
+                            </li>
+                        }
+
+                        @for (int i = 1; i <= ViewBag.TotalPage; i++)
+                        {
+                            <li class="page-item @(i == ViewBag.Page ? "active" : "")">
+                                <a class="page-link" href="@Url.Action("NhanVien", new { page = i })">@i</a>
+                            </li>
+                        }
+
+                        @if (ViewBag.Page < ViewBag.TotalPage)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" href="@Url.Action("NhanVien", new { page = ViewBag.Page + 1 })">Next</a>
+                            </li>
+                        }
+
+                    </ul>
+                </nav>
+
+
+                <!-- MODAL THÊM NHÂN VIÊN -->
+                <div class="modal fade" id="addNhanVienModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            @using (Html.BeginForm("AddNhanVien", "Admin", FormMethod.Post))
+                            {
+                                <div class="modal-header">
+                                    <h4>Thêm Nhân Viên</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <div class="mb-2">
+                                        @Html.Label("Tên nhân viên")
+                                        @Html.TextBox("tennv", "", new { @class = "form-control", required = "required" })
+                                    </div>
+
+                                    <div class="mb-2">
+                                        @Html.Label("Giới tính")
+                                        @Html.DropDownList("gioitinh", new SelectList(new[] { "Nam", "Nữ" }), "Chọn giới tính", new { @class = "form-control" })
+                                    </div>
+
+                                    <div class="mb-2">
+                                        @Html.Label("Ngày sinh")
+                                        @Html.TextBox("ngaysinh", "", new { @type = "date", @class = "form-control", required = "required" })
+                                    </div>
+
+                                    <div class="mb-2">
+                                        @Html.Label("Chức vụ")
+                                        @Html.TextBox("chuc", "", new { @class = "form-control" })
+                                    </div>
+
+                                    <div class="mb-2">
+                                        @Html.Label("Lương")
+                                        @Html.TextBox("luong", "", new { @class = "form-control", required = "required" })
+                                    </div>
+
+                                    <div class="mb-2">
+                                        @Html.Label("Số điện thoại")
+                                        @Html.TextBox("sdt", "", new { @class = "form-control", required = "required" })
+                                    </div>
+
+                                    <div class="mb-2">
+                                        @Html.Label("Địa chỉ")
+                                        @Html.TextArea("diachi", "", new { @class = "form-control" })
+                                    </div>
+
+                                    <div class="mb-2">
+                                        @Html.Label("Email")
+                                        @Html.TextBox("email", "", new { @class = "form-control", required = "required" })
+                                    </div>
+
+                                    <div class="mb-2">
+                                        @Html.Label("Mật khẩu")
+                                        @Html.Password("pass", "", new { @class = "form-control", required = "required" })
+                                    </div>
+
+                                    <div class="mb-2">
+                                        @Html.Label("Xác nhận mật khẩu")
+                                        @Html.Password("confirmpass", "", new { @class = "form-control", required = "required" })
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <button class="btn btn-success">Thêm</button>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Edit Modal HTML -->
+                <div id="editNhanVienModal" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            @using (Html.BeginForm("EditNhanVien", "Admin", FormMethod.Post))
+                            {
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Sửa Nhân Viên</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+
+                                <div class="modal-body">
+
+                                    <!-- Mã nhân viên (readonly) -->
+                                    <div class="mb-3">
+                                        @Html.Label("Mã nhân viên")
+                                        @Html.TextBox("manv", "", new { @class = "form-control", id = "edit-manv", @readonly = "readonly", required = "required" })
+                                    </div>
+
+                                    <!-- Tên nhân viên -->
+                                    <div class="mb-3">
+                                        @Html.Label("Tên Nhân Viên")
+                                        @Html.TextBox("tennv", "", new { @class = "form-control", id = "edit-tennv", required = "required" })
+                                    </div>
+
+                                    <!-- Giới tính -->
+                                    <div class="mb-3">
+                                        @Html.Label("Giới tính")
+                                        @Html.DropDownList("gioitinh",
+                                        new SelectList(new[] { "Nam", "Nữ" }),
+                                                                        "-- Chọn giới tính --",
+                                                                        new { @class = "form-control", id = "edit-gioitinh", required = "required" })
+                                </div>
+
+                                <!-- Ngày sinh -->
+                                <div class="mb-3">
+                                    @Html.Label("Ngày sinh")
+                                    @Html.TextBox("ngaysinh", "", new { @type = "date", @class = "form-control", id = "edit-ngaysinh", required = "required" })
+                                </div>
+
+                                <!-- Chức vụ -->
+                                <div class="mb-3">
+                                    @Html.Label("Chức vụ")
+                                    @Html.TextBox("chuc", "", new { @class = "form-control", id = "edit-chuc", required = "required" })
+                                </div>
+
+                                <!-- Lương -->
+                                <div class="mb-3">
+                                    @Html.Label("Lương")
+                                    @Html.TextBox("luong", "", new { @class = "form-control", id = "edit-luong", required = "required" })
+                                </div>
+
+                                <!-- Số điện thoại -->
+                                <div class="mb-3">
+                                    @Html.Label("Số điện thoại")
+                                    @Html.TextBox("sdt", "", new { @class = "form-control", id = "edit-sdt", required = "required" })
+                                </div>
+
+                                <!-- Địa chỉ -->
+                                <div class="mb-3">
+                                    @Html.Label("Địa chỉ")
+                                    @Html.TextArea("diachi", "", new { @class = "form-control", id = "edit-diachi", required = "required" })
+                                </div>
+
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                <button type="submit" class="btn btn-info">Cập nhật</button>
+                            </div>
+                                                        }
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delete Modal HTML -->
+                <div id="deleteNhanVien" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            @using (Html.BeginForm("DeleteNhanVien", "Admin", FormMethod.Post))
+                            {
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Xóa Nhân Viên</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    @Html.TextBox("manv", "", new { @class = "form-control", id = "modal-delete-manv", required = "required", @readonly = "readonly" })
+                                    <p>Bạn có muốn xóa Nhân viên này?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <button type="submit" class="btn btn-danger">Xóa</button>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 
+    <script>
+
+            var addForm = document.querySelector('#addNhanVienModal form');
+            var form = document.querySelector('form');
+            form.addEventListener('submit', function(e){ var pass = form.querySelector('[name="pass"]').value;
+            var conf = form.querySelector('[name="confirmpass"]').value; if(pass !== conf){ e.preventDefault();
+                alert("Mật khẩu xác nhận không khớp!"); } });
+
+                // ===================== MODAL SỬA NHÂN VIÊN =====================
+        var editModal = document.getElementById('editNhanVienModal');
+
+        if (editModal) {
+            editModal.addEventListener('show.bs.modal', function (event) {
+
+                var button = event.relatedTarget;
+
+                document.getElementById('edit-manv').value = button.getAttribute('data-manv');
+                document.getElementById('edit-tennv').value = button.getAttribute('data-tennv');
+                document.getElementById('edit-gioitinh').value = button.getAttribute('data-gioitinh');
+                document.getElementById('edit-ngaysinh').value = button.getAttribute('data-ngaysinh');
+                document.getElementById('edit-chuc').value = button.getAttribute('data-chuc');
+                document.getElementById('edit-luong').value = button.getAttribute('data-luong');
+                document.getElementById('edit-sdt').value = button.getAttribute('data-sdt');
+                document.getElementById('edit-diachi').value = button.getAttribute('data-diachi');
+
+            });
+        }
+
+        var deleteModal = document.getElementById('deleteNhanVien');
+            deleteModal.addEventListener('show.bs.modal', function (event) {
+                    var button = event.relatedTarget;
+                    document.getElementById('modal-delete-manv').value = button.getAttribute('data-manv');
+            });
+    </script>
+    }
 </body>
 
 </html>

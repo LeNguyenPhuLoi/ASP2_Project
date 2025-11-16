@@ -1,10 +1,12 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using Microsoft.AspNetCore.Identity
+@using WebLinhKienDienTu.Models
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 @{
     Layout = "/Views/Shared/_AdminLayout.cshtml"; // Chỉ định layout mới cho trang Index
     ViewData["Title"] = "Admin Page";
 }
+@model List<Khachhang>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,26 +34,28 @@
 
 <body>
 
+    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+    {
     <div class="container mt-4">
         <div class="card shadow-lg">
             <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
                 <h4 class="mb-0">Quản lý Khách Hàng</h4>
                 @* <a class="btn btn-success btn-sm">+ Thêm Nhân Viên</a> *@
-                <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addEmployeeModal"><i class="bi bi-pencil"></i><span> Thêm khách hàng</span></a>
+                <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addCustomer"><i class="bi bi-pencil"></i><span> Thêm khách hàng</span></a>
             </div>
 
             <div class="card-body">
                 <!-- Thanh tìm kiếm -->
-                <form class="row mb-3">
+                <form class="row mb-3" method="post" asp-action="KhachHang" asp-controller="Admin">
                     <div class="col-md-4">
-                        <input type="text" class="form-control" name="searchMa" placeholder="Tìm theo mã khách hàng">
+                        <input type="text" class="form-control" name="searchMa" placeholder="Tìm theo mã khách hàng" value="@ViewBag.searchMa">
                     </div>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" name="searchKhachHang" placeholder="Tìm theo tên khách hàng">
+                        <input type="text" class="form-control" name="searchKhachHang" placeholder="Tìm theo tên khách hàng" value="@ViewBag.searchKhachHang">
                     </div>
                     <div class="col-md-4 text-end">
                         <button class="btn btn-info" type="submit">Tìm kiếm</button>
-                        <a class="btn btn-secondary">Làm mới</a>
+                        <a class="btn btn-secondary" href="@Url.Action("KhachHang", "Admin")">Làm mới</a>
                     </div>
                 </form>
 
@@ -75,67 +79,213 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                    <label for="checkbox1"></label>
-                                </span>
-                            </td>
-                            <td>KH001</td>
-                            <td>Nguyễn Văn A</td>
-                            <td>0909123456</td>
-                            <td>VanA@gmail.com</td>                           
-                            <td>45 Lê Lợi, Q1, TP.HCM</td>
-                            <td>1990-11-5</td>
-                            <td>
-                                <a class="btn btn-warning btn-sm">Sửa</a>
-                                <a class="btn btn-danger btn-sm">Xóa</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                    <label for="checkbox1"></label>
-                                </span>
-                            </td>
-                            <td>KH001</td>
-                            <td>Nguyễn Văn A</td>
-                            <td>0909123456</td>
-                            <td>VanA@gmail.com</td>
-                            <td>45 Lê Lợi, Q1, TP.HCM</td>
-                            <td>1990-11-5</td>
-                            <td>
-                                <a class="btn btn-warning btn-sm">Sửa</a>
-                                <a class="btn btn-danger btn-sm">Xóa</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                    <label for="checkbox1"></label>
-                                </span>
-                            </td>
-                            <td>KH001</td>
-                            <td>Nguyễn Văn A</td>
-                            <td>0909123456</td>
-                            <td>VanA@gmail.com</td>
-                            <td>45 Lê Lợi, Q1, TP.HCM</td>
-                            <td>1990-11-5</td>
-                            <td>
-                                <a class="btn btn-warning btn-sm">Sửa</a>
-                                <a class="btn btn-danger btn-sm">Xóa</a>
-                            </td>
-                        </tr>
-                        
+
+                        @foreach (var customer in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <span class="custom-checkbox">
+                                        <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                        <label for="checkbox1"></label>
+                                    </span>
+                                </td>
+                                <td>@customer.Makh</td>
+                                <td>@customer.Tenkh</td>
+                                <td>@customer.Sdt</td>
+                                <td>@customer.Email</td>
+                                <td>@customer.Diachi</td>
+                                <td>@customer.Ngaytao</td>
+                                <td>
+                                    <a class="btn btn-warning btn-sm"
+                                       data-bs-toggle="modal"
+                                       data-bs-target="#editCustomer"
+                                       data-makh="@customer.Makh"
+                                       data-tenkh="@customer.Tenkh"
+                                       data-sdt="@customer.Sdt"
+                                       data-diachi="@customer.Diachi">
+                                        Sửa
+                                    </a>
+                                    <a class="btn btn-danger btn-sm"
+                                       data-bs-toggle="modal"
+                                       data-bs-target="#deleteCustomer"
+                                       data-makh="@customer.Makh">
+                                        Xóa
+                                    </a>
+                                </td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
+
+                <nav>
+                    <ul class="pagination justify-content-center">
+
+                        @if (ViewBag.Page > 1)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" href="@Url.Action("KhachHang", new { page = ViewBag.Page - 1 })">Previous</a>
+                            </li>
+                        }
+
+                        @for (int i = 1; i <= ViewBag.TotalPage; i++)
+                        {
+                            <li class="page-item @(i == ViewBag.Page ? "active" : "")">
+                                <a class="page-link" href="@Url.Action("KhachHang", new { page = i })">@i</a>
+                            </li>
+                        }
+
+                        @if (ViewBag.Page < ViewBag.TotalPage)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" href="@Url.Action("KhachHang", new { page = ViewBag.Page + 1 })">Next</a>
+                            </li>
+                        }
+
+                    </ul>
+                </nav>
+
+                <!-- Add Modal HTML -->
+                <div id="addCustomer" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            @using (Html.BeginForm("AddCustomer", "Admin", FormMethod.Post))
+                            {
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Thêm Khách Hàng</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        @Html.Label("Tên Khách Hàng")
+                                        @Html.TextBox("tenkh", "", new { @class = "form-control", required = "required" })
+                                    </div>
+                                    <div class="mb-3">
+                                        @Html.Label("Số điện thoại")
+                                        @Html.TextBox("sdt", "", new { @class = "form-control", required = "required" })
+                                    </div>
+                                    <div class="mb-3">
+                                        @Html.Label("Địa chỉ")
+                                        @Html.TextArea("diachi", "", new { @class = "form-control", required = "required" })
+                                    </div>
+                                    <div class="mb-3">
+                                        @Html.Label("Email")
+                                        @Html.TextBox("email", "", new { @class = "form-control", required = "required" })
+                                    </div>
+                                    <div class="mb-3">
+                                        @Html.Label("Pass")
+                                        @Html.Password("pass", "", new { @class = "form-control", required = "required" })
+                                    </div>
+                                    <div class="mb-3">
+                                        @Html.Label("Xác nhận mật khẩu")
+                                        @Html.Password("confirmpass", "", new { @class = "form-control", required = "required" })
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <button type="submit" class="btn btn-success">Thêm</button>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Edit Modal HTML -->
+                <div id="editCustomer" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            @using (Html.BeginForm("EditCustomer", "Admin", FormMethod.Post))
+                            {
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Sửa Khách Hàng</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- Mã khách hàng (readonly) -->
+                                    <div class="mb-3">
+                                        @Html.Label("Mã khách hàng")
+                                        @Html.TextBox("makh", "", new { @class = "form-control", id = "modal-makh", @readonly = "readonly", required = "required" })
+                                    </div>
+
+                                    <!-- Tên khách hàng -->
+                                    <div class="mb-3">
+                                        @Html.Label("Tên Khách Hàng")
+                                        @Html.TextBox("tenkh", "", new { @class = "form-control", id = "modal-tenkh", required = "required" })
+                                    </div>
+
+                                    <!-- Số điện thoại -->
+                                    <div class="mb-3">
+                                        @Html.Label("Số điện thoại")
+                                        @Html.TextBox("sdt", "", new { @class = "form-control", id = "modal-sdt", required = "required" })
+                                    </div>
+
+                                    <!-- Địa chỉ -->
+                                    <div class="mb-3">
+                                        @Html.Label("Địa chỉ")
+                                        @Html.TextArea("diachi", "", new { @class = "form-control", id = "modal-diachi", required = "required" })
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <button type="submit" class="btn btn-info">Sửa</button>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delete Modal HTML -->
+                <div id="deleteCustomer" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            @using (Html.BeginForm("DeleteCustomer", "Admin", FormMethod.Post))
+                            {
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Xóa Khách Hàng</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    @Html.TextBox("makh", "", new { @class = "form-control", id = "modal-delete-makh", required = "required", @readonly = "readonly" })
+                                    <p>Bạn có muốn xóa Khách hàng này?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <button type="submit" class="btn btn-danger">Xóa</button>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 
+
+
+    <script>
+
+        var addForm = document.querySelector('#addCustomer form');
+        var form = document.querySelector('form');
+        form.addEventListener('submit', function(e){ var pass = form.querySelector('[name="pass"]').value;
+        var conf = form.querySelector('[name="confirmpass"]').value; if(pass !== conf){ e.preventDefault();
+            alert("Mật khẩu xác nhận không khớp!"); } }); var editModal = document.getElementById('editCustomer');
+
+        editModal.addEventListener('show.bs.modal', function (event) { var button = event.relatedTarget;
+                document.getElementById('modal-makh').value = button.getAttribute('data-makh');
+                document.getElementById('modal-tenkh').value = button.getAttribute('data-tenkh');
+                document.getElementById('modal-sdt').value = button.getAttribute('data-sdt');
+                document.getElementById('modal-diachi').value = button.getAttribute('data-diachi');
+        });
+
+        var deleteModal = document.getElementById('deleteCustomer');
+        deleteModal.addEventListener('show.bs.modal', function (event) {
+                var button = event.relatedTarget;
+                document.getElementById('modal-delete-makh').value = button.getAttribute('data-makh');
+        });
+    </script>
+    }
 </body>
 
 </html>
