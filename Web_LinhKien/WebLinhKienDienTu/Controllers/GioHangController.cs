@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using WebLinhKienDienTu.Models;
 using WebLinhKienDienTu.Repository;
 
@@ -8,16 +9,34 @@ namespace WebLinhKienDienTu.Controllers
     {
         public readonly IChiTietHoaDonService _chiTietHoaDon;
         public readonly IGioHangService _gioHangService;
+        private readonly ILichSuMuaHangService _lichSuMuaHangService;
 
-        public GioHangController(IChiTietHoaDonService chiTietHoaDon, IGioHangService gioHangService)
+        public GioHangController(IChiTietHoaDonService chiTietHoaDon, IGioHangService gioHangService, ILichSuMuaHangService lichSuMuaHangService)
         {
             _chiTietHoaDon = chiTietHoaDon;
             _gioHangService = gioHangService;
+            _lichSuMuaHangService = lichSuMuaHangService;
         }
 
-        public IActionResult GioHang(string email)
+        public IActionResult GioHang(string email, int page = 1)
         {
-            return View(_gioHangService.LayDanhSachGioHangTheoMaKH(email));
+            int pageSize = 5; // Số dòng mỗi trang
+
+            // Lấy toàn bộ danh sách
+            var danhsach = _gioHangService.LayDanhSachGioHangTheoMaKH(email)
+                                          .OrderBy(k => k.Mahd);
+
+            // Tính toán phân trang
+            var data = danhsach.Skip((page - 1) * pageSize)
+                               .Take(pageSize)
+                               .ToList();
+
+            // Gửi thông tin phân trang sang View
+            ViewBag.Page = page;
+            ViewBag.TotalPage = (int)Math.Ceiling((double)danhsach.Count() / pageSize);
+
+
+            return View(data);
         }
 
         [HttpPost]
@@ -45,9 +64,34 @@ namespace WebLinhKienDienTu.Controllers
             return View(_chiTietHoaDon.LayChiTietHoaDon(mahd));
         }
 
-        public IActionResult LichSuMuaHang()
+        public IActionResult LichSuMuaHang(string email, int page = 1)
         {
-            return View();
+            int pageSize = 5; // Số dòng mỗi trang
+
+            // Lấy toàn bộ danh sách
+            var danhsach = _lichSuMuaHangService.LayDanhSachHoaDonTheoEmail(email)
+                                          .OrderBy(k => k.Mahd);
+
+            // Tính toán phân trang
+            var data = danhsach.Skip((page - 1) * pageSize)
+                               .Take(pageSize)
+                               .ToList();
+
+            // Gửi thông tin phân trang sang View
+            ViewBag.Page = page;
+            ViewBag.TotalPage = (int)Math.Ceiling((double)danhsach.Count() / pageSize);
+            return View(data);
+        }
+
+        [HttpPost]
+        public IActionResult LichSuMuaHang(string searchMa, string searchTrangThai, string searchNgay,string email)
+        {
+            ViewBag.searchMa = searchMa;
+            ViewBag.searchTrangThai = searchTrangThai;
+            ViewBag.searchNgay = searchNgay;
+            ViewBag.email = email;
+            var model = _lichSuMuaHangService.TimKiem(searchMa, searchTrangThai, searchNgay, email);
+            return View(model);
         }
     }
 }

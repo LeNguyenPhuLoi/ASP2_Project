@@ -217,9 +217,10 @@
                                         </div>
                                         <div class="mb-3">
                                             @Html.Label("Khách Hàng")
-                                            @Html.DropDownList("Makh", (IEnumerable<SelectListItem>)ViewBag.Makh,
+                                            @Html.DropDownList("Makh",
+                                            (IEnumerable<SelectListItem>)ViewBag.Makh,
                                             "— Chọn khách hàng —",
-                                            new { @class = "form-select", id = "modal-makh", required = "required" })
+                                            new { @class = "form-select", id = "modal-makh" })
                                         </div>
                                         <div class="mb-3">
                                             @Html.Label("Ngày Lập")
@@ -229,11 +230,11 @@
                                             @Html.Label("Nhân Viên Lập Hóa Đơn")
                                             @Html.DropDownList("Manv", (IEnumerable<SelectListItem>)ViewBag.Manv,
                                             "— Chọn nhân viên —",
-                                            new { @class = "form-select", id = "modal-manv", required = "required" })
+                                            new { @class = "form-select", id = "modal-manv", required = "required", @readonly = "readonly" })
                                         </div>
                                         <div class="mb-3">
                                             @Html.Label("Tổng Tiền")
-                                            @Html.TextBox("Tongtien", "", new { @class = "form-control", id = "modal-tongtien", required = "required" })
+                                            @Html.TextBox("Tongtien", "", new { @class = "form-control", id = "modal-tongtien", required = "required", @readonly = "readonly" })
                                         </div>
                                         <div class="mb-3">
                                             @Html.Label("Trạng Thái")
@@ -307,5 +308,11 @@
         document.getElementById('modal-delete-mahoadon').value = makho;
     });
 
+    document.getElementById('modal-makh').addEventListener('mousedown', function (e) {
+        e.preventDefault(); // không mở dropdown
+    });
 
+    document.getElementById('modal-manv').addEventListener('mousedown', function (e) {
+        e.preventDefault(); // không mở dropdown
+    });
 </script>
