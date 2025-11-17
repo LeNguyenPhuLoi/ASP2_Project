@@ -38,44 +38,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <!-- Shop dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">All Products</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#">2</a></li>
-                                <li><a class="dropdown-item" href="#">1</a></li>
-                            </ul>
-                        </li>
                     </ul>
-
-                    <!-- Thanh tìm kiếm -->
-                    <div class="header-search mx-3">
-                        <form action='store.php' method='get'>
-                            <select class="input-select" name='cat-id'>
-                                <option value='all'>Tất cả</option>
-                                <option value='1'>value 1</option>
-                                <option value='2'>value 2</option>
-                                <option value='3'>value 3</option>
-                            </select>
-                            <input class="input" name='key' placeholder="Tìm kiếm ở đây...">
-                            <input type='hidden' name='mode' value='product'>
-                            <input type='hidden' name='ac' value='search'>
-                            <button class="search-btn" name='basic-search' value='Search'>Search</button>
-                        </form>
-                    </div>
-
-                    <div class="header-cart">
-                        @* CART *@
-                        <form class="d-flex" asp-controller="GioHang" asp-action="GioHang">
-                            <button style="border:none;" class="btn btn-outline-dark" type="submit">
-                                <i class="fa fa-shopping-cart"></i>
-                                <span>Carts</span>
-                            </button>
-                        </form>
-                    </div>
 
                     <!-- Login partial -->
                     <partial name="_LoginPartial" />

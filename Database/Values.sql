@@ -48,9 +48,9 @@ VALUES
 ('SP004', N'Intel Pentium G5400', 1900000, N'VND', N'CPU Intel Pentium G5400, 2 nhân 4 luồng, phù hợp máy tính văn phòng cơ bản', 'intel_pentium_g5400.jpg', 20, 'LSP01'),
 
 -- RAM
-('SP005', N'Corsair Vengeance RGB 8GB DDR4 3200MHz', 1200000, N'VND', N'RAM Corsair Vengeance RGB 8GB DDR4 3200MHz, thiết kế đẹp mắt và hiệu năng ổn định', 'corsair_ram_vegeance_rgb.jpg', 25, 'LSP02'),
+('SP005', N'Corsair Vengeance RGB 8GB DDR4 3200MHz', 1200000, N'VND', N'RAM Corsair Vengeance RGB 8GB DDR4 3200MHz, thiết kế đẹp mắt và hiệu năng ổn định', 'corsair_ddr4_ven-1px.jpg', 25, 'LSP02'),
 ('SP006', N'G.Skill Trident Z RGB 8GB DDR4 3600MHz', 1300000, N'VND', N'RAM G.Skill Trident Z RGB 8GB DDR4 3600MHz, tốc độ cao, tản nhiệt hiệu quả', 'dominator_platinum_rgb_x2.jpg', 18, 'LSP02'),
-('SP007', N'Kingston HyperX 8GB DDR4 3200MHz', 1150000, N'VND', N'RAM Kingston HyperX 8GB DDR4 3200MHz, hiệu năng bền bỉ cho chơi game và đồ họa', 'kingston_hyperx_ddr4_3200.jpg', 22, 'LSP02'),
+('SP007', N'Kingston HyperX 8GB DDR4 3200MHz', 1150000, N'VND', N'RAM Kingston HyperX 8GB DDR4 3200MHz, hiệu năng bền bỉ cho chơi game và đồ họa', 'kingston_hyper_2x8gb_ddr4_3200.jpg', 22, 'LSP02'),
 ('SP008', N'Gigabyte Aorus 2x8GB DDR4 3200MHz', 2300000, N'VND', N'Bộ RAM đôi Gigabyte Aorus 16GB (2x8GB) bus 3200MHz, tản nhiệt tốt và độ ổn định cao', 'gigabyte_aorus_2x8gb_ddr4_3200.jpg', 10, 'LSP02'),
 
 -- GPU
@@ -60,24 +60,24 @@ VALUES
 ('SP012', N'MSI RTX 2080Ti 11GB GDDR6', 19800000, N'VND', N'Card đồ họa cao cấp MSI RTX 2080Ti 11GB GDDR6, dành cho chơi game 4K và dựng hình 3D', 'asus_rtx_2080ti.jpg', 4, 'LSP03'),
 
 -- Ổ cứng
-('SP013', N'SSD Kingston A2000 500GB NVMe', 1350000, N'VND', N'SSD Kingston A2000 dung lượng 500GB, chuẩn NVMe PCIe, tốc độ đọc ghi cao', 'kingston_500gb_ssd.jpg', 25, 'LSP04'),
+('SP013', N'SSD Kingston A2000 500GB NVMe', 1350000, N'VND', N'SSD Kingston A2000 dung lượng 500GB, chuẩn NVMe PCIe, tốc độ đọc ghi cao', 'kingston_480gb_ssd_sata.jpg', 25, 'LSP04'),
 ('SP014', N'SSD Samsung 860 EVO 250GB', 1150000, N'VND', N'SSD Samsung 860 EVO 250GB, chuẩn SATA III, độ bền cao và ổn định', 'samsung_860evo250gb_m2280.png', 18, 'LSP04'),
 ('SP015', N'SSD Intel 660p 1TB NVMe', 2200000, N'VND', N'SSD Intel 660p 1TB NVMe, tốc độ cao, dung lượng lớn cho lưu trữ dữ liệu', 'intel_360gb_sata3_ssd.jpg', 10, 'LSP04'),
-('SP016', N'HDD Seagate Barracuda 1TB 7200rpm', 1050000, N'VND', N'HDD Seagate Barracuda 1TB, tốc độ quay 7200rpm, dung lượng lớn, hoạt động bền bỉ', 'seagate_barracuda_1tb.jpg', 30, 'LSP04'),
+('SP016', N'Samsung SSD 500GB SATA III', 1050000, N'VND', N'Samsung SSD 500GB SATA III, tốc độ đọc ghi cao, mở ứng dụng nhanh, hoạt động ổn định, phù hợp nâng cấp laptop và PC', 'samsung_500gb_ssd.jpg', 30, 'LSP04'),
 
 -- Nguồn & Tản nhiệt
 ('SP017', N'Nguồn AcBel 600W', 950000, N'VND', N'Nguồn máy tính AcBel 600W, hoạt động ổn định và tiết kiệm điện năng', 'AcBel_600W.jpg', 25, 'LSP05'),
 ('SP018', N'Nguồn Gigabyte Aorus 850W', 2100000, N'VND', N'Nguồn Gigabyte Aorus 850W, chuẩn 80 Plus Gold, hiệu suất cao', 'gigabyte_aorus_850w.jpg', 15, 'LSP05'),
 ('SP019', N'Tản nhiệt Cooler Master Hyper 212 LED Turbo', 750000, N'VND', N'Tản nhiệt khí Cooler Master Hyper 212 LED Turbo, hiệu quả và êm ái', 'coolermaster_hyper212ledturbo.jpg', 20, 'LSP05'),
-('SP020', N'Tản nhiệt nước Cooler Master ML240L', 1750000, N'VND', N'Tản nhiệt nước Cooler Master ML240L, làm mát tốt cho CPU hiệu năng cao', 'coolermaster_ml240l.jpg', 10, 'LSP05');
+('SP020', N'Tản nhiệt nước Cooler Master ML240L', 1750000, N'VND', N'Tản nhiệt nước Cooler Master ML240L, làm mát tốt cho CPU hiệu năng cao', 'coolermaster_masterliquid_ml240r.jpg', 10, 'LSP05');
 
 --THEM DU LIEU TAI KHOAN
 GO
 INSERT INTO TAIKHOAN(EMAIL, PASS, QUYEN, TRANGTHAI)
-VALUES (N'namle75@gmail.com','namle@123', N'ADMIN', N'HOẠT ĐỘNG'),
-		(N'tung98@gmail.com','tung@123', N'USER', N'HOẠT ĐỘNG'),
-		(N'thanhlong87@gmail.com','thanhlong@123', N'USER', N'HOẠT ĐỘNG'),
-		(N'huunghi123@gmail.com','huunghi@123', N'USER', N'HOẠT ĐỘNG')
+VALUES (N'namle75@gmail.com','namle@123', N'ADMIN', N'Active'),
+		(N'tung98@gmail.com','tung@123', N'USER', N'Active'),
+		(N'thanhlong87@gmail.com','thanhlong@123', N'USER', N'Active'),
+		(N'huunghi123@gmail.com','huunghi@123', N'USER', N'Active')
 
 --THEM DU LIEU NHAN VIEN
 GO
