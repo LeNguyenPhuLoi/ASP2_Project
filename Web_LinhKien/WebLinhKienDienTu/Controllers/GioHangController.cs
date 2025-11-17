@@ -10,12 +10,14 @@ namespace WebLinhKienDienTu.Controllers
         public readonly IChiTietHoaDonService _chiTietHoaDon;
         public readonly IGioHangService _gioHangService;
         private readonly ILichSuMuaHangService _lichSuMuaHangService;
+        private readonly IThanhToanService _thanhToanService;
 
-        public GioHangController(IChiTietHoaDonService chiTietHoaDon, IGioHangService gioHangService, ILichSuMuaHangService lichSuMuaHangService)
+        public GioHangController(IChiTietHoaDonService chiTietHoaDon, IGioHangService gioHangService, ILichSuMuaHangService lichSuMuaHangService, IThanhToanService thanhToanService)
         {
             _chiTietHoaDon = chiTietHoaDon;
             _gioHangService = gioHangService;
             _lichSuMuaHangService = lichSuMuaHangService;
+            _thanhToanService = thanhToanService;
         }
 
         public IActionResult GioHang(string email, int page = 1)
@@ -92,6 +94,27 @@ namespace WebLinhKienDienTu.Controllers
             ViewBag.email = email;
             var model = _lichSuMuaHangService.TimKiem(searchMa, searchTrangThai, searchNgay, email);
             return View(model);
+        }
+
+        public IActionResult ThanhToan(string email, int page = 1)
+        {
+            int pageSize = 5; // Số dòng mỗi trang
+
+            // Lấy toàn bộ danh sách
+            var danhsach = _gioHangService.LayDanhSachGioHangTheoMaKH(email)
+                                          .OrderBy(k => k.Mahd);
+
+            // Tính toán phân trang
+            var data = danhsach.Skip((page - 1) * pageSize)
+                               .Take(pageSize)
+                               .ToList();
+
+            // Gửi thông tin phân trang sang View
+            ViewBag.Page = page;
+            ViewBag.TotalPage = (int)Math.Ceiling((double)danhsach.Count() / pageSize);
+
+
+            return View(data);
         }
     }
 }

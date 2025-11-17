@@ -38,6 +38,7 @@ namespace WebLinhKienDienTu
             builder.Services.AddScoped<ILichSuMuaHangService, LichSuMuaHangService>();
             builder.Services.AddScoped<IKhachHangService, KhachHangService>();
             builder.Services.AddScoped<INhanVienService, NhanVienService>();
+            builder.Services.AddScoped<IThanhToanService, ThanhToanService>();
 
             var app = builder.Build();
             using (var scope = app.Services.CreateScope())
