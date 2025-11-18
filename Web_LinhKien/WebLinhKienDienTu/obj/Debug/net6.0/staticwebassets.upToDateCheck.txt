@@ -3,6 +3,7 @@ wwwroot\css\register-custom.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\image\1989b824-131b-48e9-bcc7-04ead0c2506d.jpg
+wwwroot\image\4c21804f-9a87-41b6-bebb-301f21d90296.png
 wwwroot\image\4e49606d-d15e-435b-973b-122ac191f98f.jpg
 wwwroot\image\6410fb27-a96e-4df6-98a2-52736e6c0163.jpg
 wwwroot\image\9308ca19-d42f-4f99-91fb-9faffaa2aa10.png

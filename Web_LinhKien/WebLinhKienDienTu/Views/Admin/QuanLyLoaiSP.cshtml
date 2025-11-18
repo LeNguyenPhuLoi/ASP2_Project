@@ -1,4 +1,8 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Identity
+@using WebLinhKienDienTu.Models
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@{
     Layout = "/Views/Shared/_AdminLayout.cshtml"; // Chỉ định layout mới cho trang Index
     ViewData["Title"] = "Home Page";
 }
@@ -30,190 +34,191 @@
 </head>
 
 <body>
-
-    <div class="container mt-4">
-        <div class="card shadow-lg">
-            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-                <h4 class="mb-0">Quản lý Loại Sản Phẩm</h4>
-                <a class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#addLoaiSP">+ Thêm <b>Loại Sản Phẩm</b></a>
-            </div>
-
-            <div class="card-body">
-                <!-- Thanh tìm kiếm -->
-                <form class="row mb-3" method="post" asp-action="QuanLyLoaiSP" asp-controller="Admin">
-                    <div class="col-md-4">
-                        <input type="text" class="form-control" name="searchMaLoai" placeholder="Tìm theo mã loại " value="@ViewBag.searchMaLoai" />
-                    </div>
-                    <div class="col-md-4">
-                        <input type="text" class="form-control" name="searchTenLoai" placeholder="Tìm theo tên loại sản phẩm" value="@ViewBag.searchTenLoai" />
-                    </div>
-                    <div class="col-md-4 text-end">
-                        <button class="btn btn-primary" type="submit">Tìm kiếm</button>
-                        <a class="btn btn-secondary" href="@Url.Action("QuanLyLoaiSP", "Admin")">Làm mới</a>
-                    </div>
-                </form>
-
-                <!-- Bảng danh sách -->
-                <table class="table table-bordered text-center align-middle">
-                    <thead class="table-secondary">
-                        <tr>
-                            <th>Mã loại</th>
-                            <th>Tên loại</th>
-                            <th>Mô tả</th>
-                            <th width="20%">Thao tác</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        @if (Model != null)
-                        {
-                            @foreach (var item in Model)
-                            {
-                                <tr>
-                                    <th>@item.Maloai</th>
-                                    <th>@item.Tenloai</th>
-                                    <th>@item.Mota</th>
-                                    <td>
-                                        <a class="btn btn-info btn-sm edit-btn"
-                                           data-bs-toggle="modal"
-                                           data-bs-target="#editLoaiSP"
-                                           data-maloai="@item.Maloai"
-                                           data-tenloai="@item.Tenloai"
-                                           data-mota="@item.Mota">
-                                            Sửa
-                                        </a>
-                                        <a class="btn btn-danger btn-sm"
-                                           data-bs-toggle="modal"
-                                           data-bs-target="#deleteLoaiSP"
-                                           data-maloai="@item.Maloai">
-                                            Xóa
-                                        </a>
-                                    </td>
-                                </tr>
-                            }
-                        }
-
-                    </tbody>
-                </table>
-
-                <!--Chuyển Trang-->
-                <nav>
-                    <ul class="pagination justify-content-center">
-
-                        @if (ViewBag.Page > 1)
-                        {
-                            <li class="page-item">
-                                <a class="page-link" href="@Url.Action("QuanLyLoaiSP", new { page = ViewBag.Page - 1 })">Previous</a>
-                            </li>
-                        }
-
-                        @for (int i = 1; i <= ViewBag.TotalPage; i++)
-                        {
-                            <li class="page-item @(i == ViewBag.Page ? "active" : "")">
-                                <a class="page-link" href="@Url.Action("QuanLyLoaiSP", new { page = i })">@i</a>
-                            </li>
-                        }
-
-                        @if (ViewBag.Page < ViewBag.TotalPage)
-                        {
-                            <li class="page-item">
-                                <a class="page-link" href="@Url.Action("QuanLyLoaiSP", new { page = ViewBag.Page + 1 })">Next</a>
-                            </li>
-                        }
-
-                    </ul>
-                </nav>
-
-                <!--Add Loại Sản Phẩm-->
-                <div id="addLoaiSP" class="modal fade">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            @using (Html.BeginForm("AddLoaiSanPham", "Admin", FormMethod.Post))
-                            {
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Thêm Loại Sản Phẩm</h4>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                </div>
-                                <div class="modal-body">                                   
-                                    <div class="mb-3">
-                                        @Html.Label("Tên Loại Sản Phẩm")
-                                        @Html.TextBox("Tenloai", "", new { @class = "form-control", required = "required" })
-                                    </div>
-                                    <div class="mb-3">
-                                        @Html.Label("Mô Tả")
-                                        @Html.TextArea("Mota", "", new { @class = "form-control", required = "required" })
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-                                    <button type="submit" class="btn btn-success">Thêm</button>
-                                </div>
-                            }
-                        </div>
-                    </div>
+    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+    {
+        <div class="container mt-4">
+            <div class="card shadow-lg">
+                <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                    <h4 class="mb-0">Quản lý Loại Sản Phẩm</h4>
+                    <a class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#addLoaiSP">+ Thêm <b>Loại Sản Phẩm</b></a>
                 </div>
 
-                <!--Edit Loại Sản Phẩm-->
-                <div id="editLoaiSP" class="modal fade">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            @using (Html.BeginForm("EditLoaiSanPham", "Admin", FormMethod.Post))
+                <div class="card-body">
+                    <!-- Thanh tìm kiếm -->
+                    <form class="row mb-3" method="post" asp-action="QuanLyLoaiSP" asp-controller="Admin">
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="searchMaLoai" placeholder="Tìm theo mã loại " value="@ViewBag.searchMaLoai" />
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="searchTenLoai" placeholder="Tìm theo tên loại sản phẩm" value="@ViewBag.searchTenLoai" />
+                        </div>
+                        <div class="col-md-4 text-end">
+                            <button class="btn btn-primary" type="submit">Tìm kiếm</button>
+                            <a class="btn btn-secondary" href="@Url.Action("QuanLyLoaiSP", "Admin")">Làm mới</a>
+                        </div>
+                    </form>
+
+                    <!-- Bảng danh sách -->
+                    <table class="table table-bordered text-center align-middle">
+                        <thead class="table-secondary">
+                            <tr>
+                                <th>Mã loại</th>
+                                <th>Tên loại</th>
+                                <th>Mô tả</th>
+                                <th width="20%">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @if (Model != null)
                             {
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Sửa Loại Sản Phẩm</h4>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="mb-3">
-                                        @Html.Label("Mã Loại Sản Phẩm")
-                                        @Html.TextBox("Maloai", "", new { @class = "form-control", id = "modal-maloai", required = "required", @readonly = "readonly" })
-                                    </div>
-                                    <div class="mb-3">
-                                        @Html.Label("Tên Loại Sản Phẩm")
-                                        @Html.TextBox("Tenloai", "", new { @class = "form-control", id = "modal-tenloai", required = "required" })
-                                    </div>
-                                    <div class="mb-3">
-                                        @Html.Label("Mô Tả")
-                                        @Html.TextArea("Mota", "", new { @class = "form-control", id = "modal-mota", required = "required" })
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-                                    <button type="submit" class="btn btn-info">Sửa</button>
-                                </div>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <th>@item.Maloai</th>
+                                        <th>@item.Tenloai</th>
+                                        <th>@item.Mota</th>
+                                        <td>
+                                            <a class="btn btn-info btn-sm edit-btn"
+                                               data-bs-toggle="modal"
+                                               data-bs-target="#editLoaiSP"
+                                               data-maloai="@item.Maloai"
+                                               data-tenloai="@item.Tenloai"
+                                               data-mota="@item.Mota">
+                                                Sửa
+                                            </a>
+                                            <a class="btn btn-danger btn-sm"
+                                               data-bs-toggle="modal"
+                                               data-bs-target="#deleteLoaiSP"
+                                               data-maloai="@item.Maloai">
+                                                Xóa
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
                             }
+
+                        </tbody>
+                    </table>
+
+                    <!--Chuyển Trang-->
+                    <nav>
+                        <ul class="pagination justify-content-center">
+
+                            @if (ViewBag.Page > 1)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link" href="@Url.Action("QuanLyLoaiSP", new { page = ViewBag.Page - 1 })">Previous</a>
+                                </li>
+                            }
+
+                            @for (int i = 1; i <= ViewBag.TotalPage; i++)
+                            {
+                                <li class="page-item @(i == ViewBag.Page ? "active" : "")">
+                                    <a class="page-link" href="@Url.Action("QuanLyLoaiSP", new { page = i })">@i</a>
+                                </li>
+                            }
+
+                            @if (ViewBag.Page < ViewBag.TotalPage)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link" href="@Url.Action("QuanLyLoaiSP", new { page = ViewBag.Page + 1 })">Next</a>
+                                </li>
+                            }
+
+                        </ul>
+                    </nav>
+
+                    <!--Add Loại Sản Phẩm-->
+                    <div id="addLoaiSP" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                @using (Html.BeginForm("AddLoaiSanPham", "Admin", FormMethod.Post))
+                                {
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Thêm Loại Sản Phẩm</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            @Html.Label("Tên Loại Sản Phẩm")
+                                            @Html.TextBox("Tenloai", "", new { @class = "form-control", required = "required" })
+                                        </div>
+                                        <div class="mb-3">
+                                            @Html.Label("Mô Tả")
+                                            @Html.TextArea("Mota", "", new { @class = "form-control", required = "required" })
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                        <button type="submit" class="btn btn-success">Thêm</button>
+                                    </div>
+                                }
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!--Delete Loại Sản Phẩm-->
-                <div id="deleteLoaiSP" class="modal fade">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            @using (Html.BeginForm("DeleteLoaiSanPham", "Admin", FormMethod.Post))
-                            {
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Xóa Loại Sản Phẩm</h4>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    @Html.TextBox("Maloai", "", new { @class = "form-control", id = "modal-delete-maloai", required = "required", @readonly = "readonly" })
-                                    <p>Bạn có muốn xóa loại sản phẩm này?</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-                                    <button type="submit" class="btn btn-danger">Xóa</button>
-                                </div>
-                            }
+                    <!--Edit Loại Sản Phẩm-->
+                    <div id="editLoaiSP" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                @using (Html.BeginForm("EditLoaiSanPham", "Admin", FormMethod.Post))
+                                {
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Sửa Loại Sản Phẩm</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            @Html.Label("Mã Loại Sản Phẩm")
+                                            @Html.TextBox("Maloai", "", new { @class = "form-control", id = "modal-maloai", required = "required", @readonly = "readonly" })
+                                        </div>
+                                        <div class="mb-3">
+                                            @Html.Label("Tên Loại Sản Phẩm")
+                                            @Html.TextBox("Tenloai", "", new { @class = "form-control", id = "modal-tenloai", required = "required" })
+                                        </div>
+                                        <div class="mb-3">
+                                            @Html.Label("Mô Tả")
+                                            @Html.TextArea("Mota", "", new { @class = "form-control", id = "modal-mota", required = "required" })
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                        <button type="submit" class="btn btn-info">Sửa</button>
+                                    </div>
+                                }
+                            </div>
                         </div>
                     </div>
+
+                    <!--Delete Loại Sản Phẩm-->
+                    <div id="deleteLoaiSP" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                @using (Html.BeginForm("DeleteLoaiSanPham", "Admin", FormMethod.Post))
+                                {
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Xóa Loại Sản Phẩm</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        @Html.TextBox("Maloai", "", new { @class = "form-control", id = "modal-delete-maloai", required = "required", @readonly = "readonly" })
+                                        <p>Bạn có muốn xóa loại sản phẩm này?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                        <button type="submit" class="btn btn-danger">Xóa</button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
-
-
             </div>
         </div>
-    </div>
-
+    }
 </body>
 
 </html>
