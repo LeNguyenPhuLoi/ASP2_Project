@@ -50,7 +50,6 @@ namespace WebLinhKienDienTu.Repository
             var sp = _db.KhoSanphams.FirstOrDefault(k => k.Makho == makho);
             if (sp != null)
             {
-                sp.Ngaynhap = Convert.ToDateTime(ngaynhap);
                 sp.Soluongnhap = soluongnhap;
                 _db.SaveChanges();
                 flag = true;
