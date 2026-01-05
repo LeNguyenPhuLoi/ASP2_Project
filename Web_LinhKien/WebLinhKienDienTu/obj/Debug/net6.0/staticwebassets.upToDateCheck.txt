@@ -6,6 +6,8 @@ wwwroot\image\1989b824-131b-48e9-bcc7-04ead0c2506d.jpg
 wwwroot\image\4c21804f-9a87-41b6-bebb-301f21d90296.png
 wwwroot\image\4e49606d-d15e-435b-973b-122ac191f98f.jpg
 wwwroot\image\6410fb27-a96e-4df6-98a2-52736e6c0163.jpg
+wwwroot\image\762c8543-e5a2-4d3f-984c-bdd5803782ac.png
+wwwroot\image\8959fda9-4319-468d-bef8-23aa35d0cbc0.png
 wwwroot\image\9308ca19-d42f-4f99-91fb-9faffaa2aa10.png
 wwwroot\image\960aca01-7b6c-4ddf-ab5b-b9ff52deabf3.jpg
 wwwroot\image\9faa611f-617a-4b3f-9e11-8a3dfbfa7df2.jpg
@@ -29,6 +31,7 @@ wwwroot\image\asus_tuf_B450M.jpg
 wwwroot\image\asus_tuf_gt501.jpg
 wwwroot\image\asus_wr_ts8x_dvds.png
 wwwroot\image\ba62c575-a6b1-4f8f-a94c-b759bec2732c.jpg
+wwwroot\image\c28976c2-2cd8-4486-bb60-0de5e8e6cb75.jpg
 wwwroot\image\coolermaster_elete_460w.jpg
 wwwroot\image\coolermaster_gammax400.jpg
 wwwroot\image\coolermaster_hyper212LEDTurbo.jpg
@@ -44,6 +47,7 @@ wwwroot\image\corsair_ram_vegeeance_ipx_red.jpg
 wwwroot\image\corsair_vegeance_rgb_2pack_1.jpg
 wwwroot\image\d9f6ac56-5039-47b7-8416-1279cb552c30.jpg
 wwwroot\image\dominator_platinum_rgb_x2.jpg
+wwwroot\image\f50b9431-f65a-4157-97d9-27907a6521ec.png
 wwwroot\image\gigabyte_400w_gp_pw400.jpg
 wwwroot\image\gigabyte_8gb_ddr4_2666.jpg
 wwwroot\image\gigabyte_aorus_2x8gb_ddr4_3200.jpg
